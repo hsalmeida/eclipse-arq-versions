@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="advice"
+    nsURI="com.ibm.team.process.advice" nsPrefix="advice">
+  <eAnnotations source="teamModel">
+    <details key="clientProject" value="com.ibm.team.process.common"/>
+    <details key="clientSrcFolder" value="src"/>
+  </eAnnotations>
+  <eAnnotations source="teamPackage">
+    <details key="clientBasePackage" value="com.ibm.team.process.internal.common"/>
+    <details key="dbMapQueryablePropertiesOnly" value="false"/>
+    <details key="readAccessPolicy" value="PROTECTED"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationReport" instanceClassName="com.ibm.team.process.common.advice.IOperationReport"
+      eSuperTypes="#//ProcessReport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wasRun" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationConfigurationInfo"
+        ordered="false" eType="#//OperationConfigurationInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTime" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalData" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemsResponse" instanceClassName="com.ibm.team.process.advice.IItemsResponse"
+      eSuperTypes="#//OperationResponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalClientItems" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item"
+        containment="true">
+      <eAnnotations source="teamReference">
+        <details key="belongsToHandle" value="false"/>
+        <details key="forceNonHandleType" value="true"/>
+        <details key="dbReuseMembers" value="false"/>
+        <details key="minRetrievalProfile" value="DEFAULT"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectsResponse" instanceClassName="com.ibm.team.process.advice.IObjectsResponse"
+      eSuperTypes="#//OperationResponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalClientObjects"
+        ordered="false" upperBound="-1" eType="ecore:EClass Ecore.ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationResponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalOperationReport"
+        ordered="false" eType="#//OperationReport" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationConfigurationInfo" instanceClassName="com.ibm.team.process.common.advice.IOperationConfigurationInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationId" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="developmentLineItemUuid"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorSource" ordered="false"
+        eType="#//ConfigurationSource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryAreaInfo" ordered="false"
+        lowerBound="1" eType="#//OperationAreaInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalSecondaryAreaInfos"
+        ordered="false" upperBound="-1" eType="#//OperationAreaInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectConfiguration" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessReport" instanceClassName="com.ibm.team.process.common.advice.IProcessReport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="complete" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalNestedReports"
+        ordered="false" upperBound="-1" eType="#//ProcessReport" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalReportInfos" ordered="false"
+        upperBound="-1" eType="#//ReportInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeTaken" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParticipantReport" instanceClassName="com.ibm.team.process.common.advice.IParticipantReport"
+      eSuperTypes="#//ProcessReport"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportInfo" instanceClassName="com.ibm.team.process.common.advice.IReportInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessExtensionData" instanceClassName="com.ibm.team.process.internal.common.service.IProcessExtensionData">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensionElementMap" ordered="false"
+        upperBound="-1" eType="#//ConfigurationElementEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" ordered="false"
+        upperBound="-1" eType="#//ConfigurationAttributeEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalChildren" ordered="false"
+        upperBound="-1" eType="#//ConfigurationElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalNamespaceIdentifier"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationAttributeEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationElementEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+        upperBound="-1" eType="#//ConfigurationElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunnableReport" eSuperTypes="#//OperationReport"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceAreaItemUuid" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentUuid" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentKey" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleId" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="areaIsTeamArea" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PermissionSource" eSuperTypes="#//ConfigurationSource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalPermittedActions"
+        ordered="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdvisorReport" instanceClassName="com.ibm.team.process.common.advice.IAdvisorReport"
+      eSuperTypes="#//ParticipantReport"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdvisorInfo" instanceClassName="com.ibm.team.process.common.advice.IAdvisorInfo"
+      eSuperTypes="#//ReportInfo"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationAreaInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="areaItemUuid" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="areaIsTeamArea" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkedActions" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkedRoles" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalPermissionSources"
+        ordered="false" upperBound="-1" eType="#//PermissionSource" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

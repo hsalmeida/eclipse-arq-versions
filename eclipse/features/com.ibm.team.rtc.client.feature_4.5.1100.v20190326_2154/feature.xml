@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2010, 2017. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.rtc.client.feature"
+      label="%featureName"
+      version="4.5.1100.v20190326_2154"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license>
+      %license
+   </license>
+
+   <includes
+         id="com.hp.hpl.jena.rdf.feature"
+         version="1.2.0.v20190109_1531"
+         optional="true"/>
+
+   <includes
+         id="com.google.common.feature"
+         version="18.0.0.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.common.splash.feature"
+         version="1.2.1.v20150105_2326"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.feedreader.feature"
+         version="1.0.6.v20141107_1924"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ut.ic.server.feature"
+         version="1.2.1.v20150105_2326"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.preferenceharvester.feature"
+         version="1.3.1.v20150105_2326"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.ua.generators.sitexml.feature"
+         version="1.0.3.v20141107_1924"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.ua.wizards.feature"
+         version="1.2.2.v20141107_1924"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.ccl.welcome.bits.feature"
+         version="7.0.9.v20141107_1924"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.help.common.rational.remote.feature"
+         version="7.6.0.v20190319_1739"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.jazz.reports.ide.ui.cshelp.feature"
+         version="3.0.1.v20171127_1751"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.rational.buildforge.common.rtc.feature"
+         version="3.0.2000.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.rational.connector.cq.common.rtc.feature"
+         version="3.0.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.rational.connector.cq.ide.rtc.feature"
+         version="3.0.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.rational.common.welcome.doc.feature"
+         version="7.6.0.v20170829_1451"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apache.log4j.rtc.feature"
+         version="1.0.400.v20190201_1652"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apache.lucene2.jfs.feature"
+         version="5.5.5.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.client.rtc.feature"
+         version="3.0.2100.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.common.rtc.feature"
+         version="3.0.2100.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.ide.rtc.feature"
+         version="3.0.2100.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.ide.server.shared.rtc.feature"
+         version="3.0.2100.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.setup.junit.rtc.feature"
+         version="3.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.client.rtc.feature"
+         version="3.0.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.common.rtc.feature"
+         version="3.1.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.cshelp.feature"
+         version="3.0.1.v20190320_0128"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.ide.rtc.feature"
+         version="3.0.2100.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.setup.junit.rtc.feature"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.toolkit.rtc.feature"
+         version="3.0.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.calm.foundation.client.rtc.feature"
+         version="3.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.calm.foundation.common.rtc.feature"
+         version="3.1.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.calm.foundation.rcp.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.collaboration.chat.rcp.jfs.feature"
+         version="1.0.6000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.collaboration.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.collaboration.jabber.rcp.rtc.feature"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.collaboration.rcp.jfs.feature"
+         version="1.0.5000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.collaboration.sametime.rcp.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.concert.feature"
+         version="3.1.1900.v20190326_2154"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.connector.client.rtc.feature"
+         version="3.2.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.connector.common.rtc.feature"
+         version="3.1.1400.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.connector.cq.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.connector.ide.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.connector.scm.cc.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.dashboard.common.jfs.feature"
+         version="6.0.4000.v20190116_0124"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.dashboard.rcp.jfs.feature"
+         version="1.0.6000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.cli.rtc.feature"
+         version="3.2.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.client.rtc.feature"
+         version="3.2.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.common.rtc.feature"
+         version="3.2.1300.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.ide.rtc.feature"
+         version="3.3.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.rcp.rtc.feature"
+         version="3.3.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.filesystem.setup.junit.rtc.feature"
+         version="3.0.300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.foundation.client.jfs.feature"
+         version="1.1.5000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.foundation.common.jfs.feature"
+         version="1.1.5000.v20190116_0124"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.interop.client.rtc.feature"
+         version="3.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.interop.common.rtc.feature"
+         version="3.0.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.interop.ide.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.interop.rcp.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.platform.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.client.jfs.feature"
+         version="1.2.5000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.common.jfs.feature"
+         version="1.2.5000.v20190116_0124"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.definitions.ide.rtc.feature"
+         version="3.1.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.ide.jfs.feature"
+         version="1.2.5000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.integrations.rad.feature"
+         version="3.1.4000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.process.rcp.jfs.feature"
+         version="1.2.5000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.reports.client.jfs.feature"
+         version="1.0.6000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.reports.common.jfs.feature"
+         version="1.1.4000.v20190116_0124"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.reports.common.rtc.feature"
+         version="3.1.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.reports.ide.jfs.feature"
+         version="1.1.4000.v20190116_0148"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.reports.ide.rtc.feature"
+         version="3.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.repository.client.jfs.feature"
+         version="1.1.5000.v20190116_0124"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.repository.common.jfs.feature"
+         version="1.1.5000.v20190306_1746"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.repository.rcp.common.rtc.feature"
+         version="3.1.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.repository.rcp.rtc.feature"
+         version="3.1.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.rtc.common.rtc.feature"
+         version="3.0.2100.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.dev.jdojo.rtc.feature"
+         version="1.0.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.rtc.scriptengine.rtc.feature"
+         version="3.0.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.admin.rtc.feature"
+         version="3.2.1300.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.client.rtc.feature"
+         version="3.2.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.common.rtc.feature"
+         version="3.2.1300.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="org.antlr.rtc.feature"
+         version="1.0.600.v20190109_1650"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.cshelp.feature"
+         version="3.0.1.v20190205_0213"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.svn.client.rtc.feature"
+         version="3.1.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.svn.common.rtc.feature"
+         version="3.1.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.svn.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.scm.svn.ide.rtc.feature"
+         version="3.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.tpt.client.rtc.feature"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.tpt.common.rtc.feature"
+         version="3.1.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.tpt.ide.rtc.feature"
+         version="3.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.welcome.feature"
+         version="3.0.100.v20190321_0133"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.client.rtc.feature"
+         version="3.1.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.common.rtc.feature"
+         version="3.2.1200.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.cshelp.feature"
+         version="3.0.1.v20180925_1701"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.ide.rtc.feature"
+         version="3.1.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.java.common.rtc.feature"
+         version="3.1.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.rcp.rtc.feature"
+         version="3.1.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.workitem.setup.junit.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.rational.clearquest.cqjni.rtc.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="net.oauth.jfs.feature"
+         version="1.0.3000.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="org.apache.commons.httpclient.jfs.feature"
+         version="1.1.0.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="org.apache.http.jfs.feature"
+         version="1.1.0.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="org.apache.commons.io.feature"
+         version="1.3.0.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.common.feature"
+         version="1.0.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.build.feature.client"
+         version="0.7.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.buildablesubset.feature.common"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.buildablesubset.feature.client"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.buildmap.feature.common"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.dependencyset.feature.client"
+         version="1.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.dependencyset.feature.common"
+         version="1.0.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.dependencyset.feature.client"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.dependencyset.feature.common"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.build.feature.ide"
+         version="3.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.metadata.feature"
+         version="1.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.zcomponent.feature"
+         version="1.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.zcomponent.ui.feature"
+         version="1.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.langdef.feature.common"
+         version="1.1.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.langdef.feature.client"
+         version="1.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.langdef.feature.ide"
+         version="3.1.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.fileagent.miner.common.feature"
+         version="1.0.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.build.ant.feature"
+         version="3.1.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.build.ant.zos.feature"
+         version="1.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.buildmap.feature.client"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.mapping.feature"
+         version="1.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.dsdef.feature.common"
+         version="1.1.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.dsdef.feature.client"
+         version="1.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.dsdef.feature.ide"
+         version="1.1.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.rdf.query.feature.common"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.rdf.query.feature.client"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ref.integrity.feature"
+         version="1.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.metadata.scanner.common.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.metadata.scanner.client.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.metadata.query.ui.feature"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.migration.feature.ide"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.common.ui.feature"
+         version="3.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.common.feature"
+         version="3.1.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.build.common.rtc.feature"
+         version="3.0.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.build.ide.rtc.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.dependencyset.feature.common"
+         version="3.0.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.dependencyset.feature.client"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.filesystem.client.rtc.feature"
+         version="4.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.filesystem.common.rtc.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.filesystem.ide.rtc.feature"
+         version="3.1.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.ide.client.rtc.feature"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.logging.rtc.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.scm.client.rtc.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.scm.common.rtc.feature"
+         version="3.0.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.common"
+         version="3.5.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.toolkit"
+         version="1.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.ui"
+         version="1.0.2000.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.toolkit"
+         version="1.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.mapping.feature"
+         version="1.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.toolkit"
+         version="1.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.ui"
+         version="1.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.common"
+         version="1.0.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.etools.iseries.toolbox"
+         version="8.5.5002.v20160106_1822"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.etools.iseries.projects.core"
+         version="8.5.500.v20150525_1743"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.automation.common.feature"
+         version="3.1.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.automation.ui.feature"
+         version="3.1.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.feature.common"
+         version="3.0.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.feature.ui"
+         version="1.2.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.build.feature.client"
+         version="1.0.500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.build.feature.ui"
+         version="1.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.build.feature.ui"
+         version="1.0.1300.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.buildablesubset.feature.common"
+         version="3.1.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.buildablesubset.feature.client"
+         version="3.1.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.buildmap.common.feature"
+         version="1.0.800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.buildmap.client.feature"
+         version="1.0.800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.buildmap.common.feature"
+         version="3.1.1400.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.buildmap.client.feature"
+         version="3.0.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.definitions.ui.feature"
+         version="3.0.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.dependency.util.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.deployment.ui.feature"
+         version="3.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.deployment.client.feature"
+         version="3.1.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.deployment.common.feature"
+         version="3.1.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.langdef.client.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.langdef.common.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.collection.client.feature"
+         version="3.0.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.collection.common.feature"
+         version="3.0.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.scanner.client.feature"
+         version="3.1.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.scanner.common.feature"
+         version="3.0.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.query.common.feature"
+         version="3.0.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.query.ui.feature"
+         version="3.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.process.feature.common"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.process.feature.ui"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.process.definitions.ide.rtc.feature"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.rdf.query.client.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.rdf.query.common.feature"
+         version="3.1.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.resourcedef.client.feature"
+         version="3.0.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.resourcedef.common.feature"
+         version="3.0.1500.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.packaging.ui.feature"
+         version="3.1.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.packaging.client.feature"
+         version="3.1.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.packaging.common.feature"
+         version="3.1.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.metadata.collection.ide.feature"
+         version="3.0.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.promotion.feature.client"
+         version="3.1.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.promotion.feature.ui"
+         version="3.1.1700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.promotion.feature.common"
+         version="3.1.1700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.client"
+         version="3.5.1800.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.common"
+         version="3.5.1800.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.ui"
+         version="1.0.1900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.aix.metadata.collection.client.feature"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.ibmi.metadata.collection.client.feature"
+         version="3.1.1500.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.metadata.util.feature"
+         version="3.0.1600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.supa.server.common.feature"
+         version="3.0.1900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamz.supa.client.feature"
+         version="3.0.1600.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.teamp.metadata.query.ui.feature"
+         version="3.0.1400.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.feed.common.feature"
+         version="1.0.900.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.feed.ui.feature"
+         version="1.0.900.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.draw2d"
+         version="3.9.101.201408150207"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.codegen"
+         version="2.10.0.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.codegen.ecore"
+         version="2.10.2.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.common"
+         version="2.10.1.v20150123-0348"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.ecore"
+         version="2.10.2.v20150123-0348"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.ecore.edit"
+         version="2.9.0.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.edit"
+         version="2.10.1.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.mapping"
+         version="2.8.0.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.emf.mapping.ecore"
+         version="2.8.0.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.gef"
+         version="3.9.101.201408150207"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.help"
+         version="2.0.103.v20150204-1700"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.jdt"
+         version="3.10.1.v20150204-1700"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.pde"
+         version="3.10.1.v20150204-1700"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.platform"
+         version="4.4.2.v20150204-1700"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.rcp"
+         version="4.4.2.v20150204-1700"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.xsd"
+         version="2.10.0.v20150123-0452"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.svnkit.rtc.feature"
+         version="1.0.1200.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="org.eclipse.equinox.p2.user.ui"
+         version="2.2.0.v20150129-0838"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.scd.client.feature"
+         version="1.0.700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.scd.common.feature"
+         version="1.0.700.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.enterprise.scd.ide.ui.feature"
+         version="1.0.700.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="org.mozilla.rhino.feature"
+         version="1.7.1100.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="org.dojotoolkit.feature"
+         version="1.8.4.v20181221_2153"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.apt.api.ui.feature"
+         version="1.0.600.v20190320_2310"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.git.workitem.client.feature"
+         version="1.0.100.v20190321_0118"
+         optional="true"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.client.rtc.feature"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.common.rtc.feature"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.toolkit.rtc.feature"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.client"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.common"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.toolkit"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.client"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.common"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.toolkit"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.ui"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.client.rtc.feature"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.common.rtc.feature"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.team.build.extensions.toolkit.rtc.feature"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.automation.ui.feature"
+         version="3.1.1800.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.client"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.common"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.teamz.zcomponent.feature"
+         version="1.0.1600.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.teamz.zcomponent.ui.feature"
+         version="1.1.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.common"
+         version="1.0.1700.v20190320_2310"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.toolkit"
+         version="1.0.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.systemdefinition.feature.ui"
+         version="1.0.1900.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.client"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.common"
+         version="1.0.500.v20190201_1652"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.toolkit"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.client"
+         version="3.5.1800.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.toolkit"
+         version="1.0.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.systemdefinition.feature.ui"
+         version="1.0.1900.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.extensions.feature.toolkit"
+         version="1.0.500.v20190202_0205"/>
+
+   <includes
+         id="com.ibm.team.enterprise.build.feature.ui"
+         version="1.2.1600.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.definitions.ui.feature"
+         version="3.0.1800.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.build.feature.ui"
+         version="1.0.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.ui"
+         version="1.0.2000.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.packaging.ui.feature"
+         version="3.1.1900.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.process.feature.ui"
+         version="3.0.1500.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.promotion.feature.ui"
+         version="3.1.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.teamz.supa.client.feature"
+         version="3.0.1600.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.teamz.supa.server.common.feature"
+         version="3.0.1900.v20190320_2310"/>
+
+   <includes
+         id="com.ibm.team.enterprise.ref.integrity.feature"
+         version="1.0.1700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.scd.ide.ui.feature"
+         version="1.0.700.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.enterprise.zos.mapping.feature"
+         version="1.0.1600.v20190320_2310"/>
+
+   <includes
+         id="com.ibm.team.enterprise.smpe.feature.ui"
+         version="1.0.400.v20190202_0205"/>
+
+   <includes
+         id="org.eclipse.paho.client.mqttv3.feature"
+         version="1.1.0.v20181221_2153"/>
+
+   <includes
+         id="com.ibm.team.build.logging.client.rtc.feature"
+         version="1.0.200.v20190321_0118"/>
+
+   <includes
+         id="com.ibm.team.build.logging.ui.rtc.feature"
+         version="1.0.200.v20190321_0118"/>
+
+</feature>

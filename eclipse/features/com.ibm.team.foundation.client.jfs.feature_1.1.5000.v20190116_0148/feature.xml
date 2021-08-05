@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2009, 2019. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.foundation.client.jfs.feature"
+      label="Foundation Client Feature"
+      version="1.1.5000.v20190116_0148"
+      provider-name="IBM">
+
+   <plugin
+         id="com.ibm.team.feed.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.7000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.feed.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.7000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.foundation.client"
+         download-size="0"
+         install-size="0"
+         version="1.1.4000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.foundation.rcp.core"
+         download-size="0"
+         install-size="0"
+         version="1.1.6000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.foundation.rcp.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.3000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.jface"
+         download-size="0"
+         install-size="0"
+         version="1.2.3000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.fulltext.client"
+         download-size="0"
+         install-size="0"
+         version="1.2.4000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.fulltext.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.4000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.foundation.setup.client"
+         download-size="0"
+         install-size="0"
+         version="1.1.4000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.foundation.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.4000.v20190116_0148"
+         unpack="false"/>
+
+</feature>

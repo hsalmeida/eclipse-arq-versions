@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="ua_brochure" name="Help overview" alt-style="css/swt.properties" style="PLUGINS_ROOT/com.ibm.welcome.common.rational.doc/css/common.css" path="overview/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Finding information to help you" url="http://org.eclipse.ui.intro/showPage?id=ua_brochure_help" id="ua_brochure_link">
+				<text>Learn about the types of information and documentation that are available to help you learn about concepts and features that you might want to use.</text>
+			</link>
+			<group label="Select a topic" style-id="select-topic" id="ua_brochure_select-a-topic" expandable="true">
+				<contentProvider id="ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTopicList" pluginId="com.ibm.ccl.welcome.bits" /> 
+			</group>
+			
+		</group>
+	</extensionContent>
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css,../com.ibm.welcome.common.rational.doc/css/common.css" id="ua_brochure_help" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<contentProvider id="header-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />	
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<contentProvider id="title-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTitle" pluginId="com.ibm.ccl.welcome.bits" />
+						</group>
+						<text>The help topics provide step-by-step task instructions, conceptual information, and reference materials to help you accomplish your goals.</text>
+<!-- Alternative 1 using bold styling -->
+						<img style-id="right" src="images/HelpView.gif" alt="Help view" />
+						<text>
+						You can view help in two places: the Help window and a dynamic help view. In either place, you can find the 
+						information you want by using the index, search, or navigation, and recall it easily with bookmarks.</text>
+						<text><![CDATA[To access help topics in the Help window, click <b>Help > Help contents</b>.]]></text>
+						<text><![CDATA[To see links to topics related to your current context, click <b>Window > Show view</b> and select <b>Help</b>.]]></text>
+<!-- Alternative 2 using bullets, which can't contain bolding just yet -->
+<!-- (commented out until we have proper styles to use within the bulleted list
+						<text>You can view help in two places: the Help window and a dynamic help view. In either place, you can find the 
+						information you want by using the index, search or navigation, and recall it easily with bookmarks.
+						&lt;ul&gt;
+						&lt;li&gt;To access help topics in the Help window, click Help > Help contents.&lt;/li&gt;
+						&lt;li&gt;To see links to topics related to your current context, click Window > Show view and select Help&lt;/li&gt;
+						&lt;/ul&gt;
+						</text>
+						-->
+						
+						<text>When you are viewing a modal dialog box, such as a wizard, you can click the question mark icon and the Help view docks on the side. 
+						This allows you to browse and search all product information while working through the dialog box or wizard.</text>
+						<text><![CDATA[The top part of the Help view (<b>About...</b>) shows help and links to topics that are relevant to the currently active context. The bottom part provides a powerful 
+						search capability for the product's user assistance content. You can also add Web sites to the search scope.]]></text>
+						<group style-id="content-group" id="content-group">
+							<link style-id="content-link" label="Finding information to assist you"
+						 	url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.help.common.rational.doc/topics/c_help_on_help.html"
+						 	id="common_ov_helponhelp" alt="">
+								<text>Go to the help topics to read more about product usage information and getting help.</text>
+							</link>
+						</group>
+						<group id="clear"><text></text></group>	
+					</group>	
+				</group>
+			</group>
+			<contentProvider id="footer-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>
+
+
+	<!-- Actual Page -->
+	<!-- <page style="$theme$/html/overview.css" id="ua_brochure_tutorials" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<contentProvider id="header-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />	
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<contentProvider id="title-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTitle" pluginId="com.ibm.ccl.welcome.bits" />
+						</group>
+						<img style-id="right" src="images/TutorialsGallery.gif" alt="Tutorials Gallery" />
+						<text>To actively learn about a concept or a tool, try one of the tutorials in the Tutorials Gallery. 
+						Each tutorial explains what you can learn and the time required to complete it. Many tutorials have text-based lessons, while others include movies 
+						that you can watch to learn about a feature or workflow.</text>
+						<text><![CDATA[To open the Tutorials Gallery, click <b>Help > Tutorials Gallery</b>.]]></text>
+						<group id="clear"><text></text></group>
+					</group>
+				</group>
+
+			</group>
+			<contentProvider id="footer-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>
+	-->
+	
+	<!-- Actual Page -->
+	<!-- <page style="$theme$/html/overview.css" id="ua_brochure_samples" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<contentProvider id="header-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />	
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<contentProvider id="title-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTitle" pluginId="com.ibm.ccl.welcome.bits" />
+						</group>
+						<img style-id="right" src="images/SamplesGallery.gif" alt="Samples Gallery" />
+						<text>The Samples Gallery provides a broad range of sample projects, files, and applications that you can use to jump-start your own projects. Some of these samples work with some of the tutorials in the Tutorials Gallery.</text>
+						<text><![CDATA[To open the Samples Gallery, click <b>Help > Samples Gallery</b>.]]></text>
+						<group id="clear"><text></text></group>
+					</group>
+				</group>
+
+			</group>
+			<contentProvider id="footer-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>
+	-->
+	
+	<!-- Actual Page -->
+	<!--<page style="$theme$/html/overview.css" id="ua_brochure_cheatsheets" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<contentProvider id="header-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />	
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<contentProvider id="title-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTitle" pluginId="com.ibm.ccl.welcome.bits" />
+						</group>
+						<img style-id="right" src="images/filler.gif" alt="filler" />
+						<text>[ About cheatsheets ]</text>
+						<text>[ More about cheatsheets ]</text>
+						<text>[ Link to a cheatsheet? ]</text>
+						<text><![CDATA[<hr size="1" />]]></text>					 
+					</group>
+				</group>
+
+			</group>
+			<contentProvider id="footer-ua_brochure" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>-->
+
+</introContent>

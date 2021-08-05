@@ -1,0 +1,239 @@
+/************************************************
+*  
+* WEB RESOURCES 
+*
+*************************************************/
+
+/***** STYLES FOR WEBRESOURCES CATEGORY BLOCK ****/
+
+/***** DIV AROUND THE WHOLE BLOCK ******/
+.webresources-category {
+	display : block;
+	background-position: top left;
+	background-repeat: no-repeat;
+	padding-left: 53px;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: .8em;
+	font-weight: normal;
+}
+
+/***** THE CATEGORY TITLE ******/
+.webresources-categorytitle {
+	font-size: 1em; 
+	font-weight: bold; 
+	line-height: 1.5;
+	display: block;
+	padding-top: 5px;
+}
+
+/***** THE CATEGORY DESCRIPTION PARAGRAPH ******/
+.webresources-linkdesc {
+	display: block;
+	padding-left: 3px;
+}
+
+/***** THE PARAGRAPH AROUND THE CATEGORY LINKS ******/
+.webresources-linklist {
+	position: relative;
+	top: -10px;
+	display: block;
+	padding-left: 5px;
+	line-height: 1.4;
+	font-weight: normal;
+}
+
+.webresources-linklist ul {
+	
+}
+
+/***** THE LINKS THEMSELVES ******/
+
+.webresources-linklist .plainWebLink:active,
+.webresources-linklist .plainWebLink:visited,
+.webresources-linklist .plainWebLink:link {
+	/*background-image: url("../images/arrow.gif");
+	background-position: center left;
+	background-repeat: no-repeat;
+	padding-left: 0px;*/
+}
+
+.webresources-category ul {
+	margin: 0px 0px 5px 32px;
+}
+
+.webresources-category li {
+}
+
+.webresources-category p {
+	margin: 0px 0px 0px 0px;
+}
+
+#rss-feed {
+	position: relative;
+	left: 0px;
+}
+
+#rss-feed h4 {
+	font-family: Verdana, Arial, Helvetica; 
+	font-size: 11pt; 
+	font-weight: bold; 
+	line-height:1.5;
+}
+
+#rss-feed .provided-content {
+	padding: 6px 0px 6px 0px;
+}
+
+#rss-feed * span {
+	display: block;
+}
+
+#rss-feed .status-text {
+	margin-top: 0px;
+	margin-left: 14px;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+#rss-feed .status-text a {
+	font-size: 10pt;
+}
+
+.rss-feed-link {
+	margin-left: 14px;
+	padding-top: 6px;	
+}
+
+.rss-feed-link a {
+	padding: 2px 0px 5px 20px;
+	font-weight: normal;
+	font-size: .7em;
+	background-image: url("../images/feed-icon-16x16.gif");
+	background-repeat: no-repeat;
+	background-position: top left;	
+}
+
+/************************************************
+*  
+* WHATS NEW 
+*
+*************************************************/
+div.enhancement {
+	width:100%;
+	float: none;
+}
+
+div.enhancement .description{
+	width: 318px;
+	float: left;
+	text-align: left;
+}
+
+div.enhancement .image{
+	max-width: 475px;
+	float: right;
+	padding-left: 15px;
+}
+
+p.descr {
+	position: relative;
+	left: 0;
+	margin-left: 0;
+	padding-left: 0;
+	line-height:1.3;
+}
+
+span.title { 
+	font-weight: bold; 
+	font-size: 1.2em; 
+	line-height:1.5;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+div.enhancement hr {
+	width: 100%;
+	margin: 10px 0px 10px 0px;
+}
+
+div.enhancement li {
+	line-height: 1.4;
+}
+
+div.enhancement ul {
+	margin-bottom: 0px;	
+}
+
+
+/***** NEW STYLE OF WHATS NEW ITEMS ******/
+
+div.wn_category {
+	text-align: left;
+}
+
+div.wn_categorytitle {
+	border-bottom: 0px solid #ccc;
+	text-align: left;
+}
+
+div.wn_item {
+	border-bottom: 1px solid #eee;
+	padding: 0px 0px 10px 0px;
+	margin: 0px 0px 10px 0px;
+	float: none;
+}
+
+div.wn_itemtitle {
+	width: 180px;
+	height: 100%;
+	float: left;
+	text-align: left;
+	font-weight: bold;
+	border: 0px solid #ccc;
+}
+
+div.wn_itemdesc {
+	margin-left: 200px;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	border-left: 0px solid #ddd;
+}
+
+/************************************************
+*  
+* BROCHURE STUFF - A FEW LITTLE THINGS 
+*
+*************************************************/
+
+.brochure-content span.subheading {
+	font-weight: bold;
+	font-size: 1.1em;	
+}
+
+
+
+
+/************************************************
+*  
+* COMMON 
+*
+*************************************************/
+
+
+a.topicList, a.plainWebLink {
+	font-weight: normal;
+	color: #69c;
+	text-decoration: none;
+	font-size: .9em;
+}
+
+a.topicList:hover, a.plainWebLink:hover {
+	text-decoration: underline;
+}
+
+div.select-topic a.topicList {
+	font-size: .7em;
+}
+

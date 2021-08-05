@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+
+<!-- Delivery Related Configuration Templates -->
+
+<template
+	context="com.ibm.team.process.PreconditionsContextType#com.ibm.team.scm.client.deliver"
+	description="%ProcessSettings_1"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.RequiredContentPrecondition"
+	name="requiredContent">&lt;precondition id="com.ibm.team.process.deliver.requiredContent" xmlns="http://com.ibm.team.process/requireContent"
+							name="${name}"
+							overrulable="${true}"
+							description="${description}"&gt;
+							&lt;filePattern pattern="${filePattern}"/&gt;
+							&lt;requiredText text="${requiredText}"/&gt;
+						&lt;/precondition&gt;</template>
+											
+</templates>

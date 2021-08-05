@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.ibm.team.filesystem.client.binaries;singleton
+ :=true
+Bundle-Name: %bundleName
+Bundle-Version: 3.1.700.v20190110_0136
+Bundle-ClassPath: com.ibm.team.filesystem.client.1.7.jar
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %bundleVendor
+Fragment-Host: com.ibm.team.filesystem.client
+
+

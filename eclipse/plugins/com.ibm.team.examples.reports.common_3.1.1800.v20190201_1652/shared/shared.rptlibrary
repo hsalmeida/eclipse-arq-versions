@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.17" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.3.2.r232_20090202 Build &lt;2.3.2.v20090218-0730></property>
+    <property name="units">in</property>
+    <simple-property-list name="includeResource">
+        <value>shared/shared</value>
+    </simple-property-list>
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="theme">defaultTheme</property>
+    <themes>
+        <theme name="defaultTheme" id="4">
+            <styles>
+                <style name="birt-body" id="68">
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">12px</property>
+                    <property name="color">#666666</property>
+                </style>
+                <style name="birt-chart" id="98">
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="color">#666666</property>
+                </style>
+                <style name="birt-heading-title" id="69">
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">16px</property>
+                    <property name="fontWeight">normal</property>
+                    <property name="color">#333333</property>
+                </style>
+                <style name="watchfor-body" id="275">
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">12px</property>
+                    <property name="color">#666666</property>
+                </style>
+                <style name="watchfor-title" id="274">
+                    <property name="fontFamily">sans-serif</property>
+                    <property name="fontSize">12px</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#666666</property>
+                </style>
+                <style name="no-display" id="293">
+                    <property name="display">none</property>
+                </style>
+            </styles>
+        </theme>
+    </themes>
+    <components>
+        <text name="About this report" id="291">
+            <property name="style">birt-heading-title</property>
+            <property name="paddingTop">29px</property>
+            <property name="paddingLeft">2px</property>
+            <property name="paddingBottom">4px</property>
+            <property name="paddingRight">1pt</property>
+            <property name="contentType">html</property>
+            <text-property name="content" key="ABOUT_THIS_REPORT"><![CDATA[]]></text-property>
+        </text>
+        <text name="What does this report tell me?" id="292">
+            <property name="contentType">auto</property>
+            <text-property name="content" key="WHAT_DOES_THIS_REPORT_TELL_ME"><![CDATA[What does this report tell me?]]></text-property>
+        </text>
+    </components>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3"/>
+    </page-setup>
+    <list-property name="images">
+        <structure>
+            <property name="name">twistie-closed-light.gif</property>
+            <property name="data">R0lGODlhBwAHAIABAJmZmf///yH5BAEAAAEALAAAAAAHAAcAAAIMRI5gGLrnnmOKNRsKADs=</property>
+        </structure>
+        <structure>
+            <property name="name">twistie-open-light.gif</property>
+            <property name="data">R0lGODlhBwAHAIABAJmZmf///yH5BAEAAAEALAAAAAAHAAcAAAILjI8IyxDtDEsxnQIAOw==</property>
+        </structure>
+    </list-property>
+</library>

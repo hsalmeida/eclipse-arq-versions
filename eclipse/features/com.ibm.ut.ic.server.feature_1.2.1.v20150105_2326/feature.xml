@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.ut.ic.server.feature"
+      label="%Feature-Name"
+      version="1.2.1.v20150105_2326"
+      provider-name="%Feature-Vendor">
+
+   <description>
+      %General
+   </description>
+
+   <copyright>
+      %Copyright
+   </copyright>
+
+   <license url="">
+      %License
+   </license>
+
+   <includes
+         id="com.ibm.ccl.preferenceharvester.feature"
+         version="1.3.1.v20150105_2326"/>
+
+   <plugin
+         id="com.ibm.ut.ic.server"
+         download-size="0"
+         install-size="0"
+         version="1.2.7.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.common"
+         download-size="0"
+         install-size="0"
+         version="3.9.4.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.parser"
+         download-size="0"
+         install-size="0"
+         version="2.6.1.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.state"
+         download-size="0"
+         install-size="0"
+         version="2.0.1.v20141107_1924"
+         unpack="false"/>
+
+</feature>

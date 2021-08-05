@@ -1,0 +1,29 @@
+<LINK rel="stylesheet" href="$plugin:com.ibm.welcome.common.rational.doc$css/my_home.css" style="text/css" />
+
+<script type="text/javascript" src="$plugin:com.ibm.welcome.common.rational.doc$scripts/my_home.js"><!-- leave this here --></script>
+<script type="text/javascript">
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+
+// addLoadEvent(function() {
+//     document.body.appendChild(document.createTextNode(' monkeys!'));;
+// })
+
+addLoadEvent(function() { 
+	hideSectionsIfHiddenFromNav(); 
+})
+addLoadEvent(function() { 
+	showInitialContentInEachSection(); 
+})
+</script>

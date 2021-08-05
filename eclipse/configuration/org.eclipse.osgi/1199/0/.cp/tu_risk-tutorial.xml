@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010, 2012. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="risk_tutorial" name="Defining and managing risk tutorial" alt-style="css/swt.properties" style="css/t-links.css" path="tutorials/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Defining and managing risk" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.concert.tutorial.doc/topics/tut_risk_abstract.html" id="risk_tutorial_link">
+				<text>This tutorial shows you how to define risks and put in place a strategy to mitigate them.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

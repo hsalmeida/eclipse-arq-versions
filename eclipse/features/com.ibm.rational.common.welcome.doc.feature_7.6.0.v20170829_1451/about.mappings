@@ -1,0 +1,8 @@
+# about.mappings
+# contains fill-ins for about.properties
+# java.io.Properties file (ISO 8859-1 with "\" escapes)
+# This file does not need to be translated.
+# Usually generated at build time.
+
+0=20040308_2135-WB300-AD-V60D-R1
+1=6.0.0

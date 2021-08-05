@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	<!-- Links to content on What's new page -->
+	<extensionContent id="common.wn.ua" name="User assistance news" alt-style="css/swt.properties" style="PLUGINS_ROOT/com.ibm.welcome.common.rational.doc/css/common.css,css/t-links.css" path="whatsnew/@">
+		<group style-id="content-group" id="content-group">
+			<!--link style-id="content-link" label="Help" url="http://org.eclipse.ui.intro/showPage?id=common.wn.ua" id="common-wn-ua-icon">
+				<text>Read about enhancements that we have made to the information that will assist you in making the best use of this product.</text>
+			</link> -->
+			<!--link style-id="content-link" label="Finding release notes" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.help.sourcedita.doc/topics/t_open_rn.html" id="common-wn-relnotes-icon">
+				</link 
+			<text>Release notes cover release-specific information and include a query to the Support knowledge base, which documents known problems in the form of technotes. Go to the help topics to read about how to find release notes.
+			</text>	-->						
+		</group>
+	</extensionContent>
+
+	<!-- Actual Pages -->
+	<page style="$theme$/html/whatsnew.css" id="common.wn.ua" style-id="page">
+		<head src="wn-head.html" />
+		
+		<title style-id="intro-header">$introTitle$</title> 
+		
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="What's New" filteredFrom="swt">
+            	</group>
+            	<text style-id="page-title" id="page-title" filteredFrom="html">What's New</text>
+        
+				<group style-id="bits-content">
+					<group style-id="toolbar">
+						<group style-id="toolbar-gradient">
+							
+						</group>
+						<group style-id="toolbar-title">
+							
+						</group>
+						<group style-id="toolbar-background">
+							
+						</group>
+						<group style-id="images">
+							
+						</group>
+					</group>
+					<group style-id="content-area" id="content-area">
+					<group style-id="contentpgTitle" filteredFrom="swt">
+						<text>Help</text>
+					</group>
+					<html id="inline_flash" src="wn_ua_enhancements.html" type="inline">
+					</html>
+				</group>
+				</group>
+			</group>
+		<group style-id="bits-footer">
+			<group style-id="toolbar-gradient">
+			</group>
+			<group style-id="previous">
+			</group>
+			<group style-id="toolbar-background">
+			</group>
+			<group style-id="current-column">
+				<text>
+					User assistance: Page 1 of 1
+				</text>
+			</group>
+			<group style-id="next-column">
+			</group>
+		</group>
+	</group>
+	</page>
+	
+</introContent>

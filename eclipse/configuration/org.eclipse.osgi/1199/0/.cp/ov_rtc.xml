@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010, 2013. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="rtcoverview" name="Rational Team Concert overview" alt-style="css/swt.properties" style="css/t-links.css" path="overview/@">
+		<group label="Learn about Rational Team Concert" style-id="content-group" id="content-group">
+			<link style-id="content-link" label="What is Rational Team Concert?" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.concert.doc/topics/c_product-overview.html" id="rtc_overview_link">
+				<text>Rational Team Concert™ is a team collaboration tool that is built on a scalable, extensible platform that seamlessly integrates tasks across the software lifecycle.</text>
+			</link>
+			<link style-id="content-link" label="What is Collaborative Lifecycle Management?" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.help.common.jazz.calm.doc/topics/c_calm_common.html" id="clm_overview_link">
+				<text>Collaborative Lifecycle Management (CLM) provides integrations across Jazz-based products to connect the work of analysts with development and test teams.</text>
+			</link>
+			<link style-id="content-link" label="Tour: Rational Team Concert overview" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.concert.overview.tour.tutorial.doc/topics/rtcoverviewwrapper.html" id="rtc_tour_link">
+				<text>Watch this tour to get a quick overview of Rational Team Concert.</text>
+			</link>
+			<link style-id="content-link" label="Tour: Agile and traditional planning" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.apt.tour.tutorial.doc/topics/rtciterationplanwrapper.html" id="rtc_tour_link">
+				<text>Watch this tour to get a quick overview of agile and traditional planning.</text>
+			</link>
+			<link style-id="content-link" label="Tour: Source control" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.scm.tour.tutorial.doc/topics/rtcscmwrapper.html" id="rtc_tour_link">
+				<text>Watch this tour to get a quick overview of source control.</text>
+			</link>
+			<link style-id="content-link" label="Tour: Build" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.build.tour.tutorial.doc/topics/rtcbuildwrapper.html" id="rtc_tour_link">
+				<text>Watch this tour to get a quick overview of building in Rational Team Concert.</text>
+			</link>			
+			<!--<link style-id="content-link" label="Rational Team Concert 3.0 licenses" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.jazz.repository.web.admin.doc/topics/c_license_mgmt_over.html" id="rtc_licenses_link">
+				<text>Rational Team Concert 3.0 includes multiple role-based licenses that provide access to different capabilities.</text>
+			</link>-->
+		</group>
+	</extensionContent>
+
+</introContent>

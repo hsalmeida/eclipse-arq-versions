@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<brochure id="ua_brochure" title="Finding information to help you" >
+	<page id="ua_brochure_help" title="Two ways to find help" icon="images/topiclabel/xx_uafeatures16.gif"/>
+	<!-- <page id="ua_brochure_tutorials" title="Tutorials Gallery" icon="images/topiclabel/tu_gallery16.gif"/> -->
+	<!-- <page id="ua_brochure_samples" title="Samples Gallery" icon="images/topiclabel/sa_gallery16.gif"/> -->
+	<!-- <page id="ua_brochure_cheatsheets" title="Cheatsheets" icon="images/topiclabel/xx_topicname16.gif"/>-->
+</brochure>

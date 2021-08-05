@@ -1,0 +1,49 @@
+/***** SHARED CSS *******/
+/* This CSS is for the topic list on section pages */
+.content-group .select-topic {
+	position: relative;
+	top: -30px;
+	left: 60px;
+}
+
+.select-topic li {
+	list-style-type: none;
+}
+/***** END SHARED ******/
+
+
+.webresources-category#wn_jazz-alerts { background-image : url(../images/topiclabel/wn_jazz-alerts48.gif); }
+.webresources-category#wn_jazz-announcements { background-image : url(../images/topiclabel/wn_jazz-announcements48.gif); }
+.webresources-category#wr_jazz-events { background-image : url(../images/topiclabel/wr_jazz-events48.gif); }
+.webresources-category#wn_jazz-news { background-image : url(../images/topiclabel/wn_jazz-news48.gif); }
+
+a#getting_started_cc_link img { background-image : url(../images/topiclabel/xx_cc48.gif); }
+a#getting_started_cq_link img { background-image : url(../images/topiclabel/xx_cq48.gif); }
+a#jazz_admin_cheatsheet_link img { background-image : url(../images/topiclabel/fs_jazz-setup-repository48.gif); }
+a#jazz_architecture_link img { background-image : url(../images/topiclabel/ov_jazz-architecture48.gif); }
+a#jazz_collaboration_link img { background-image : url(../images/topiclabel/ov_jazz-collaboration48.gif); }
+a#jazz_community_link img { background-image : url(../images/topiclabel/wr_jazz-community48.gif); }
+a#jazz_connect_to_project_area_link img { background-image : url(../images/topiclabel/fs_jazz-setup-repository48.gif); }
+a#jazz_create_sample_link img { background-image : url(../images/topiclabel/fs_jazz-setup-repository48.gif); }
+a#jazz_register_link img { background-image : url(../images/topiclabel/wr_jazz-community48.gif); }
+a#jazz_invitation_link img { background-image : url(../images/topiclabel/fs_jazz-invitation48.gif); }
+a#jazz_instant_messaging_link img { background-image : url(../images/topiclabel/xx_jazz48.gif); }
+a#jazz_quick_reference_link img { background-image : url(../images/topiclabel/xx_jazz48.gif); }
+a#jazz_tutorial_link img { background-image : url(../images/topiclabel/tu_jazznet48.gif); }
+a#junit_tutorial_link img { background-image : url(../images/topiclabel/tu_jazznet48.gif); }
+a#migrate_jazz_server_link img { background-image : url(../images/topiclabel/xx_jazz48.gif); }
+a#migrate_svn_link img { background-image : url(../images/topiclabel/xx_jazz48.gif); }
+a#migrate_cc_link img { background-image : url(../images/topiclabel/xx_cc48.gif); }
+a#migrate_cq_link img { background-image : url(../images/topiclabel/xx_cq48.gif); }
+a#rtc_editions_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#rtc_getting_started_link img { background-image : url(../images/topiclabel/xx_rtc_help48.gif); }
+a#rtc_tutorial_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#risk_tutorial_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#plantrad_tutorial_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#clm_tutorial_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#cqsynch_tutorial_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#rtc_overview_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#rtc_tour_link img { background-image : url(../images/topiclabel/ov_tour48.gif); }
+a#rtc_whatsnew_link img { background-image : url(../images/topiclabel/xx_tc48.gif); }
+a#what_is_jazz_link img { background-image : url(../images/topiclabel/ov_jazz48.gif); }
+a#mcif_link img { background-image : url(../images/topiclabel/wr_mcif48.gif); }

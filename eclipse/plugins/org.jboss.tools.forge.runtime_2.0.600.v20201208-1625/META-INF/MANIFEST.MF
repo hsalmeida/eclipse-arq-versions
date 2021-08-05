@@ -1,0 +1,65 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.5.0
+Build-Jdk-Spec: 11
+Bundle-ManifestVersion: 2
+Bundle-Name: %BundleName
+Bundle-SymbolicName: org.jboss.tools.forge.runtime;singleton:=true
+Bundle-Version: 2.0.600.v20201208-1625
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %BundleProvider
+Bundle-Localization: plugin
+Eclipse-BundleShape: dir
+Bundle-ClassPath: lib/furnace-proxy-2.28.5.Final.jar,lib/furnace-api-2.2
+ 8.5.Final.jar,lib/furnace-se-2.28.5.Final.jar,lib/ui-api-3.9.8.Final.ja
+ r,lib/convert-api-3.9.8.Final.jar,lib/ui-spi-3.9.8.Final.jar,lib/facets
+ -api-3.9.8.Final.jar,lib/resources-api-3.9.8.Final.jar,lib/projects-api
+ -3.9.8.Final.jar,lib/dependencies-api-3.9.8.Final.jar,lib/shell-spi-3.9
+ .8.Final.jar,lib/database-tools-api-3.9.8.Final.jar,.
+Export-Package: bootpath,org.jboss.forge.addon.convert,org.jboss.forge.a
+ ddon.convert.exception,org.jboss.forge.addon.database.tools.connections
+ ,org.jboss.forge.addon.dependencies;uses:="org.jboss.forge.furnace.util
+ ,org.jboss.forge.addon.resource",org.jboss.forge.addon.facets,org.jboss
+ .forge.addon.projects; uses:="org.jboss.forge.furnace.spi,  org.jboss.f
+ orge.addon.facets,  org.jboss.forge.furnace.util,  org.jboss.forge.addo
+ n.resource",org.jboss.forge.addon.projects.facets; uses:="org.jboss.for
+ ge.addon.projects.building,  org.jboss.forge.addon.projects,  org.jboss
+ .forge.addon.dependencies,  org.jboss.forge.addon.resource",org.jboss.f
+ orge.addon.projects.stacks,org.jboss.forge.addon.resource;uses:="org.jb
+ oss.forge.addon.resource.events,org.jboss.forge.addon.facets",org.jboss
+ .forge.addon.resource.monitor,org.jboss.forge.addon.resource.transactio
+ n,org.jboss.forge.addon.shell.spi,org.jboss.forge.addon.shell.spi.comma
+ nd,org.jboss.forge.addon.ui; uses:="org.jboss.forge.addon.ui.metadata, 
+  org.jboss.forge.addon.ui.context,  org.jboss.forge.addon.ui.result,  o
+ rg.jboss.forge.addon.ui.util",org.jboss.forge.addon.ui.command,org.jbos
+ s.forge.addon.ui.context;uses:="org.jboss.forge.addon.ui.input",org.jbo
+ ss.forge.addon.ui.controller,org.jboss.forge.addon.ui.facets;uses:="org
+ .jboss.forge.addon.ui.hints,org.jboss.forge.addon.facets",org.jboss.for
+ ge.addon.ui.hints;uses:="org.jboss.forge.addon.environment",org.jboss.f
+ orge.addon.ui.input;uses:="org.jboss.forge.addon.convert,org.jboss.forg
+ e.addon.ui.context,org.jboss.forge.addon.facets",org.jboss.forge.addon.
+ ui.metadata;uses:="org.jboss.forge.addon.ui.hints",org.jboss.forge.addo
+ n.ui.output,org.jboss.forge.addon.ui.progress,org.jboss.forge.addon.ui.
+ result,org.jboss.forge.addon.ui.util; uses:="org.jboss.forge.addon.ui.i
+ nput,  org.jboss.forge.addon.ui.metadata,  org.jboss.forge.addon.conver
+ t,  org.jboss.forge.addon.ui.hints,  org.jboss.forge.addon.ui.context",
+ org.jboss.forge.addon.ui.validate,org.jboss.forge.addon.ui.wizard;uses:
+ ="org.jboss.forge.addon.ui.context,org.jboss.forge.addon.ui.result,org.
+ jboss.forge.addon.ui",org.jboss.forge.furnace; uses:="org.jboss.forge.f
+ urnace.versions,  org.jboss.forge.furnace.addons,  org.jboss.forge.furn
+ ace.spi,  org.jboss.forge.furnace.lock,  org.jboss.forge.furnace.reposi
+ tories",org.jboss.forge.furnace.addons;uses:="org.jboss.forge.furnace.v
+ ersions,org.jboss.forge.furnace.services,org.jboss.forge.furnace.reposi
+ tories",org.jboss.forge.furnace.event,org.jboss.forge.furnace.exception
+ ,org.jboss.forge.furnace.lock,org.jboss.forge.furnace.proxy;uses:="java
+ ssist.util.proxy,new org.jboss.forge.furnace.proxy",org.jboss.forge.fur
+ nace.proxy.javassist.util.proxy,org.jboss.forge.furnace.repositories;us
+ es:="org.jboss.forge.furnace.addons,org.jboss.forge.furnace.versions",o
+ rg.jboss.forge.furnace.se;uses:="org.jboss.forge.furnace",org.jboss.for
+ ge.furnace.services,org.jboss.forge.furnace.spi;uses:="org.jboss.forge.
+ furnace",org.jboss.forge.furnace.util;uses:="org.jboss.forge.furnace.ad
+ dons",org.jboss.forge.furnace.versions;uses:="org.jboss.forge.furnace.e
+ xception"
+Eclipse-SourceReferences: scm:git:https://github.com/jbosstools/jbosstoo
+ ls-forge.git;path="plugins/org.jboss.tools.forge.runtime";commitId=49eb
+ 43257842aaeec4ddd3c9bda66286775531b3
+

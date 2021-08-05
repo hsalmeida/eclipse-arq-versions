@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.etools.iseries.toolbox"
+      label="com.ibm.etools.iseries.toolbox"
+      version="8.5.5002.v20160106_1822"
+      provider-name="IBM">
+
+   <copyright>
+      © Copyright IBM Corp. and others 1992, 2009.  All rights reserved.
+   </copyright>
+
+   <license>
+      Use of this feature is subject to the same terms and conditions which govern the use of the IBM Product which included this feature.
+   </license>
+
+   <plugin
+         id="com.ibm.etools.iseries.toolbox"
+         download-size="0"
+         install-size="0"
+         version="8.5.5002.v20160106_1822"/>
+
+</feature>

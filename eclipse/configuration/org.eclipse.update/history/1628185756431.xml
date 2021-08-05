@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1628185756428" transient="false" version="3.0">
+	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
+		<feature id="com.ibm.team.process.ide.jfs.feature" version="1.2.5000.v20190116_0148" url="features/com.ibm.team.process.ide.jfs.feature_1.2.5000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.collection.ide.feature" version="3.0.1700.v20190321_0118" url="features/com.ibm.team.enterprise.metadata.collection.ide.feature_3.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jst.jsf.apache.trinidad.tagsupport.feature" version="2.6.1.v201902121810" url="features/org.eclipse.jst.jsf.apache.trinidad.tagsupport.feature_2.6.1.v201902121810/">
+		</feature>
+		<feature id="com.rational.clearquest.cqjni.rtc.feature" version="3.0.1600.v20190321_0118" url="features/com.rational.clearquest.cqjni.rtc.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.apt.common.rtc.feature" version="3.0.2100.v20190320_2310" url="features/com.ibm.team.apt.common.rtc.feature_3.0.2100.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.connector.telnet.feature" version="10.3.0.202104042017" url="features/org.eclipse.tm.terminal.connector.telnet.feature_10.3.0.202104042017/">
+		</feature>
+		<feature id="com.ibm.team.apt.api.ui.feature" version="1.0.600.v20190320_2310" url="features/com.ibm.team.apt.api.ui.feature_1.0.600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamp.build.common.rtc.feature" version="3.0.1800.v20190320_2310" url="features/com.ibm.teamp.build.common.rtc.feature_3.0.1800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.promotion.feature.ui" version="3.1.1700.v20190321_0118" url="features/com.ibm.team.enterprise.promotion.feature.ui_3.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.bugzilla_feature" version="3.25.2.v20200814-0512" url="features/org.eclipse.mylyn.bugzilla_feature_3.25.2.v20200814-0512/" plugin-identifier="org.eclipse.mylyn.tasks.core">
+		</feature>
+		<feature id="com.ibm.teamz.buildmap.feature.client" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.buildmap.feature.client_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.draw2d" version="3.10.100.201606061308" url="features/org.eclipse.draw2d_3.10.100.201606061308/">
+		</feature>
+		<feature id="com.genuitec.eclipse.theming.core.feature" version="1.11.0.202105260439" url="features/com.genuitec.eclipse.theming.core.feature_1.11.0.202105260439/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.scd.ide.ui.feature" version="1.0.700.v20190321_0118" url="features/com.ibm.team.enterprise.scd.ide.ui.feature_1.0.700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.dependencyset.feature.common" version="3.0.1500.v20190320_2310" url="features/com.ibm.teamp.dependencyset.feature.common_3.0.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamp.filesystem.ide.rtc.feature" version="3.1.1600.v20190321_0118" url="features/com.ibm.teamp.filesystem.ide.rtc.feature_3.1.1600.v20190321_0118/">
+		</feature>
+		<feature id="net.oauth.jfs.feature" version="1.0.3000.v20181221_2153" url="features/net.oauth.jfs.feature_1.0.3000.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.jgit.ssh.apache" version="5.12.0.202106070339-r" url="features/org.eclipse.jgit.ssh.apache_5.12.0.202106070339-r/">
+		</feature>
+		<feature id="com.ibm.ut.ic.server.feature" version="1.2.1.v20150105_2326" url="features/com.ibm.ut.ic.server.feature_1.2.1.v20150105_2326/">
+		</feature>
+		<feature id="org.eclipse.egit" version="5.12.0.202106070339-r" url="features/org.eclipse.egit_5.12.0.202106070339-r/">
+		</feature>
+		<feature id="com.ibm.team.build.cshelp.feature" version="3.0.1.v20190320_0128" url="features/com.ibm.team.build.cshelp.feature_3.0.1.v20190320_0128/">
+		</feature>
+		<feature id="com.ibm.teamz.dependencyset.feature.client" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.dependencyset.feature.client_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.scm.svn.ide.rtc.feature" version="3.1.1700.v20190321_0118" url="features/com.ibm.team.scm.svn.ide.rtc.feature_3.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.control.feature" version="10.3.0.202105240049" url="features/org.eclipse.tm.terminal.control.feature_10.3.0.202105240049/" plugin-identifier="org.eclipse.tm.terminal.control">
+		</feature>
+		<feature id="org.eclipse.emf.databinding.edit" version="1.8.0.v20210113-0340" url="features/org.eclipse.emf.databinding.edit_1.8.0.v20210113-0340/">
+		</feature>
+		<feature id="org.eclipse.jst.web_core.feature" version="3.22.0.v202103200058" url="features/org.eclipse.jst.web_core.feature_3.22.0.v202103200058/">
+		</feature>
+		<feature id="com.ibm.team.apt.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.apt.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="com.ibm.team.connector.ide.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.connector.ide.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.view.feature" version="10.3.0.202105240430" url="features/org.eclipse.tm.terminal.view.feature_10.3.0.202105240430/" plugin-identifier="org.eclipse.tm.terminal.view.ui">
+		</feature>
+		<feature id="com.ibm.team.process.rcp.jfs.feature" version="1.2.5000.v20190116_0148" url="features/com.ibm.team.process.rcp.jfs.feature_1.2.5000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.smpe.feature.ui" version="1.0.400.v20190202_0205" url="features/com.ibm.team.enterprise.smpe.feature.ui_1.0.400.v20190202_0205/">
+		</feature>
+		<feature id="com.ibm.team.reports.ide.jfs.feature" version="1.1.4000.v20190116_0148" url="features/com.ibm.team.reports.ide.jfs.feature_1.1.4000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.teamz.fileagent.miner.common.feature" version="1.0.1300.v20190321_0118" url="features/com.ibm.teamz.fileagent.miner.common.feature_1.0.1300.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.hsqldb.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.hsqldb.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.teamz.metadata.query.ui.feature" version="3.0.1400.v20190321_0118" url="features/com.ibm.teamz.metadata.query.ui.feature_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.process.definitions.ide.rtc.feature" version="3.0.1400.v20190321_0118" url="features/com.ibm.team.enterprise.process.definitions.ide.rtc.feature_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.foundation.common.jfs.feature" version="1.1.5000.v20190116_0124" url="features/com.ibm.team.foundation.common.jfs.feature_1.1.5000.v20190116_0124/">
+		</feature>
+		<feature id="com.ibm.team.connector.common.rtc.feature" version="3.1.1400.v20190320_2310" url="features/com.ibm.team.connector.common.rtc.feature_3.1.1400.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.ui" version="1.0.2000.v20190321_0118" url="features/com.ibm.team.enterprise.ibmi.systemdefinition.feature.ui_1.0.2000.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.promotion.feature.common" version="3.1.1700.v20190320_2310" url="features/com.ibm.team.enterprise.promotion.feature.common_3.1.1700.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.emf.edit.ui" version="2.21.0.v20210506-1232" url="features/org.eclipse.emf.edit.ui_2.21.0.v20210506-1232/">
+		</feature>
+		<feature id="org.eclipse.emf.mapping.ui" version="2.13.0.v20190323-1059" url="features/org.eclipse.emf.mapping.ui_2.13.0.v20190323-1059/">
+		</feature>
+		<feature id="org.eclipse.emf.converter" version="2.16.0.v20210405-0904" url="features/org.eclipse.emf.converter_2.16.0.v20210405-0904/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.collection.common.feature" version="3.0.1900.v20190320_2310" url="features/com.ibm.team.enterprise.metadata.collection.common.feature_3.0.1900.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore" version="2.24.0.v20210405-0628" url="features/org.eclipse.emf.ecore_2.24.0.v20210405-0628/">
+		</feature>
+		<feature id="com.ibm.team.build.extensions.toolkit.rtc.feature" version="1.0.500.v20190202_0205" url="features/com.ibm.team.build.extensions.toolkit.rtc.feature_1.0.500.v20190202_0205/">
+		</feature>
+		<feature id="org.eclipse.emf" version="2.26.0.v20210506-1425" url="features/org.eclipse.emf_2.26.0.v20210506-1425/">
+		</feature>
+		<feature id="com.ibm.rational.connector.cq.ide.rtc.feature" version="3.0.2000.v20190321_0118" url="features/com.ibm.rational.connector.cq.ide.rtc.feature_3.0.2000.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.collaboration.sametime.rcp.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.collaboration.sametime.rcp.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.apache.commons.io.feature" version="1.3.0.v20181221_2153" url="features/org.apache.commons.io.feature_1.3.0.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.jst.web_ui.feature" version="3.22.0.v202103200058" url="features/org.eclipse.jst.web_ui.feature_3.22.0.v202103200058/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.feature" version="10.3.0.202104042017" url="features/org.eclipse.tm.terminal.feature_10.3.0.202104042017/" plugin-identifier="org.eclipse.tm.terminal.view.core">
+		</feature>
+		<feature id="com.ibm.team.git.workitem.client.feature" version="1.0.100.v20190321_0118" url="features/com.ibm.team.git.workitem.client.feature_1.0.100.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wst.common.fproj" version="3.7.3.v202007142017" url="features/org.eclipse.wst.common.fproj_3.7.3.v202007142017/" plugin-identifier="org.eclipse.wst.common.project.facet.core">
+		</feature>
+		<feature id="org.eclipse.e4.rcp" version="4.20.0.v20210602-2209" url="features/org.eclipse.e4.rcp_4.20.0.v20210602-2209/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.extras.feature" version="1.4.1200.v20210507-0825" url="features/org.eclipse.equinox.p2.extras.feature_1.4.1200.v20210507-0825/">
+		</feature>
+		<feature id="cucumber.eclipse.feature" version="1.0.0.202107150747" url="features/cucumber.eclipse.feature_1.0.0.202107150747/">
+		</feature>
+		<feature id="org.eclipse.jst.web_userdoc.feature" version="3.6.1.v201908261515" url="features/org.eclipse.jst.web_userdoc.feature_3.6.1.v201908261515/">
+		</feature>
+		<feature id="com.ibm.teamz.langdef.feature.common" version="1.1.1600.v20190320_2310" url="features/com.ibm.teamz.langdef.feature.common_1.1.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.welcome.feature" version="3.0.100.v20190321_0133" url="features/com.ibm.team.welcome.feature_3.0.100.v20190321_0133/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ibmi.build.feature.client" version="1.0.500.v20190321_0118" url="features/com.ibm.team.enterprise.ibmi.build.feature.client_1.0.500.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jpt.jpa.eclipselink.feature" version="3.4.101.v201903221940" url="features/org.eclipse.jpt.jpa.eclipselink.feature_3.4.101.v201903221940/" plugin-identifier="org.eclipse.jpt.jpa.eclipselink.branding">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.common" version="3.5.1600.v20190320_2310" url="features/com.ibm.team.enterprise.ibmi.systemdefinition.feature.common_3.5.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.rcp" version="4.20.0.v20210611-1600" url="features/org.eclipse.rcp_4.20.0.v20210611-1600/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.core.feature" version="1.6.1000.v20210507-0825" url="features/org.eclipse.equinox.p2.core.feature_1.6.1000.v20210507-0825/">
+		</feature>
+		<feature id="org.eclipse.datatools.connectivity.oda.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.connectivity.oda.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.connectivity.oda">
+		</feature>
+		<feature id="org.eclipse.emf.edit" version="2.16.0.v20190920-0401" url="features/org.eclipse.emf.edit_2.16.0.v20190920-0401/">
+		</feature>
+		<feature id="org.eclipse.jst.ws.axis2tools.feature" version="1.1.401.v201909051708" url="features/org.eclipse.jst.ws.axis2tools.feature_1.1.401.v201909051708/" plugin-identifier="org.eclipse.jst.ws.axis2.ui">
+		</feature>
+		<feature id="com.ibm.team.foundation.client.jfs.feature" version="1.1.5000.v20190116_0148" url="features/com.ibm.team.foundation.client.jfs.feature_1.1.5000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.systemdefinition.feature.toolkit" version="1.0.1700.v20190321_0118" url="features/com.ibm.team.enterprise.systemdefinition.feature.toolkit_1.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.build.setup.junit.rtc.feature" version="3.0.1500.v20190321_0118" url="features/com.ibm.team.build.setup.junit.rtc.feature_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.scm.client.rtc.feature" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamp.scm.client.rtc.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.common.ui.feature" version="3.0.1900.v20190321_0118" url="features/com.ibm.team.enterprise.common.ui.feature_3.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.calm.foundation.rcp.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.calm.foundation.rcp.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.m2e.pde.feature" version="1.17.3.20210406-1049" url="features/org.eclipse.m2e.pde.feature_1.17.3.20210406-1049/" plugin-identifier="org.eclipse.m2e.core">
+		</feature>
+		<feature id="com.ibm.teamp.ide.client.rtc.feature" version="3.0.1500.v20190321_0118" url="features/com.ibm.teamp.ide.client.rtc.feature_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.scm.svn.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.scm.svn.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.langdef.common.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.team.enterprise.langdef.common.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.interop.ide.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.interop.ide.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.m2e.wtp.jpa.feature" version="1.4.4.20201128-1705" url="features/org.eclipse.m2e.wtp.jpa.feature_1.4.4.20201128-1705/" plugin-identifier="org.eclipse.m2e.wtp.jpa">
+		</feature>
+		<feature id="com.ibm.teamz.dependencyset.feature.common" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamz.dependencyset.feature.common_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.rdf.query.feature.common" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamz.rdf.query.feature.common_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jst.server_core.feature" version="3.4.500.v202103192305" url="features/org.eclipse.jst.server_core.feature_3.4.500.v202103192305/">
+		</feature>
+		<feature id="org.eclipse.platform" version="4.20.0.v20210611-1600" url="features/org.eclipse.platform_4.20.0.v20210611-1600/">
+		</feature>
+		<feature id="com.ibm.teamp.dependencyset.feature.client" version="3.0.1500.v20190321_0118" url="features/com.ibm.teamp.dependencyset.feature.client_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wildwebdeveloper.feature" version="0.10.6.202102181620" url="features/org.eclipse.wildwebdeveloper.feature_0.10.6.202102181620/">
+		</feature>
+		<feature id="org.eclipse.m2e.feature" version="1.18.0.20210603-1206" url="features/org.eclipse.m2e.feature_1.18.0.20210603-1206/" plugin-identifier="org.eclipse.m2e.core">
+		</feature>
+		<feature id="org.eclipse.emf.mapping" version="2.13.0.v20190323-1059" url="features/org.eclipse.emf.mapping_2.13.0.v20190323-1059/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.rcp.feature" version="1.4.1200.v20210507-0825" url="features/org.eclipse.equinox.p2.rcp.feature_1.4.1200.v20210507-0825/">
+		</feature>
+		<feature id="org.eclipse.mylyn_feature" version="3.25.2.v20200814-0512" url="features/org.eclipse.mylyn_feature_3.25.2.v20200814-0512/" plugin-identifier="org.eclipse.mylyn.tasks.core">
+		</feature>
+		<feature id="org.eclipse.datatools.connectivity.doc.user" version="1.14.102.201911250848" url="features/org.eclipse.datatools.connectivity.doc.user_1.14.102.201911250848/">
+		</feature>
+		<feature id="org.eclipse.datatools.connectivity.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.connectivity.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.connectivity">
+		</feature>
+		<feature id="com.ibm.team.workitem.ide.rtc.feature" version="3.1.2000.v20190321_0118" url="features/com.ibm.team.workitem.ide.rtc.feature_3.1.2000.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.filesystem.common.rtc.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamp.filesystem.common.rtc.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.build.feature.client" version="0.7.1500.v20190320_2310" url="features/com.ibm.teamz.build.feature.client_0.7.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.dashboard.common.jfs.feature" version="6.0.4000.v20190116_0124" url="features/com.ibm.team.dashboard.common.jfs.feature_6.0.4000.v20190116_0124/">
+		</feature>
+		<feature id="com.ibm.ccl.ua.wizards.feature" version="1.2.2.v20141107_1924" url="features/com.ibm.ccl.ua.wizards.feature_1.2.2.v20141107_1924/">
+		</feature>
+		<feature id="com.ibm.team.apt.ide.rtc.feature" version="3.0.2100.v20190321_0118" url="features/com.ibm.team.apt.ide.rtc.feature_3.0.2100.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamz.metadata.feature" version="1.0.1600.v20190321_0118" url="features/com.ibm.teamz.metadata.feature_1.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wst.common_ui.feature" version="3.22.0.v202103232321" url="features/org.eclipse.wst.common_ui.feature_3.22.0.v202103232321/">
+		</feature>
+		<feature id="org.eclipse.jst.server_userdoc.feature" version="3.3.300.v201901310132" url="features/org.eclipse.jst.server_userdoc.feature_3.3.300.v201901310132/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.definitions.ui.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.enterprise.definitions.ui.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" version="0.2.2.202102092209" url="features/org.eclipse.wildwebdeveloper.embedder.node.feature_0.2.2.202102092209/">
+		</feature>
+		<feature id="com.ibm.teamz.rdf.query.feature.client" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.rdf.query.feature.client_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.build.ide.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.teamp.build.ide.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.emf.ecore.edit" version="2.14.0.v20190822-1451" url="features/org.eclipse.emf.ecore.edit_2.14.0.v20190822-1451/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.results.feature" version="1.14.200.202008192017" url="features/org.eclipse.datatools.sqldevtools.results.feature_1.14.200.202008192017/">
+		</feature>
+		<feature id="de.jcup.jenkinseditor.feature" version="1.8.0" url="features/de.jcup.jenkinseditor.feature_1.8.0/">
+		</feature>
+		<feature id="com.ibm.help.common.rational.remote.feature" version="7.6.0.v20190319_1739" url="features/com.ibm.help.common.rational.remote.feature_7.6.0.v20190319_1739/">
+		</feature>
+		<feature id="org.eclipse.jgit.gpg.bc" version="5.12.0.202106070339-r" url="features/org.eclipse.jgit.gpg.bc_5.12.0.202106070339-r/">
+		</feature>
+		<feature id="org.eclipse.jpt.jaxb.feature" version="1.5.201.v202104080213" url="features/org.eclipse.jpt.jaxb.feature_1.5.201.v202104080213/" plugin-identifier="org.eclipse.jpt.jaxb.branding">
+		</feature>
+		<feature id="org.eclipse.jst.webpageeditor.feature" version="2.9.1.v202007170344" url="features/org.eclipse.jst.webpageeditor.feature_2.9.1.v202007170344/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.packaging.client.feature" version="3.1.1600.v20190321_0118" url="features/com.ibm.team.enterprise.packaging.client.feature_3.1.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.springframework.tooling.cloudfoundry.manifest.ls.feature" version="4.11.0.202106150606" url="features/org.springframework.tooling.cloudfoundry.manifest.ls.feature_4.11.0.202106150606/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.sqlite.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.sqlite.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="org.eclipse.wst.xml_ui.feature" version="3.22.0.v202103232331" url="features/org.eclipse.wst.xml_ui.feature_3.22.0.v202103232331/" plugin-identifier="org.eclipse.wst.xml.ui">
+		</feature>
+		<feature id="com.ibm.teamz.buildmap.feature.common" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamz.buildmap.feature.common_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.automation.common.feature" version="3.1.1700.v20190320_2310" url="features/com.ibm.team.enterprise.automation.common.feature_3.1.1700.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.feature" version="3.14.1703.v20210409-2301" url="features/org.eclipse.ecf.filetransfer.feature_3.14.1703.v20210409-2301/">
+		</feature>
+		<feature id="com.ibm.team.build.extensions.client.rtc.feature" version="1.0.500.v20190202_0205" url="features/com.ibm.team.build.extensions.client.rtc.feature_1.0.500.v20190202_0205/">
+		</feature>
+		<feature id="com.ibm.team.build.toolkit.rtc.feature" version="3.0.2000.v20190321_0118" url="features/com.ibm.team.build.toolkit.rtc.feature_3.0.2000.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.gef" version="3.11.0.201606061308" url="features/org.eclipse.gef_3.11.0.201606061308/">
+		</feature>
+		<feature id="org.eclipse.m2e.wtp.jsf.feature" version="1.4.4.20201128-1705" url="features/org.eclipse.m2e.wtp.jsf.feature_1.4.4.20201128-1705/" plugin-identifier="org.eclipse.m2e.wtp.jsf">
+		</feature>
+		<feature id="org.eclipse.datatools.connectivity.oda.designer.core.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.connectivity.oda.designer.core.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.connectivity.oda.design.ui">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.extensions.feature.client" version="1.0.400.v20190202_0205" url="features/com.ibm.team.enterprise.build.extensions.feature.client_1.0.400.v20190202_0205/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.smpe.feature.common" version="1.0.500.v20190201_1652" url="features/com.ibm.team.enterprise.smpe.feature.common_1.0.500.v20190201_1652/">
+		</feature>
+		<feature id="org.eclipse.jst.enterprise_core.feature" version="3.22.0.v202103200058" url="features/org.eclipse.jst.enterprise_core.feature_3.22.0.v202103200058/">
+		</feature>
+		<feature id="com.ibm.team.process.definitions.ide.rtc.feature" version="3.1.1300.v20190321_0118" url="features/com.ibm.team.process.definitions.ide.rtc.feature_3.1.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.dependency.util.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.team.enterprise.dependency.util.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.datatools.doc.user" version="1.14.102.201911250848" url="features/org.eclipse.datatools.doc.user_1.14.102.201911250848/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.mysql.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.mysql.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="org.eclipse.emf.common" version="2.22.0.v20210319-0732" url="features/org.eclipse.emf.common_2.22.0.v20210319-0732/">
+		</feature>
+		<feature id="com.ibm.team.svnkit.rtc.feature" version="1.0.1200.v20190320_2310" url="features/com.ibm.team.svnkit.rtc.feature_1.0.1200.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.packaging.common.feature" version="3.1.1900.v20190320_2310" url="features/com.ibm.team.enterprise.packaging.common.feature_3.1.1900.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.common.feature" version="1.0.1700.v20190320_2310" url="features/com.ibm.teamz.common.feature_1.0.1700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.workitem.rcp.rtc.feature" version="3.1.2000.v20190321_0118" url="features/com.ibm.team.workitem.rcp.rtc.feature_3.1.2000.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamz.build.ant.feature" version="3.1.1800.v20190321_0118" url="features/com.ibm.teamz.build.ant.feature_3.1.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.google.common.feature" version="18.0.0.v20181221_2153" url="features/com.google.common.feature_18.0.0.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.wst.ws_core.feature" version="3.21.0.v202101270311" url="features/org.eclipse.wst.ws_core.feature_3.21.0.v202101270311/">
+		</feature>
+		<feature id="com.ibm.team.interop.rcp.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.interop.rcp.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.wikitext_feature" version="3.0.38.202008172112" url="features/org.eclipse.mylyn.wikitext_feature_3.0.38.202008172112/" plugin-identifier="org.eclipse.mylyn.wikitext">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.buildmap.common.feature" version="1.0.800.v20190320_2310" url="features/com.ibm.team.enterprise.build.buildmap.common.feature_1.0.800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.buildablesubset.feature.client" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.buildablesubset.feature.client_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.springframework.tooling.concourse.ls.feature" version="4.11.0.202106150606" url="features/org.springframework.tooling.concourse.ls.feature_4.11.0.202106150606/">
+		</feature>
+		<feature id="org.eclipse.ecf.core.ssl.feature" version="1.1.501.v20210409-2301" url="features/org.eclipse.ecf.core.ssl.feature_1.1.501.v20210409-2301/">
+		</feature>
+		<feature id="com.ibm.etools.iseries.projects.core" version="8.5.500.v20150525_1743" url="features/com.ibm.etools.iseries.projects.core_8.5.500.v20150525_1743/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.systemdefinition.feature.ui" version="1.0.1900.v20190321_0118" url="features/com.ibm.team.enterprise.systemdefinition.feature.ui_1.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.scm.svn.client.rtc.feature" version="3.1.1300.v20190321_0118" url="features/com.ibm.team.scm.svn.client.rtc.feature_3.1.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.rational.connector.cq.common.rtc.feature" version="3.0.2000.v20190321_0118" url="features/com.ibm.rational.connector.cq.common.rtc.feature_3.0.2000.v20190321_0118/">
+		</feature>
+		<feature id="org.mozilla.rhino.feature" version="1.7.1100.v20181221_2153" url="features/org.mozilla.rhino.feature_1.7.1100.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.mylyn.commons.notifications" version="1.17.2.v20200813-0821" url="features/org.eclipse.mylyn.commons.notifications_1.17.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="com.ibm.team.collaboration.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.collaboration.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="org.eclipse.jst.enterprise_ui.feature" version="3.22.0.v202103200058" url="features/org.eclipse.jst.enterprise_ui.feature_3.22.0.v202103200058/" plugin-identifier="org.eclipse.jst.jee.ui">
+		</feature>
+		<feature id="org.eclipse.m2e.wtp.jaxrs.feature" version="1.4.4.20201128-1705" url="features/org.eclipse.m2e.wtp.jaxrs.feature_1.4.4.20201128-1705/" plugin-identifier="org.eclipse.m2e.wtp.jaxrs">
+		</feature>
+		<feature id="org.eclipse.userstorage" version="1.2.0.v20210517-0327" url="features/org.eclipse.userstorage_1.2.0.v20210517-0327/">
+		</feature>
+		<feature id="com.ibm.teamz.migration.feature.ide" version="3.0.1400.v20190321_0118" url="features/com.ibm.teamz.migration.feature.ide_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.tpt.common.rtc.feature" version="3.1.1800.v20190320_2310" url="features/com.ibm.team.tpt.common.rtc.feature_3.1.1800.v20190320_2310/">
+		</feature>
+		<feature id="org.springframework.ide.eclipse.xml.namespaces.feature" version="4.11.0.202106180608" url="features/org.springframework.ide.eclipse.xml.namespaces.feature_4.11.0.202106180608/" plugin-identifier="org.springframework.ide.eclipse">
+		</feature>
+		<feature id="org.eclipse.oomph.p2" version="1.19.0.v20210428-0629" url="features/org.eclipse.oomph.p2_1.19.0.v20210428-0629/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.parsers.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.sqldevtools.parsers.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.sqltools.parsers.sql">
+		</feature>
+		<feature id="org.eclipse.m2e.logback.feature" version="1.17.1.20210603-1006" url="features/org.eclipse.m2e.logback.feature_1.17.1.20210603-1006/" plugin-identifier="org.eclipse.m2e.logback.configuration">
+		</feature>
+		<feature id="com.ibm.teamz.supa.server.common.feature" version="3.0.1900.v20190320_2310" url="features/com.ibm.teamz.supa.server.common.feature_3.0.1900.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.datatools.intro" version="1.14.102.201911250848" url="features/org.eclipse.datatools.intro_1.14.102.201911250848/">
+		</feature>
+		<feature id="org.dojotoolkit.feature" version="1.8.4.v20181221_2153" url="features/org.dojotoolkit.feature_1.8.4.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.emf.mapping.ecore" version="2.12.0.v20190323-1059" url="features/org.eclipse.emf.mapping.ecore_2.12.0.v20190323-1059/">
+		</feature>
+		<feature id="org.eclipse.jpt.jpa.feature" version="3.6.1.v202106020926" url="features/org.eclipse.jpt.jpa.feature_3.6.1.v202106020926/" plugin-identifier="org.eclipse.jpt.jpa.branding">
+		</feature>
+		<feature id="org.eclipse.emf.ecore.editor" version="2.17.0.v20190528-0725" url="features/org.eclipse.emf.ecore.editor_2.17.0.v20190528-0725/">
+		</feature>
+		<feature id="com.hp.hpl.jena.rdf.feature" version="1.2.0.v20190109_1531" url="features/com.hp.hpl.jena.rdf.feature_1.2.0.v20190109_1531/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.oda.feature" version="1.14.102.201911221603" url="features/org.eclipse.datatools.enablement.oda.feature_1.14.102.201911221603/" plugin-identifier="org.eclipse.datatools.enablement.oda.xml">
+		</feature>
+		<feature id="org.eclipse.mylyn.ide_feature" version="3.25.2.v20200828-1617" url="features/org.eclipse.mylyn.ide_feature_3.25.2.v20200828-1617/" plugin-identifier="org.eclipse.mylyn.context.core">
+		</feature>
+		<feature id="com.ibm.team.dev.jdojo.rtc.feature" version="1.0.1500.v20190320_2310" url="features/com.ibm.team.dev.jdojo.rtc.feature_1.0.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.mapping.feature" version="1.0.1600.v20190320_2310" url="features/com.ibm.teamz.mapping.feature_1.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.sqlbuilder.feature" version="1.14.200.202009292210" url="features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.14.200.202009292210/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.zos.mapping.feature" version="1.0.1600.v20190320_2310" url="features/com.ibm.team.enterprise.zos.mapping.feature_1.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.buildmap.client.feature" version="3.0.1500.v20190320_2310" url="features/com.ibm.team.enterprise.buildmap.client.feature_3.0.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamp.scm.common.rtc.feature" version="3.0.1700.v20190320_2310" url="features/com.ibm.teamp.scm.common.rtc.feature_3.0.1700.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jpt.common.feature" version="1.5.100.v201903221940" url="features/org.eclipse.jpt.common.feature_1.5.100.v201903221940/" plugin-identifier="org.eclipse.jpt.common.branding">
+		</feature>
+		<feature id="com.ibm.teamp.aix.metadata.collection.client.feature" version="3.0.1400.v20190321_0118" url="features/com.ibm.teamp.aix.metadata.collection.client.feature_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.build.client.rtc.feature" version="3.0.2000.v20190321_0118" url="features/com.ibm.team.build.client.rtc.feature_3.0.2000.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.commons.repositories" version="1.17.2.v20200813-0821" url="features/org.eclipse.mylyn.commons.repositories_1.17.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="com.ibm.team.reports.ide.rtc.feature" version="3.1.1700.v20190321_0118" url="features/com.ibm.team.reports.ide.rtc.feature_3.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jgit.http.apache" version="5.12.0.202106070339-r" url="features/org.eclipse.jgit.http.apache_5.12.0.202106070339-r/">
+		</feature>
+		<feature id="com.ibm.team.reports.common.jfs.feature" version="1.1.4000.v20190116_0124" url="features/com.ibm.team.reports.common.jfs.feature_1.1.4000.v20190116_0124/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.feed.common.feature" version="1.0.900.v20190320_2310" url="features/com.ibm.team.enterprise.feed.common.feature_1.0.900.v20190320_2310/">
+		</feature>
+		<feature id="com.genuitec.eclipse.codetogether.feature" version="4.1.1.202107281508" url="features/com.genuitec.eclipse.codetogether.feature_4.1.1.202107281508/">
+		</feature>
+		<feature id="com.ibm.team.workitem.client.rtc.feature" version="3.1.2000.v20190321_0118" url="features/com.ibm.team.workitem.client.rtc.feature_3.1.2000.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.calm.foundation.common.rtc.feature" version="3.1.1800.v20190320_2310" url="features/com.ibm.team.calm.foundation.common.rtc.feature_3.1.1800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.dependencyset.feature.client" version="1.0.1600.v20190321_0118" url="features/com.ibm.team.enterprise.dependencyset.feature.client_1.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.buildship" version="3.1.5.v20210113-0929" url="features/org.eclipse.buildship_3.1.5.v20210113-0929/" plugin-identifier="org.eclipse.buildship.branding">
+		</feature>
+		<feature id="com.ibm.team.enterprise.zos.systemdefinition.feature.ui" version="1.0.1900.v20190321_0118" url="features/com.ibm.team.enterprise.zos.systemdefinition.feature.ui_1.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jst.ws.jaxws.dom.feature" version="1.0.400.v202104210249" url="features/org.eclipse.jst.ws.jaxws.dom.feature_1.0.400.v202104210249/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.zos.build.feature.ui" version="1.0.1300.v20190321_0118" url="features/com.ibm.team.enterprise.zos.build.feature.ui_1.0.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.ccl.feedreader.feature" version="1.0.6.v20141107_1924" url="features/com.ibm.ccl.feedreader.feature_1.0.6.v20141107_1924/">
+		</feature>
+		<feature id="com.ibm.team.build.logging.ui.rtc.feature" version="1.0.200.v20190321_0118" url="features/com.ibm.team.build.logging.ui.rtc.feature_1.0.200.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.datatools.common.doc.user" version="1.14.102.201911250848" url="features/org.eclipse.datatools.common.doc.user_1.14.102.201911250848/">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.ssl.feature" version="1.1.401.v20210409-2301" url="features/org.eclipse.ecf.filetransfer.ssl.feature_1.1.401.v20210409-2301/">
+		</feature>
+		<feature id="org.eclipse.emf.codegen.ecore.ui" version="2.26.0.v20210405-0904" url="features/org.eclipse.emf.codegen.ecore.ui_2.26.0.v20210405-0904/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.data.feature" version="1.14.200.202008192017" url="features/org.eclipse.datatools.sqldevtools.data.feature_1.14.200.202008192017/">
+		</feature>
+		<feature id="org.eclipse.datatools.modelbase.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.modelbase.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.modelbase.sql">
+		</feature>
+		<feature id="com.ibm.team.apt.setup.junit.rtc.feature" version="3.0.1700.v20190321_0118" url="features/com.ibm.team.apt.setup.junit.rtc.feature_3.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jgit" version="5.12.0.202106070339-r" url="features/org.eclipse.jgit_5.12.0.202106070339-r/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.connector.ssh.feature" version="10.3.0.202104042017" url="features/org.eclipse.tm.terminal.connector.ssh.feature_10.3.0.202104042017/" plugin-identifier="org.eclipse.tm.terminal.connector.ssh">
+		</feature>
+		<feature id="com.ibm.team.enterprise.buildablesubset.feature.common" version="3.1.1700.v20190320_2310" url="features/com.ibm.team.enterprise.buildablesubset.feature.common_3.1.1700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.deployment.client.feature" version="3.1.1500.v20190321_0118" url="features/com.ibm.team.enterprise.deployment.client.feature_3.1.1500.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.emf.codegen.ui" version="2.23.0.v20210412-0833" url="features/org.eclipse.emf.codegen.ui_2.23.0.v20210412-0833/">
+		</feature>
+		<feature id="org.eclipse.justj.openjdk.hotspot.jre.full" version="16.0.1.v20210528-1205" url="features/org.eclipse.justj.openjdk.hotspot.jre.full_16.0.1.v20210528-1205/">
+		</feature>
+		<feature id="com.ibm.team.platform.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.platform.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="com.ibm.ccl.preferenceharvester.feature" version="1.3.1.v20150105_2326" url="features/com.ibm.ccl.preferenceharvester.feature_1.3.1.v20150105_2326/">
+		</feature>
+		<feature id="com.ibm.team.connector.client.rtc.feature" version="3.2.1800.v20190321_0118" url="features/com.ibm.team.connector.client.rtc.feature_3.2.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.scm.client.rtc.feature" version="3.2.1300.v20190321_0118" url="features/com.ibm.team.scm.client.rtc.feature_3.2.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.scd.common.feature" version="1.0.700.v20190320_2310" url="features/com.ibm.team.enterprise.scd.common.feature_1.0.700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.connector.cq.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.connector.cq.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="com.ibm.teamz.buildablesubset.feature.common" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamz.buildablesubset.feature.common_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.mylyn.monitor" version="3.25.2.v20200813-0821" url="features/org.eclipse.mylyn.monitor_3.25.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="com.ibm.ccl.common.splash.feature" version="1.2.1.v20150105_2326" url="features/com.ibm.ccl.common.splash.feature_1.2.1.v20150105_2326/">
+		</feature>
+		<feature id="com.ibm.teamz.build.ant.zos.feature" version="1.0.1400.v20190321_0118" url="features/com.ibm.teamz.build.ant.zos.feature_1.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.apache.lucene2.jfs.feature" version="5.5.5.v20181221_2153" url="features/com.ibm.team.apache.lucene2.jfs.feature_5.5.5.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.apache.derby.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.apache.derby.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.sybase">
+		</feature>
+		<feature id="com.ibm.teamz.dsdef.feature.common" version="1.1.1600.v20190320_2310" url="features/com.ibm.teamz.dsdef.feature.common_1.1.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jdt" version="3.18.800.v20210611-1600" url="features/org.eclipse.jdt_3.18.800.v20210611-1600/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.scanner.common.feature" version="3.0.1800.v20190320_2310" url="features/com.ibm.team.enterprise.metadata.scanner.common.feature_3.0.1800.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.oomph.setup" version="1.21.0.v20210601-0619" url="features/org.eclipse.oomph.setup_1.21.0.v20210601-0619/">
+		</feature>
+		<feature id="org.eclipse.eclemma.feature" version="3.1.4.202012082030" url="features/org.eclipse.eclemma.feature_3.1.4.202012082030/" plugin-identifier="org.eclipse.eclemma.ui">
+		</feature>
+		<feature id="com.ibm.team.workitem.setup.junit.rtc.feature" version="3.0.1800.v20190321_0118" url="features/com.ibm.team.workitem.setup.junit.rtc.feature_3.0.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.context_feature" version="3.25.2.v20200828-1617" url="features/org.eclipse.mylyn.context_feature_3.25.2.v20200828-1617/" plugin-identifier="org.eclipse.mylyn.context.core">
+		</feature>
+		<feature id="org.eclipse.wst.xml.xpath2.processor.feature" version="2.0.302.v201909031400" url="features/org.eclipse.wst.xml.xpath2.processor.feature_2.0.302.v201909031400/" plugin-identifier="org.eclipse.wst.xml.xpath2">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.sybase.feature" version="1.14.200.202008192017" url="features/org.eclipse.datatools.enablement.sybase.feature_1.14.200.202008192017/" plugin-identifier="org.eclipse.datatools.enablement.sybase">
+		</feature>
+		<feature id="org.eclipse.mylyn.commons" version="3.25.2.v20200813-0821" url="features/org.eclipse.mylyn.commons_3.25.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="org.eclipse.datatools.sqltools.doc.user" version="1.14.102.201911250848" url="features/org.eclipse.datatools.sqltools.doc.user_1.14.102.201911250848/">
+		</feature>
+		<feature id="com.ibm.team.interop.client.rtc.feature" version="3.0.1700.v20190321_0118" url="features/com.ibm.team.interop.client.rtc.feature_3.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.process.integrations.rad.feature" version="3.1.4000.v20190116_0148" url="features/com.ibm.team.process.integrations.rad.feature_3.1.4000.v20190116_0148/">
+		</feature>
+		<feature id="org.eclipse.m2e.sse.ui.feature" version="1.18.0.20210603-1006" url="features/org.eclipse.m2e.sse.ui.feature_1.18.0.20210603-1006/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ref.integrity.feature" version="1.0.1700.v20190321_0118" url="features/com.ibm.team.enterprise.ref.integrity.feature_1.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.filesystem.client.rtc.feature" version="4.0.1900.v20190321_0118" url="features/com.ibm.teamp.filesystem.client.rtc.feature_4.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.discovery" version="3.25.2.v20200813-0821" url="features/org.eclipse.mylyn.discovery_3.25.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="com.ibm.team.build.ide.rtc.feature" version="3.0.2100.v20190321_0118" url="features/com.ibm.team.build.ide.rtc.feature_3.0.2100.v20190321_0118/">
+		</feature>
+		<feature id="org.sonatype.m2e.mavenarchiver.feature" version="0.17.5.202002191804" url="features/org.sonatype.m2e.mavenarchiver.feature_0.17.5.202002191804/" plugin-identifier="org.sonatype.m2e.mavenarchiver">
+		</feature>
+		<feature id="org.sonarlint.eclipse.feature" version="6.0.0.34844" url="features/org.sonarlint.eclipse.feature_6.0.0.34844/" plugin-identifier="org.sonarlint.eclipse.ui">
+		</feature>
+		<feature id="org.eclipse.datatools.sdk.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.sdk.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.sdk">
+		</feature>
+		<feature id="org.eclipse.mylyn.team_feature" version="3.25.2.v20200828-1617" url="features/org.eclipse.mylyn.team_feature_3.25.2.v20200828-1617/" plugin-identifier="org.eclipse.mylyn.context.core">
+		</feature>
+		<feature id="org.eclipse.emf.common.ui" version="2.17.0.v20190507-0402" url="features/org.eclipse.emf.common.ui_2.17.0.v20190507-0402/">
+		</feature>
+		<feature id="org.springframework.ide.eclipse.boot.dash.feature" version="4.11.0.202106180608" url="features/org.springframework.ide.eclipse.boot.dash.feature_4.11.0.202106180608/" plugin-identifier="org.springframework.ide.eclipse">
+		</feature>
+		<feature id="com.genuitec.eclipse.base.feature" version="1.11.0.202105260439" url="features/com.genuitec.eclipse.base.feature_1.11.0.202105260439/">
+		</feature>
+		<feature id="com.genuitec.eclipse.common.explorer.jdt.feature" version="1.11.0.202105260439" url="features/com.genuitec.eclipse.common.explorer.jdt.feature_1.11.0.202105260439/">
+		</feature>
+		<feature id="com.genuitec.eclipse.theming.designer.feature" version="1.11.0.202105260439" url="features/com.genuitec.eclipse.theming.designer.feature_1.11.0.202105260439/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.msft.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.msft.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="org.eclipse.ecf.core.feature" version="1.5.702.v20210409-2301" url="features/org.eclipse.ecf.core.feature_1.5.702.v20210409-2301/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.feature.ui" version="1.2.1600.v20190321_0118" url="features/com.ibm.team.enterprise.build.feature.ui_1.2.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.java_feature" version="3.25.2.v20200828-1617" url="features/org.eclipse.mylyn.java_feature_3.25.2.v20200828-1617/" plugin-identifier="org.eclipse.mylyn.context.core">
+		</feature>
+		<feature id="com.ibm.team.enterprise.zos.systemdefinition.feature.common" version="1.0.1700.v20190320_2310" url="features/com.ibm.team.enterprise.zos.systemdefinition.feature.common_1.0.1700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamz.dsdef.feature.client" version="1.0.1900.v20190321_0118" url="features/com.ibm.teamz.dsdef.feature.client_1.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.common.feature" version="3.1.1800.v20190320_2310" url="features/com.ibm.team.enterprise.common.feature_3.1.1800.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.emf.mapping.ecore.editor" version="2.14.0.v20190528-0725" url="features/org.eclipse.emf.mapping.ecore.editor_2.14.0.v20190528-0725/">
+		</feature>
+		<feature id="com.ibm.teamp.logging.rtc.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamp.logging.rtc.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jst.web_js_support.feature" version="3.22.0.v202103200058" url="features/org.eclipse.jst.web_js_support.feature_3.22.0.v202103200058/">
+		</feature>
+		<feature id="com.ibm.team.build.common.rtc.feature" version="3.1.1900.v20190320_2310" url="features/com.ibm.team.build.common.rtc.feature_3.1.1900.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jst.common.fproj.enablement.jdt" version="3.22.0.v202103232321" url="features/org.eclipse.jst.common.fproj.enablement.jdt_3.22.0.v202103232321/" plugin-identifier="org.eclipse.jst.common.project.facet.core">
+		</feature>
+		<feature id="org.eclipse.wst.xml_core.feature" version="3.22.0.v202103232331" url="features/org.eclipse.wst.xml_core.feature_3.22.0.v202103232331/">
+		</feature>
+		<feature id="com.ibm.team.build.logging.client.rtc.feature" version="1.0.200.v20190321_0118" url="features/com.ibm.team.build.logging.client.rtc.feature_1.0.200.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jsf.feature" version="3.10.100.v202105172316" url="features/org.eclipse.jsf.feature_3.10.100.v202105172316/">
+		</feature>
+		<feature id="org.eclipse.epp.package.common.feature" version="4.20.0.20210612-1200" url="features/org.eclipse.epp.package.common.feature_4.20.0.20210612-1200/">
+		</feature>
+		<feature id="com.ibm.team.repository.client.jfs.feature" version="1.1.5000.v20190116_0124" url="features/com.ibm.team.repository.client.jfs.feature_1.1.5000.v20190116_0124/">
+		</feature>
+		<feature id="com.genuitec.eclipse.codetogether.client.feature" version="4.1.1.202107281508" url="features/com.genuitec.eclipse.codetogether.client.feature_4.1.1.202107281508/">
+		</feature>
+		<feature id="com.ibm.team.rtc.scriptengine.rtc.feature" version="3.0.1900.v20190320_2310" url="features/com.ibm.team.rtc.scriptengine.rtc.feature_3.0.1900.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.feature.common" version="3.0.1800.v20190320_2310" url="features/com.ibm.team.enterprise.build.feature.common_3.0.1800.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.mylyn.wikitext.editors_feature" version="3.0.38.202008172112" url="features/org.eclipse.mylyn.wikitext.editors_feature_3.0.38.202008172112/" plugin-identifier="org.eclipse.mylyn.wikitext">
+		</feature>
+		<feature id="com.ibm.team.scm.cshelp.feature" version="3.0.1.v20190205_0213" url="features/com.ibm.team.scm.cshelp.feature_3.0.1.v20190205_0213/">
+		</feature>
+		<feature id="org.eclipse.epp.package.jee.feature" version="4.20.0.20210612-1200" url="features/org.eclipse.epp.package.jee.feature_4.20.0.20210612-1200/" plugin-identifier="org.eclipse.epp.package.jee">
+		</feature>
+		<feature id="org.eclipse.emf.codegen" version="2.22.0.v20210420-0623" url="features/org.eclipse.emf.codegen_2.22.0.v20210420-0623/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.query.ui.feature" version="3.0.1900.v20190321_0118" url="features/com.ibm.team.enterprise.metadata.query.ui.feature_3.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.egit.mylyn" version="5.12.0.202106070339-r" url="features/org.eclipse.egit.mylyn_5.12.0.202106070339-r/" plugin-identifier="org.eclipse.egit">
+		</feature>
+		<feature id="org.eclipse.pde" version="3.14.800.v20210611-1636" url="features/org.eclipse.pde_3.14.800.v20210611-1636/">
+		</feature>
+		<feature id="com.ibm.team.apache.log4j.rtc.feature" version="1.0.400.v20190201_1652" url="features/com.ibm.team.apache.log4j.rtc.feature_1.0.400.v20190201_1652/">
+		</feature>
+		<feature id="com.ibm.team.repository.rcp.common.rtc.feature" version="3.1.1700.v20190320_2310" url="features/com.ibm.team.repository.rcp.common.rtc.feature_3.1.1700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.automation.ui.feature" version="3.1.1800.v20190321_0118" url="features/com.ibm.team.enterprise.automation.ui.feature_3.1.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.common.rtc.feature" version="3.2.1300.v20190320_2310" url="features/com.ibm.team.filesystem.common.rtc.feature_3.2.1300.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.user.ui" version="2.4.1200.v20210507-0825" url="features/org.eclipse.equinox.p2.user.ui_2.4.1200.v20210507-0825/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.ibm.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.ibm.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.ibm">
+		</feature>
+		<feature id="org.eclipse.jpt.common.eclipselink.feature" version="1.3.200.v201903221940" url="features/org.eclipse.jpt.common.eclipselink.feature_1.3.200.v201903221940/" plugin-identifier="org.eclipse.jpt.common.eclipselink.branding">
+		</feature>
+		<feature id="org.eclipse.datatools.connectivity.oda.designer.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.connectivity.oda.designer.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.connectivity.oda.design.ui">
+		</feature>
+		<feature id="com.ibm.teamz.build.feature.ide" version="3.1.1700.v20190321_0118" url="features/com.ibm.teamz.build.feature.ide_3.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.oomph.setup.core" version="1.20.0.v20210601-0619" url="features/org.eclipse.oomph.setup.core_1.20.0.v20210601-0619/">
+		</feature>
+		<feature id="com.ibm.rational.common.welcome.doc.feature" version="7.6.0.v20170829_1451" url="features/com.ibm.rational.common.welcome.doc.feature_7.6.0.v20170829_1451/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.ddlgen.feature" version="1.14.200.202009292210" url="features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.14.200.202009292210/" plugin-identifier="org.eclipse.datatools.sqltools.ddlgen.ui">
+		</feature>
+		<feature id="org.eclipse.ecf.filetransfer.httpclient45.feature" version="1.0.703.v20210512-0614" url="features/org.eclipse.ecf.filetransfer.httpclient45.feature_1.0.703.v20210512-0614/">
+		</feature>
+		<feature id="com.ibm.team.collaboration.rcp.jfs.feature" version="1.0.5000.v20190116_0148" url="features/com.ibm.team.collaboration.rcp.jfs.feature_1.0.5000.v20190116_0148/">
+		</feature>
+		<feature id="org.eclipse.jst.ws.cxf.feature" version="1.1.800.v202104210249" url="features/org.eclipse.jst.ws.cxf.feature_1.1.800.v202104210249/" plugin-identifier="org.eclipse.jst.ws.cxf.core">
+		</feature>
+		<feature id="com.ibm.team.enterprise.packaging.ui.feature" version="3.1.1900.v20190321_0118" url="features/com.ibm.team.enterprise.packaging.ui.feature_3.1.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.apt.ide.server.shared.rtc.feature" version="3.0.2100.v20190320_2310" url="features/com.ibm.team.apt.ide.server.shared.rtc.feature_3.0.2100.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature_1.14.102.201911250848/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.setup.junit.rtc.feature" version="3.0.300.v20190321_0118" url="features/com.ibm.team.filesystem.setup.junit.rtc.feature_3.0.300.v20190321_0118/">
+		</feature>
+		<feature id="org.antlr.rtc.feature" version="1.0.600.v20190109_1650" url="features/org.antlr.rtc.feature_1.0.600.v20190109_1650/">
+		</feature>
+		<feature id="org.springframework.tooling.boot.ls.feature" version="4.11.0.202106150606" url="features/org.springframework.tooling.boot.ls.feature_4.11.0.202106150606/">
+		</feature>
+		<feature id="org.eclipse.wst.xml_userdoc.feature" version="3.18.0.v202004271556" url="features/org.eclipse.wst.xml_userdoc.feature_3.18.0.v202004271556/">
+		</feature>
+		<feature id="com.ibm.teamz.langdef.feature.client" version="1.0.1900.v20190321_0118" url="features/com.ibm.teamz.langdef.feature.client_1.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.apt.client.rtc.feature" version="3.0.2100.v20190321_0118" url="features/com.ibm.team.apt.client.rtc.feature_3.0.2100.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.ide.rtc.feature" version="3.3.1300.v20190321_0118" url="features/com.ibm.team.filesystem.ide.rtc.feature_3.3.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamp.metadata.util.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamp.metadata.util.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.langdef.client.feature" version="3.0.1600.v20190321_0118" url="features/com.ibm.team.enterprise.langdef.client.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.zos.systemdefinition.feature.toolkit" version="1.0.1700.v20190321_0118" url="features/com.ibm.team.enterprise.zos.systemdefinition.feature.toolkit_1.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.client.rtc.feature" version="3.2.1300.v20190321_0118" url="features/com.ibm.team.filesystem.client.rtc.feature_3.2.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.smpe.feature.toolkit" version="1.0.500.v20190202_0205" url="features/com.ibm.team.enterprise.smpe.feature.toolkit_1.0.500.v20190202_0205/">
+		</feature>
+		<feature id="org.apache.commons.httpclient.jfs.feature" version="1.1.0.v20181221_2153" url="features/org.apache.commons.httpclient.jfs.feature_1.1.0.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.wst.ws_userdoc.feature" version="3.1.501.v201909051708" url="features/org.eclipse.wst.ws_userdoc.feature_3.1.501.v201909051708/">
+		</feature>
+		<feature id="com.ibm.team.scm.svn.common.rtc.feature" version="3.1.1600.v20190320_2310" url="features/com.ibm.team.scm.svn.common.rtc.feature_3.1.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.reports.client.jfs.feature" version="1.0.6000.v20190116_0148" url="features/com.ibm.team.reports.client.jfs.feature_1.0.6000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.teamz.supa.client.feature" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.supa.client.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.dependencyset.feature.common" version="1.0.1800.v20190320_2310" url="features/com.ibm.team.enterprise.dependencyset.feature.common_1.0.1800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.tpt.client.rtc.feature" version="3.0.1400.v20190321_0118" url="features/com.ibm.team.tpt.client.rtc.feature_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.teamz.zcomponent.ui.feature" version="1.1.1700.v20190321_0118" url="features/com.ibm.teamz.zcomponent.ui.feature_1.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.workitem.common.rtc.feature" version="3.2.1200.v20190320_2310" url="features/com.ibm.team.workitem.common.rtc.feature_3.2.1200.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.epp.mpc" version="1.9.1.v20210204-1408" url="features/org.eclipse.epp.mpc_1.9.1.v20210204-1408/" plugin-identifier="org.eclipse.epp.mpc.ui">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.postgresql.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.postgresql.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="org.eclipse.jst.server_adapters.ext.feature" version="3.4.200.v202106020138" url="features/org.eclipse.jst.server_adapters.ext.feature_3.4.200.v202106020138/">
+		</feature>
+		<feature id="org.eclipse.jst.ws.jaxws_userdoc.feature" version="1.0.403.v201909051708" url="features/org.eclipse.jst.ws.jaxws_userdoc.feature_1.0.403.v201909051708/">
+		</feature>
+		<feature id="org.eclipse.wst.xsl.feature" version="1.3.900.v202005251734" url="features/org.eclipse.wst.xsl.feature_1.3.900.v202005251734/" plugin-identifier="org.eclipse.wst.xsl">
+		</feature>
+		<feature id="com.ibm.team.collaboration.jabber.rcp.rtc.feature" version="3.0.1500.v20190321_0118" url="features/com.ibm.team.collaboration.jabber.rcp.rtc.feature_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.workitem.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.workitem.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="org.eclipse.tm.terminal.connector.local.feature" version="10.3.0.202105240430" url="features/org.eclipse.tm.terminal.connector.local.feature_10.3.0.202105240430/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.extensions.feature.toolkit" version="1.0.500.v20190202_0205" url="features/com.ibm.team.enterprise.build.extensions.feature.toolkit_1.0.500.v20190202_0205/">
+		</feature>
+		<feature id="com.ibm.etools.iseries.toolbox" version="8.5.5002.v20160106_1822" url="features/com.ibm.etools.iseries.toolbox_8.5.5002.v20160106_1822/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.buildmap.common.feature" version="3.1.1400.v20190320_2310" url="features/com.ibm.team.enterprise.buildmap.common.feature_3.1.1400.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.process.client.jfs.feature" version="1.2.5000.v20190116_0148" url="features/com.ibm.team.process.client.jfs.feature_1.2.5000.v20190116_0148/">
+		</feature>
+		<feature id="org.eclipse.equinox.p2.discovery.feature" version="1.2.900.v20210418-1743" url="features/org.eclipse.equinox.p2.discovery.feature_1.2.900.v20210418-1743/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.query.common.feature" version="3.0.1800.v20190320_2310" url="features/com.ibm.team.enterprise.metadata.query.common.feature_3.0.1800.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jst.enterprise_userdoc.feature" version="3.6.100.v201908261515" url="features/org.eclipse.jst.enterprise_userdoc.feature_3.6.100.v201908261515/">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.ddl.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.sqldevtools.ddl.feature_1.14.102.201911250848/">
+		</feature>
+		<feature id="com.ibm.team.calm.foundation.client.rtc.feature" version="3.0.1700.v20190321_0118" url="features/com.ibm.team.calm.foundation.client.rtc.feature_3.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.promotion.feature.client" version="3.1.1600.v20190321_0118" url="features/com.ibm.team.enterprise.promotion.feature.client_3.1.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.ccl.welcome.bits.feature" version="7.0.9.v20141107_1924" url="features/com.ibm.ccl.welcome.bits.feature_7.0.9.v20141107_1924/">
+		</feature>
+		<feature id="com.ibm.team.collaboration.chat.rcp.jfs.feature" version="1.0.6000.v20190116_0148" url="features/com.ibm.team.collaboration.chat.rcp.jfs.feature_1.0.6000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.team.reports.common.rtc.feature" version="3.1.1900.v20190320_2310" url="features/com.ibm.team.reports.common.rtc.feature_3.1.1900.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.deployment.ui.feature" version="3.1.1700.v20190321_0118" url="features/com.ibm.team.enterprise.deployment.ui.feature_3.1.1700.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.rtc.common.rtc.feature" version="3.0.2100.v20190320_2310" url="features/com.ibm.team.rtc.common.rtc.feature_3.0.2100.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.jst.server_ui.feature" version="3.4.500.v202103180201" url="features/org.eclipse.jst.server_ui.feature_3.4.500.v202103180201/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.feed.ui.feature" version="1.0.900.v20190321_0118" url="features/com.ibm.team.enterprise.feed.ui.feature_1.0.900.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wst.server_adapters.feature" version="3.2.900.v202106111324" url="features/org.eclipse.wst.server_adapters.feature_3.2.900.v202106111324/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.jdbc.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.jdbc.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.sybase">
+		</feature>
+		<feature id="org.eclipse.datatools.sqldevtools.feature" version="1.14.200.202009292210" url="features/org.eclipse.datatools.sqldevtools.feature_1.14.200.202009292210/" plugin-identifier="org.eclipse.datatools.sqltools.common.ui">
+		</feature>
+		<feature id="com.ibm.teamz.zcomponent.feature" version="1.0.1600.v20190321_0118" url="features/com.ibm.teamz.zcomponent.feature_1.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.help" version="2.3.600.v20210611-1600" url="features/org.eclipse.help_2.3.600.v20210611-1600/" plugin-identifier="org.eclipse.help.base">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.teamz.langdef.feature.ide" version="3.1.1800.v20190321_0118" url="features/com.ibm.teamz.langdef.feature.ide_3.1.1800.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wst.ws_ui.feature" version="3.9.100.v202004082157" url="features/org.eclipse.wst.ws_ui.feature_3.9.100.v202004082157/">
+		</feature>
+		<feature id="org.eclipse.m2e.lemminx.feature" version="1.17.2.20210411-0929" url="features/org.eclipse.m2e.lemminx.feature_1.17.2.20210411-0929/">
+		</feature>
+		<feature id="org.eclipse.jst.ws.jaxws.feature" version="1.2.800.v202104210249" url="features/org.eclipse.jst.ws.jaxws.feature_1.2.800.v202104210249/" plugin-identifier="org.eclipse.jst.ws.jaxws.core">
+		</feature>
+		<feature id="com.genuitec.eclipse.theming.feature" version="1.11.0.202105260439" url="features/com.genuitec.eclipse.theming.feature_1.11.0.202105260439/">
+		</feature>
+		<feature id="com.ibm.team.connector.scm.cc.cshelp.feature" version="3.0.1.v20180925_1701" url="features/com.ibm.team.connector.scm.cc.cshelp.feature_3.0.1.v20180925_1701/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.jdt.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.jdt.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.jdt.classpath">
+		</feature>
+		<feature id="com.ibm.team.enterprise.scd.client.feature" version="1.0.700.v20190321_0118" url="features/com.ibm.team.enterprise.scd.client.feature_1.0.700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.wst.common_core.feature" version="3.22.0.v202103232321" url="features/org.eclipse.wst.common_core.feature_3.22.0.v202103232321/">
+		</feature>
+		<feature id="com.ibm.teamp.ibmi.metadata.collection.client.feature" version="3.1.1500.v20190321_0118" url="features/com.ibm.teamp.ibmi.metadata.collection.client.feature_3.1.1500.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.mylyn.commons.identity" version="1.17.2.v20200813-0821" url="features/org.eclipse.mylyn.commons.identity_1.17.2.v20200813-0821/" plugin-identifier="org.eclipse.mylyn.commons.core">
+		</feature>
+		<feature id="com.ibm.team.enterprise.rdf.query.client.feature" version="3.0.1600.v20190321_0118" url="features/com.ibm.team.enterprise.rdf.query.client.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.apache.http.jfs.feature" version="1.1.0.v20181221_2153" url="features/org.apache.http.jfs.feature_1.1.0.v20181221_2153/">
+		</feature>
+		<feature id="com.ibm.teamz.dsdef.feature.ide" version="1.1.1800.v20190321_0118" url="features/com.ibm.teamz.dsdef.feature.ide_1.1.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.dashboard.rcp.jfs.feature" version="1.0.6000.v20190116_0148" url="features/com.ibm.team.dashboard.rcp.jfs.feature_1.0.6000.v20190116_0148/">
+		</feature>
+		<feature id="com.ibm.team.workitem.java.common.rtc.feature" version="3.1.1700.v20190320_2310" url="features/com.ibm.team.workitem.java.common.rtc.feature_3.1.1700.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.smpe.feature.client" version="1.0.400.v20190202_0205" url="features/com.ibm.team.enterprise.smpe.feature.client_1.0.400.v20190202_0205/">
+		</feature>
+		<feature id="org.eclipse.tips.feature" version="0.2.1400.v20210317-2216" url="features/org.eclipse.tips.feature_0.2.1400.v20210317-2216/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.systemdefinition.feature.client" version="3.5.1800.v20190321_0118" url="features/com.ibm.team.enterprise.systemdefinition.feature.client_3.5.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.repository.common.jfs.feature" version="1.1.5000.v20190306_1746" url="features/com.ibm.team.repository.common.jfs.feature_1.1.5000.v20190306_1746/">
+		</feature>
+		<feature id="com.ibm.rational.buildforge.common.rtc.feature" version="3.0.2000.v20190320_2310" url="features/com.ibm.rational.buildforge.common.rtc.feature_3.0.2000.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.scm.common.rtc.feature" version="3.2.1300.v20190320_2310" url="features/com.ibm.team.scm.common.rtc.feature_3.2.1300.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.interop.common.rtc.feature" version="3.0.1900.v20190320_2310" url="features/com.ibm.team.interop.common.rtc.feature_3.0.1900.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.jazz.reports.ide.ui.cshelp.feature" version="3.0.1.v20171127_1751" url="features/com.ibm.jazz.reports.ide.ui.cshelp.feature_3.0.1.v20171127_1751/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.buildmap.client.feature" version="1.0.800.v20190320_2310" url="features/com.ibm.team.enterprise.build.buildmap.client.feature_1.0.800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.collection.client.feature" version="3.0.1700.v20190320_2310" url="features/com.ibm.team.enterprise.metadata.collection.client.feature_3.0.1700.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.emf.codegen.ecore" version="2.26.0.v20210506-1425" url="features/org.eclipse.emf.codegen.ecore_2.26.0.v20210506-1425/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.rcp.rtc.feature" version="3.3.1300.v20190321_0118" url="features/com.ibm.team.filesystem.rcp.rtc.feature_3.3.1300.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.filesystem.cli.rtc.feature" version="3.2.1300.v20190321_0118" url="features/com.ibm.team.filesystem.cli.rtc.feature_3.2.1300.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jst.server_adapters.feature" version="3.2.700.v202105161646" url="features/org.eclipse.jst.server_adapters.feature_3.2.700.v202105161646/">
+		</feature>
+		<feature id="com.ibm.team.rtc.client.feature" version="4.5.1100.v20190326_2154" url="features/com.ibm.team.rtc.client.feature_4.5.1100.v20190326_2154/">
+		</feature>
+		<feature id="org.eclipse.m2e.wtp.feature" version="1.4.4.20201128-1705" url="features/org.eclipse.m2e.wtp.feature_1.4.4.20201128-1705/" plugin-identifier="org.eclipse.m2e.wtp">
+		</feature>
+		<feature id="org.eclipse.emf.databinding" version="1.7.0.v20190323-1059" url="features/org.eclipse.emf.databinding_1.7.0.v20190323-1059/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.deployment.common.feature" version="3.1.1500.v20190320_2310" url="features/com.ibm.team.enterprise.deployment.common.feature_3.1.1500.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.oda.designer.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.oda.designer.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.oda.xml.ui">
+		</feature>
+		<feature id="com.ibm.teamz.metadata.scanner.common.feature" version="3.0.1600.v20190320_2310" url="features/com.ibm.teamz.metadata.scanner.common.feature_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.resourcedef.client.feature" version="3.0.1500.v20190321_0118" url="features/com.ibm.team.enterprise.resourcedef.client.feature_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.jpt.jaxb.eclipselink.feature" version="1.4.203.v202104080213" url="features/org.eclipse.jpt.jaxb.eclipselink.feature_1.4.203.v202104080213/" plugin-identifier="org.eclipse.jpt.jaxb.eclipselink.branding">
+		</feature>
+		<feature id="com.ibm.team.enterprise.build.extensions.feature.common" version="1.0.500.v20190201_1652" url="features/com.ibm.team.enterprise.build.extensions.feature.common_1.0.500.v20190201_1652/">
+		</feature>
+		<feature id="org.eclipse.wildwebdeveloper.xml.feature" version="0.10.4.202102250843" url="features/org.eclipse.wildwebdeveloper.xml.feature_0.10.4.202102250843/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.buildablesubset.feature.client" version="3.1.1600.v20190321_0118" url="features/com.ibm.team.enterprise.buildablesubset.feature.client_3.1.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.ingres.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.ingres.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.team.enterprise.systemdefinition.feature.common" version="3.5.1800.v20190320_2310" url="features/com.ibm.team.enterprise.systemdefinition.feature.common_3.5.1800.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.teamp.metadata.query.ui.feature" version="3.0.1400.v20190321_0118" url="features/com.ibm.teamp.metadata.query.ui.feature_3.0.1400.v20190321_0118/">
+		</feature>
+		<feature id="org.springframework.boot.ide.main.feature" version="4.11.0.202106180608" url="features/org.springframework.boot.ide.main.feature_4.11.0.202106180608/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.process.feature.ui" version="3.0.1500.v20190321_0118" url="features/com.ibm.team.enterprise.process.feature.ui_3.0.1500.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.build.extensions.common.rtc.feature" version="1.0.500.v20190201_1652" url="features/com.ibm.team.build.extensions.common.rtc.feature_1.0.500.v20190201_1652/">
+		</feature>
+		<feature id="com.ibm.teamz.metadata.scanner.client.feature" version="3.0.1600.v20190321_0118" url="features/com.ibm.teamz.metadata.scanner.client.feature_3.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.sdk.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.sdk.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.team.enterprise.process.feature.common" version="3.0.1600.v20190320_2310" url="features/com.ibm.team.enterprise.process.feature.common_3.0.1600.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.tpt.ide.rtc.feature" version="3.0.1900.v20190321_0118" url="features/com.ibm.team.tpt.ide.rtc.feature_3.0.1900.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ibmi.systemdefinition.feature.toolkit" version="1.0.1600.v20190321_0118" url="features/com.ibm.team.enterprise.ibmi.systemdefinition.feature.toolkit_1.0.1600.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.concert.feature" version="3.1.1900.v20190326_2154" url="features/com.ibm.team.concert.feature_3.1.1900.v20190326_2154/" plugin-identifier="com.ibm.team.concert">
+		</feature>
+		<feature id="com.ibm.team.enterprise.metadata.scanner.client.feature" version="3.1.1500.v20190320_2310" url="features/com.ibm.team.enterprise.metadata.scanner.client.feature_3.1.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.rdf.query.common.feature" version="3.1.1500.v20190320_2310" url="features/com.ibm.team.enterprise.rdf.query.common.feature_3.1.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.resourcedef.common.feature" version="3.0.1500.v20190320_2310" url="features/com.ibm.team.enterprise.resourcedef.common.feature_3.0.1500.v20190320_2310/">
+		</feature>
+		<feature id="com.ibm.team.repository.rcp.rtc.feature" version="3.1.1800.v20190321_0118" url="features/com.ibm.team.repository.rcp.rtc.feature_3.1.1800.v20190321_0118/">
+		</feature>
+		<feature id="com.ibm.team.enterprise.ibmi.build.feature.ui" version="1.0.1700.v20190321_0118" url="features/com.ibm.team.enterprise.ibmi.build.feature.ui_1.0.1700.v20190321_0118/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.sap.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.sap.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.team.scm.admin.rtc.feature" version="3.2.1300.v20190320_2310" url="features/com.ibm.team.scm.admin.rtc.feature_3.2.1300.v20190320_2310/">
+		</feature>
+		<feature id="org.eclipse.mylyn.tasks.ide" version="3.25.2.v20200814-0512" url="features/org.eclipse.mylyn.tasks.ide_3.25.2.v20200814-0512/" plugin-identifier="org.eclipse.mylyn.tasks.core">
+		</feature>
+		<feature id="org.eclipse.paho.client.mqttv3.feature" version="1.1.0.v20181221_2153" url="features/org.eclipse.paho.client.mqttv3.feature_1.1.0.v20181221_2153/">
+		</feature>
+		<feature id="org.eclipse.datatools.enablement.oracle.feature" version="1.14.102.201911250848" url="features/org.eclipse.datatools.enablement.oracle.feature_1.14.102.201911250848/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
+		</feature>
+		<feature id="com.ibm.team.process.common.jfs.feature" version="1.2.5000.v20190116_0124" url="features/com.ibm.team.process.common.jfs.feature_1.2.5000.v20190116_0124/">
+		</feature>
+	</site>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2015, 2016. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="org.antlr.rtc.feature"
+      label="Antlr Java Libraries Feature"
+      version="1.0.600.v20190109_1650"
+      provider-name="IBM">
+
+   <plugin
+         id="org.antlr"
+         download-size="0"
+         install-size="0"
+         version="1.1.300.v20190109_1650"/>
+
+</feature>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!--  -->
+	<extensionContent id="wr_jazz-community" name="Jazz.net Community Site" alt-style="css/swt.properties" style="css/common.css,css/t-links.css" path="webresources/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Jazz.net Community Site" url="http://org.eclipse.ui.intro/openBrowser?url=https://jazz.net" id="jazz_community_link">
+				<text>Join the Jazz.net community. After you register, you'll be able to interact directly with the Jazz® development team and other members of the Jazz community through newsgroups and mailing lists, and help guide the evolution of the Jazz platform.</text>
+			</link>
+		</group>
+	</extensionContent>
+	
+</introContent>

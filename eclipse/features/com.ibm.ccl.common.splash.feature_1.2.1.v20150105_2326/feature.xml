@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.ccl.common.splash.feature"
+      label="Common Splash Handler Feature"
+      version="1.2.1.v20150105_2326"
+      provider-name="IBM">
+
+   <description>
+      %General
+   </description>
+
+   <copyright>
+      %Copyright
+   </copyright>
+
+   <license url="">
+      %License
+   </license>
+
+   <plugin
+         id="com.ibm.ccl.common.splash"
+         download-size="0"
+         install-size="0"
+         version="1.0.3.v20150105_2326"
+         unpack="false"/>
+
+</feature>

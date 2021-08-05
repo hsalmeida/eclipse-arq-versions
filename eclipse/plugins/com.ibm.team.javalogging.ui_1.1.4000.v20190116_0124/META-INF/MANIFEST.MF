@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.ibm.team.javalogging.ui
+Export-Package: com.ibm.team.javalogging.ui
+Bundle-Name: %bundle.name
+Bundle-Version: 1.1.4000.v20190116_0124
+Bundle-Localization: OSGI-INF/l10n/plugin
+Bundle-ClassPath: javalogging.jar
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ManifestVersion: 2
+Bundle-Activator: com.ibm.team.javalogging.ui.Activator
+Bundle-Vendor: %bundle.vendor
+Eclipse-LazyStart: true
+
+

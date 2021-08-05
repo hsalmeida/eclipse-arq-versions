@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.google.common
+Export-Package: com.google.common.annotations;version="18.0.0",com.goo
+ gle.common.base;version="18.0.0",com.google.common.base.internal;vers
+ ion="18.0.0",com.google.common.cache;version="18.0.0",com.google.comm
+ on.collect;version="18.0.0",com.google.common.escape;version="18.0.0"
+ ,com.google.common.eventbus;version="18.0.0",com.google.common.hash;v
+ ersion="18.0.0",com.google.common.html;version="18.0.0",com.google.co
+ mmon.io;version="18.0.0",com.google.common.math;version="18.0.0",com.
+ google.common.net;version="18.0.0",com.google.common.primitives;versi
+ on="18.0.0",com.google.common.reflect;version="18.0.0",com.google.com
+ mon.util.concurrent;version="18.0.0",com.google.common.xml;version="1
+ 8.0.0",com.google.thirdparty.publicsuffix;version="18.0.0"
+Bundle-Name: Google Guava
+Bundle-Version: 18.0.0.v20181221_2153
+Bundle-ClassPath: guava-18.0.jar
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

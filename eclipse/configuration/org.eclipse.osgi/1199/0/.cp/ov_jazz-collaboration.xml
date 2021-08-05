@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="jazz-collaboration" name="Jazz collaboration" alt-style="css/swt.properties" style="css/t-links.css" path="overview/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Jazz collaboration" url="http://org.eclipse.ui.intro/showPage?id=jazz_collaboration" id="jazz_collaboration_link">
+				<text>At its core, the Jazz Platform is a collaboration tool and platform. Learn more about the Jazz collaboration model.</text>
+			</link>			
+		</group>
+	</extensionContent>
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css" id="jazz_collaboration" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>The Jazz collaboration model</text>
+						</group>
+						<html id="inline_flash" src="ov_jazz-collaboration.html" type="inline"></html>
+					</group>	
+				</group>
+			</group>
+		</group>
+	</page>
+
+</introContent>

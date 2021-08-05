@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2017. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.git.workitem.client.feature"
+      label="%featureName"
+      version="1.0.100.v20190321_0118"
+      provider-name="%providerName"
+      license-feature="com.ibm.team.rtc.client.license.feature"
+      license-feature-version="0.0.0">
+<license url="%licenseURL" >
+      %license
+  </license>
+
+   <requires>
+      <import feature="com.ibm.team.calm.foundation.client.rtc.feature" version="3.0.1300.qualifier"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+   </requires>
+
+   <plugin
+         id="com.ibm.team.git.client"
+         download-size="0"
+         install-size="0"
+         version="1.0.200.v20190202_0205"
+         unpack="false"/>
+
+</feature>

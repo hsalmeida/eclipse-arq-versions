@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010, 2012. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="jazz_connect-to-project-area" name="Connect to a Rational Team Concert project area" alt-style="css/swt.properties" style="css/t-links.css" path="firststeps/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Connect to a Rational Team Concert project area" url="http://org.eclipse.ui.intro/runAction?class=com.ibm.team.process.ide.ui.IntroConnectProjectAreasAction&amp;pluginId=com.ibm.team.process.ide.ui" id="jazz_connect_to_project_area_link">
+				<text>If you know your Rational Team Concert repository URI, click here to connect to a Rational Team Concert project area.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

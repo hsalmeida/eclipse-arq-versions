@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2009, 2015. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.filesystem.common.rtc.feature"
+      label="%featureName"
+      version="3.2.1300.v20190320_2310"
+      provider-name="%providerName"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="com.ibm.team.scm.common.rtc.feature"/>
+      <import feature="com.ibm.team.workitem.common.rtc.feature"/>
+   </requires>
+
+   <plugin
+         id="com.ibm.team.filesystem.common"
+         download-size="0"
+         install-size="0"
+         version="3.2.1300.v20190108_2122"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.filesystem.common.workitems"
+         download-size="0"
+         install-size="0"
+         version="3.1.1400.v20190202_0044"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.filesystem.reviews.common"
+         download-size="0"
+         install-size="0"
+         version="1.1.400.v20190312_1548"
+         unpack="false"/>
+
+</feature>

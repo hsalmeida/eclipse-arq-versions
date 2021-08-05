@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.ibm.team.filesystem.ide.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="com.ibm.team.filesystem.ide.ui" id="extraLoadWizards" name="Extra Load Wizards"/>
+      </appInfo>
+      <documentation>
+         The extension point provides a means of contributing extra load wizards for different types of sandboxes (e.g. remote sandboxes) with a different storage ID. The new wizards show up as radio buttons on the first page of the normal load wizard. When the user chooses an extra load wizard the contributed wizard takes over.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="extraLoadWizard"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="extraLoadWizard">
+      <complexType>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="com.ibm.team.filesystem.ide.ui.internal.wizards.load.AbstractExtraLoadWizard:"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A unique ID for the extra load wizard. This is used to distinguish it from other extra load wizards that can be contributed.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="label" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A label for this extra load wizard in the load wizard main page.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="default" type="boolean">
+            <annotation>
+               <documentation>
+                  The default attribute, if present and set to true, will mark this extra load wizard as the default the first time that the load wizard is invoked.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         4.0.5
+      </documentation>
+   </annotation>
+
+
+
+
+
+</schema>

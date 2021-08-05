@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="jazz_start_learning" name="Start learning about Jazz" alt-style="css/swt.properties" style="css/t-links.css" path="firststeps/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Start learning about Jazz" url="http://org.eclipse.ui.intro/openBrowser?url=https%3A%2F%2Fjazz.net%2Flearn%2FLearnItem.jsp%3Fhref%3Dgetting-started.html" id="jazz_start_learning_link">
+				<text>For an in-depth guide to getting started, read the "Getting Started with Jazz" materials on Jazz.net.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

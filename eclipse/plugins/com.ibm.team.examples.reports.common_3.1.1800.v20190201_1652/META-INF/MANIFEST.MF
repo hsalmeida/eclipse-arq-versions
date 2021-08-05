@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.ibm.team.examples.reports.common;singleton:=t
+ rue
+Bundle-Name: %Bundle-Name.0
+Bundle-Version: 3.1.1800.v20190201_1652
+Bundle-Localization: plugin
+Require-Bundle: com.ibm.team.reports.common
+Bundle-ManifestVersion: 2
+Bundle-Vendor: %Bundle-Vendor.0
+
+

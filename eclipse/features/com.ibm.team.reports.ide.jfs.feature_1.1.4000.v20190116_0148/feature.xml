@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2011, 2019. All Rights Reserved.
+   
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.reports.ide.jfs.feature"
+      label="Reports IDE UI Feature"
+      version="1.1.4000.v20190116_0148"
+      provider-name="IBM">
+
+   <description>
+      Build feature for the JCB build of the Reports IDE component.
+   </description>
+
+   <plugin
+         id="com.ibm.team.reports.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="2.1.6000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.reports.ide.ui.oda"
+         download-size="0"
+         install-size="0"
+         version="2.1.5000.v20190116_0148"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.reports.rcp.ui"
+         download-size="0"
+         install-size="0"
+         version="2.2.3000.v20190116_0148"
+         unpack="false"/>
+
+</feature>

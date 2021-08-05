@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %plugin.provider
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: com.ibm.team.welcome;singleton:=true
+Bundle-Version: 3.0.100.v20190321_0133
+Bundle-ManifestVersion: 2
+

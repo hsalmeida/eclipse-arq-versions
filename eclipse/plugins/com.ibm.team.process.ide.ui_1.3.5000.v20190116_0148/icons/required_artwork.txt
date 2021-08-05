@@ -1,0 +1,53 @@
+elcl16/rerun_op_co.gif					re_run process enabled operation / try again: context menu action in team advisor view
+elcl16/recheck_op_co.gif				recheck preconditions for process enabled operation: context menu action in team advisor view
+elcl16/create_pa_co.gif					create new project area: view tool bar
+elcl16/connect_pa_co.gif				connect to project areas: view tool bar
+elcl16/explain_co.gif					explain a given process error: visible in the context menu of the team advisor view
+elcl16/current_phase_co.gif				mark a milestone phase as the current milesstone phase
+elcl16/create_ta_co.gif                 create new team area: view tool bar
+elcl16/create_pt_co.gif                 create new process template: view tool bar
+
+ovr16/completed_ovr.gif                 overlay for completed iterations
+ovr16/current_ovr.gif                   overlay for currently in-progress iterations
+ovr16/fixed_ovr.gif						overlay for a failed process rule which cause has been fixed using a proposed quickfix
+ovr16/overrule_ovr.gif					overlay for a failed process rule the user has been marked to be ignored during the next run
+
+view16/tadv.gif							default view icon for the team advisor view, should be the dark blue gear without any annotation
+
+obj16/completediteration_obj.gif		a completed iteration (milestone phase, milestone, project phase)
+obj16/configuration_obj.gif				a piece in the process description representing a configuration element (either an operation, an event, or configuration data)
+obj16/configurationdata_obj.gif			a piece in the process description representing configuration data
+obj16/currentiteration_obj.gif			the current iteration (milestone phase, milestone, project phase)
+obj16/date_obj.gif						a piece in the process description representing a date
+obj16/developmentline_obj.gif			a development line (examples: on going development for version 3.0, maintanance for version 2.1), a development line is divided into project phases
+obj16/event_obj.gif						a piece in the process description describing the reaction to an event
+obj16/initialization_obj.gif			a piece in the process description describing what should happen on initialization
+obj16/milestone_obj.gif					a milestone, a milestone is divided into milestone phases
+obj16/milestonephase_obj.gif			a milestone phase
+obj16/operation_obj.gif					a piece in the process description describing the execution of an operation
+obj16/operationreport_obj.gif			a report about the execution of an operation
+obj16/participantreport_obj.gif			a report about a single step of the execution of an operation
+obj16/processstate_obj.gif				the state of the process
+obj16/processtemplate_obj.gif			a template for a process description
+obj16/projectphase_obj.gif				a project phase, a project phase is divided into milestones
+obj16/role_obj.gif						a role defined by the process
+obj16/roledefinition_obj.gif			a piece in the process description defining a role
+obj16/roledefinitions_obj.gif			a piece in the process description defining multiple roles
+obj16/static_obj.gif					a piece of the process description containing static (i.e. independent of development lines) configuration data       
+obj16/success_obj.gif					represents a successful execution of process checks (used together with error and warning icons)
+obj16/tag_inexact_obj.gif          		an inexact proposal for an XML element or name produced by the content assistant
+obj16/tag_exact_obj.gif          		an exact proposal for an XML element or name produced by the content assistant
+obj16/uninitialized_pa_obj.gif			an uninitialized project area
+
+
+-------------- RENAMES of previous artwork received from the UI team ---------------------------------------------------------
+
+view16/da_fail.gif -> view16/tadv_failure.gif
+view16/da_wan.gif  -> view16/tadv_warning.gif
+view16/da_succ.gif -> view16/tadv_success.gif
+view16/run.gif -> view16/tadv_run_success.gif
+view16/run_err.gif -> view16/tadv_run_failure.gif
+view16/run_warn.gif -> view16/tadv_run_warning.gif
+
+obj16/processdefinition_obj.gif -> obj16/processtemplate_obj.gif
+obj16/processsettings_obj.gif -> obj16/processcustomization_obj.gif

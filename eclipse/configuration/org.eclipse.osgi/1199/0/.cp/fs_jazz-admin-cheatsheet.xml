@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="fs_jazz_admin_cheatsheet" name="Set up a Jazz project area" alt-style="css/swt.properties" style="css/t-links.css" path="firststeps/@">
+		<group label="Project administrators" style-id="content-group" id="content-group">
+			<filter name="plugin" value=""/>
+			<link style-id="content-link" label="Set up a new Jazz project area and team area" url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=com.ibm.team.setupRepository" id="jazz_admin_cheatsheet_link">
+				<text>This cheatsheet guides you through the steps for making a repository connection, creating a new Jazz project area, adding a team area, and adding members to the team. If you just installed the server and client, this is a great place to start.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

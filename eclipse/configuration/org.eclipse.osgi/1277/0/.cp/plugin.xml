@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+ <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/ov_accessibility.xml"/>
+ </extension>
+
+ <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/ov_roles.xml"/>
+ </extension>
+
+ <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/ov_help_on_help.xml"/>
+ </extension>
+
+ <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/wr_devworks_brochure.xml"/>
+ </extension>
+ <extension
+         point="com.ibm.ccl.welcome.bits.brochure">
+      <content file="$nl$/wr_devworks_brochuretoc.xml"/>
+ </extension>
+
+ <extension
+       point="org.eclipse.ui.intro.configExtension">
+     <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/wr_support.xml"/>
+ </extension>
+
+ <extension
+       point="org.eclipse.ui.intro.configExtension">
+     <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="$nl$/my_home_page.xml"/>
+ </extension>
+
+</plugin>

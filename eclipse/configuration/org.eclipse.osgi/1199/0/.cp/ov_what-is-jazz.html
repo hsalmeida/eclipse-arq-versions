@@ -1,0 +1,53 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><p>Jazz is a scalable, extensible, team collaboration platform for seamlessly integrating tasks across the software lifecycle.</p>
+
+<h3>Why do we need the Jazz Platform?</h3>
+
+<p>Developing software in a team is much like playing an instrument in a band. Each musician must play his or her part while also staying in tune and in sync with the others. They must agree on how they communicate, and they must pay attention to the signals that they send each other, or the performance collapses. Strong collaboration and individual virtuosity are both required. Similarly, software developers must focus on building quality code and coordinating their activities so that all of the pieces fit well together.</p>
+
+<p>Integrated development environments (IDEs), such as Eclipse, have succeeded in improving individual productivity. However, developers are as actively engaged in working with their teams as they are with writing their code. This is where the Jazz Platform comes in, shifting the focus from the productivity of the individual, to the productivity of the team.</p>
+
+<h3>The case for a shift in focus</h3>
+
+<p>Consider the work it takes for a team to track and fix a hypothetical bug. The work of fixing a bug flows within the team, from Mike who discovered and reported the problem, to Rick who reviews incoming bugs reports and assigned the work to Susan, to Susan who fixed the bug, and finally back to Mike for verification. The bug fix itself also flows within the team, from Susan who fixes the problem in the code stream to Mike who verifies the fix in the build that contains it.</p>
+
+<div align="center"><img src="$plugin:com.ibm.team.welcome$/images/bug-flow.gif" alt="Bug Flows" /></div>
+
+<p>These flows can be fragile. The flows within the team break down if a fix is checked-in without updating the bug report, or if there is no link to connect the fix to a particular code stream and build. These breakdowns can lead to confusion within the team and impede progress. To make matters worse, a breakdown might not be immediately apparent to anyone on the team. There is also an interleaving of domain-related work (e.g., writing code for their software product) with work related primarily to maintaining coordination with their team (e.g., marking bugs as fixed).</p>
+
+<p>Although the IDE integrates several tools, the developer is still doing a lot of repetitive bookkeeping work by hand, work that is critical to keeping the team working together effectively, but also work that is very easy to forget or to do incorrectly. It would be better if Susan could simply tell the IDE that she was now working on fixing a particular bug. Then, when she completes the fix and test case, she could indicate that she was done. Without further action on her part, the system would commit the changed files and associate them with the bug report, update the build notes, and mark the bug report as closed. If the tools automated the bookkeeping in this way, it would help make the team more effective by ensuring that the important connections between bug reports and code check-ins are reliable. At the same time, it would make the individual team members more effective by automating tedious and error-prone bookkeeping duties.</p>
+
+<h3>The Jazz Platform bridges the gap</h3>
+
+<p>Jazz is a team collaboration platform for the full software lifecycle, designed to support seamless integration of tasks across all phases of the software lifecycle (the earlier example scenario touches on a few common tasks in the middle of the lifecycle). The Jazz Platform is designed to be extensible both on the client and the server, and to scale from very small teams to large enterprise installations. It incorporates the notion of tool-supported process guidance, where the tools understand the team's development process and help team members to follow this process without getting in their way.</p>
+
+<p>The Jazz Platform is not just intended to integrate existing point tools, but also to provide a platform upon which to build much more integrated lifecycle tool function than previously possible. When development tools are integrated across the lifecycle in this way, it becomes possible to do things unimaginable with a set of bolted-together point solutions. Integrated end-to-end tools like this can help teams build software more effectively, and make the software development activity more enjoyable.</p>
+
+<h3>Jazz is a process-aware platform</h3>
+
+<p>The Jazz Platform is designed to allow comprehensive support across the entire software development lifecycle. One thread that runs throughout all phases of a project is the process that the team members have agreed to follow. By teaching the Jazz Platform about the process, it can help the team in process-specific ways. This process support can come in a wide (and completely open-ended) variety of forms, ranging from on-the-fly rule checking, to offering online (e.g., F1 key) process help, to automating bookkeeping. The Jazz Platform supports process in the following ways:
+	<ul>
+		<li>The Jazz Platform is process-aware. In general, a team's process can affect any aspect of the work a team member does. The notion of process is designed into the Jazz Platform. The team's process is explicitly represented, and all the work that team members do within the system happens within a context that includes the process representation.</li>
+		<li>Jazz components are process-enabled. All Jazz components, including the initial core, have been designed to allow the prevailing process to exert influence over the component's operations and items.</li>
+		<li>The Jazz Platform represents the process using standard Jazz items which are stored in the repository. This process representation can describe processes of all kinds, and can capture and enact as much (or as little) of the team's process as practical.</li>
+		<li>The Jazz Platform is process-neutral. Jazz itself has no built in process enforcing what is done on any particular occasion. It's left up to the team to define an appropriate governing process to make such decisions for their project. The Tech Preview includes exemplary process templates, including an early version of the one encapsulating the process used by the Jazz project team itself.</li>
+	</ul>
+</p>
+
+<p>The Jazz Platform is designed and built to do the following:
+	<ul>
+		<li>Support seamless integration of tasks across the software lifecycle.</li>
+		<li>Facilitate team collaboration and coordination throughout the software lifecycle.</li>
+		<li>Support globally distributed development teams.</li>
+		<li>Provide an extensible platform.</li>
+		<li>Help teams build software more effectively.</li>
+		<li>Provide solutions scalable from small teams up through large enterprises.</li>
+		<li>Maintain audit trails and automate bookkeeping so that teams are accountable.</li>
+		<li>Support UI integrations (IDE, web browser, etc.) that fit the needs of customers.</li>
+		<li>Foster a broad ecosystem of tool providers, including independent software vendors (ISVs).</li>
+		<li>Make software development more enjoyable.</li>
+	</ul>
+</p>
+
+<p>The Jazz Platform's principal role is to provide tool writers with mechanisms to use, and rules to follow, that lead to seamlessly-integrated lifecycle tools. These mechanisms are exposed via well-defined APIs. The Jazz Platform also provides useful building blocks and frameworks that facilitate developing new tools.</p>

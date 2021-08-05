@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.rational.common.welcome.doc.feature"
+      label="%featureName"
+      version="7.6.0.v20170829_1451"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+   
+	<plugin
+         id="com.ibm.welcome.common.rational.doc"
+         download-size="0"
+         install-size="0"
+         version="7.6.0.v20170829_1451"
+         unpack="false"/>
+
+</feature>

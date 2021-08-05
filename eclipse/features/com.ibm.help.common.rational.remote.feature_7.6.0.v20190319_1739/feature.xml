@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.help.common.rational.remote.feature"
+      label="%featureName"
+      version="7.6.0.v20190319_1739"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.help.common.rational.remote.doc"
+         download-size="0"
+         install-size="0"
+         version="7.6.0.v20190319_1739"
+         unpack="false"/>
+
+   <data
+         id="uadelivery.properties"
+         download-size="0"
+         install-size="0"/>
+
+</feature>

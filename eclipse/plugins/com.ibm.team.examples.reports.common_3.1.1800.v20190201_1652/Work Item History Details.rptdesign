@@ -1,0 +1,3337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Licensed Materials - Property of IBM (c) Copyright IBM Corporation 2006, 2007. All Rights Reserved. Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <simple-property-list name="includeResource">
+        <value>shared/shared</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[timestamp = params["Time"].value;
+fromTime = null;
+toTime = null;
+if (timestamp) {
+	fromTime = new Date(timestamp.getTime() - 60000);
+	toTime = new Date(timestamp.getTime() + 60000);
+}
+dateTimeFormat = new java.text.SimpleDateFormat("dd/MM/yyyy H:mm");]]></method>
+    <property name="theme">shared.defaultTheme</property>
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">shared/shared.rptlibrary</property>
+            <property name="namespace">shared</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <cascading-parameter-group name="CascadingParameterGroup1" id="144">
+            <property name="dataSet">Parameters 1</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName" id="145">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 1</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="TeamAreaName" id="146">
+                    <text-property name="promptText" key="PARAM_TEAM_AREA">Team Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["TEAM_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["TEAM_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["TEAM_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Category" id="427">
+                    <text-property name="promptText" key="PARAM_CATEGORY"></text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 1</property>
+                    <expression name="valueExpr">row["CATEGORY_NAME"]</expression>
+                    <expression name="labelExpr">row["CATEGORY_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["CATEGORY_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <cascading-parameter-group name="CascadingParameterGroup2" id="251">
+            <property name="dataSet">Parameters 2</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName1" id="252">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 2</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Timeline" id="253">
+                    <text-property name="promptText" key="PARAM_TIMELINE">Timeline</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["DEV_LINE_NAME"]</expression>
+                    <expression name="labelExpr">row["DEV_LINE_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["DEV_LINE_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Interval" id="421">
+                    <text-property name="promptText" key="PARAM_ITERATION"></text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 2</property>
+                    <expression name="valueExpr">row["ITERATION_NAME"]</expression>
+                    <expression name="labelExpr">row["ITERATION_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["ITERATION_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <cascading-parameter-group name="CascadingParameterGroup3" id="423">
+            <property name="dataSet">Parameters 3</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName2" id="424">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 3</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Type" id="425">
+                    <text-property name="promptText" key="PARAM_TYPE">Type</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["WI_TYPE"]</expression>
+                    <expression name="labelExpr">row["WI_TYPE"]</expression>
+                    <expression name="sortByColumn">dataSetRow["WI_TYPE"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Severity" id="426">
+                    <text-property name="promptText" key="PARAM_SEVERITY">Severity</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 2</property>
+                    <expression name="valueExpr">row["WI_SEVERITY"]</expression>
+                    <expression name="labelExpr">row["WI_SEVERITY"]</expression>
+                    <expression name="sortByColumn">dataSetRow["WI_SEVERITY"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <cascading-parameter-group name="CascadingParameterGroup4" id="482">
+            <property name="dataSet">Parameters 4</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName3" id="483">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 4</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">{Current Project Area}</value>
+                    </simple-property-list>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Priority" id="484">
+                    <text-property name="promptText" key="PARAM_PRIORITY">Priority</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["WI_PRIORITY"]</expression>
+                    <expression name="labelExpr">row["WI_PRIORITY"]</expression>
+                    <expression name="sortByColumn">dataSetRow["WI_PRIORITY"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Resolution" id="486">
+                    <text-property name="promptText" key="PARAM_RESOLUTION">Resolution</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 4</property>
+                    <expression name="valueExpr">row["WI_RESOLUTION"]</expression>
+                    <expression name="labelExpr">row["WI_RESOLUTION"]</expression>
+                    <expression name="sortByColumn">dataSetRow["WI_RESOLUTION"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <cascading-parameter-group name="CascadingParameterGroup5" id="431">
+            <property name="dataSet">Parameters 5</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName4" id="432">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 5</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">{Current Project Area}</value>
+                    </simple-property-list>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="StateGroup" id="570">
+                    <text-property name="promptText" key="PARAM_STATE_GROUP"></text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 5</property>
+                    <expression name="valueExpr">row["STATE_GROUP"]</expression>
+                    <expression name="labelExpr">row["STATE_GROUP_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["STATE_GROUP_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+                <scalar-parameter name="State" id="571">
+                    <text-property name="promptText" key="PARAM_STATE"></text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">Parameters 5</property>
+                    <expression name="valueExpr">row["STATE_NAME"]</expression>
+                    <expression name="labelExpr">row["STATE_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["STATE_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <scalar-parameter name="Tags" id="428">
+            <text-property name="promptText" key="PARAM_TAGS"></text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Time" id="485">
+            <text-property name="promptText" key="TIME">Time</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">dateTime</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Position" id="504">
+            <text-property name="promptText" key="POSITION"></text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">0</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Columns" id="567">
+            <text-property name="promptText" key="COLUMNS"></text-property>
+            <property name="valueType">static</property>
+            <property name="sortBy">label</property>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">ID</property>
+                    <property name="label">ID</property>
+                    <property name="labelID">ID</property>
+                </structure>
+                <structure>
+                    <property name="value">SUMMARY</property>
+                    <property name="label">Summary</property>
+                    <property name="labelID">SUMMARY</property>
+                </structure>
+                <structure>
+                    <property name="value">STATE</property>
+                    <property name="label">State</property>
+                    <property name="labelID">STATE</property>
+                </structure>
+                <structure>
+                    <property name="value">PLANNED_WORK</property>
+                    <property name="label">Planned Work</property>
+                    <property name="labelID">PLANNED_WORK</property>
+                </structure>
+                <structure>
+                    <property name="value">COMPLETED_WORK</property>
+                    <property name="label">Completed Work</property>
+                    <property name="labelID">COMPLETED_WORK</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Work Items" id="104">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">WORKITEMS_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Parameters 1" id="106">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                    <text-property name="heading">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TEAM_AREA_NAME</property>
+                    <text-property name="displayName">TEAM_AREA_NAME</text-property>
+                    <text-property name="heading">TEAM_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CATEGORY_NAME</property>
+                    <text-property name="displayName">CATEGORY_NAME</text-property>
+                    <text-property name="heading">CATEGORY_NAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TEAM_AREA_NAME</property>
+                    <property name="nativeName">TEAM_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">CATEGORY_NAME</property>
+                    <property name="nativeName">CATEGORY_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_POSITION</property>
+                    <property name="nativeName">RESULT_SET_POSITION</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TEAM_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CATEGORY_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TEAM_AREA_NAME</property>
+                    <property name="nativeName">TEAM_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CATEGORY_NAME</property>
+                    <property name="nativeName">CATEGORY_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TEAM_AREA_NAME</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>CATEGORY_NAME</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>FROM_TIME</design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TO_TIME</design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_POSITION</design:name>
+            <design:position>7</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_TYPE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CATEGORY_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CATEGORY_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PROJECT_AREA</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ITERATION_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITERATION_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTRIBUTOR_USERID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTRIBUTOR_USERID</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE_GROUP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE_GROUP</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEMS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>CATEGORY_NAME,PROJECT_AREA_NAME,TEAM_AREA_NAME</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEMS</property>
+            <property name="parameterFields">CATEGORY_NAME,PROJECT_AREA_NAME,TEAM_AREA_NAME</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Parameters 2" id="420">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                    <text-property name="heading">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ITERATION_NAME</property>
+                    <text-property name="displayName">ITERATION_NAME</text-property>
+                    <text-property name="heading">ITERATION_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DEV_LINE_NAME</property>
+                    <text-property name="displayName">DEV_LINE_NAME</text-property>
+                    <text-property name="heading">DEV_LINE_NAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">ITERATION_NAME</property>
+                    <property name="nativeName">ITERATION_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">DEV_LINE_NAME</property>
+                    <property name="nativeName">DEV_LINE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_POSITION</property>
+                    <property name="nativeName">RESULT_SET_POSITION</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ITERATION_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">DEV_LINE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ITERATION_NAME</property>
+                    <property name="nativeName">ITERATION_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">DEV_LINE_NAME</property>
+                    <property name="nativeName">DEV_LINE_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>ITERATION_NAME</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>DEV_LINE_NAME</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>FROM_TIME</design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TO_TIME</design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_POSITION</design:name>
+            <design:position>7</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_TYPE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CATEGORY_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CATEGORY_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PROJECT_AREA</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ITERATION_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITERATION_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTRIBUTOR_USERID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTRIBUTOR_USERID</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE_GROUP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE_GROUP</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEMS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>DEV_LINE_NAME,ITERATION_NAME,PROJECT_AREA_NAME</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEMS</property>
+            <property name="parameterFields">DEV_LINE_NAME,ITERATION_NAME,PROJECT_AREA_NAME</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Parameters 3" id="422">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                    <text-property name="heading">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_TYPE</property>
+                    <text-property name="displayName">WI_TYPE</text-property>
+                    <text-property name="heading">WI_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_SEVERITY</property>
+                    <text-property name="displayName">WI_SEVERITY</text-property>
+                    <text-property name="heading">WI_SEVERITY</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">WI_TYPE</property>
+                    <property name="nativeName">WI_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">WI_SEVERITY</property>
+                    <property name="nativeName">WI_SEVERITY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_POSITION</property>
+                    <property name="nativeName">RESULT_SET_POSITION</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">WI_SEVERITY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_TYPE</property>
+                    <property name="nativeName">WI_TYPE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">WI_SEVERITY</property>
+                    <property name="nativeName">WI_SEVERITY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>WI_TYPE</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>WI_SEVERITY</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>FROM_TIME</design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TO_TIME</design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_POSITION</design:name>
+            <design:position>7</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_TYPE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CATEGORY_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CATEGORY_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PROJECT_AREA</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ITERATION_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITERATION_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTRIBUTOR_USERID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTRIBUTOR_USERID</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE_GROUP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE_GROUP</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEMS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>PROJECT_AREA_NAME,WI_SEVERITY,WI_TYPE</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEMS</property>
+            <property name="parameterFields">PROJECT_AREA_NAME,WI_SEVERITY,WI_TYPE</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Parameters 4" id="480">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                    <text-property name="heading">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_PRIORITY</property>
+                    <text-property name="displayName">WI_PRIORITY</text-property>
+                    <text-property name="heading">WI_PRIORITY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_RESOLUTION</property>
+                    <text-property name="displayName">WI_RESOLUTION</text-property>
+                    <text-property name="heading">WI_RESOLUTION</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">WI_PRIORITY</property>
+                    <property name="nativeName">WI_PRIORITY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">WI_RESOLUTION</property>
+                    <property name="nativeName">WI_RESOLUTION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_PRIORITY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">WI_RESOLUTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_PRIORITY</property>
+                    <property name="nativeName">WI_PRIORITY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">WI_RESOLUTION</property>
+                    <property name="nativeName">WI_RESOLUTION</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>WI_PRIORITY</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>WI_RESOLUTION</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>FROM_TIME</design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TO_TIME</design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_TYPE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CATEGORY_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CATEGORY_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PROJECT_AREA</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ITERATION_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITERATION_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTRIBUTOR_USERID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTRIBUTOR_USERID</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE_GROUP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE_GROUP</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEMS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>PROJECT_AREA_NAME,WI_PRIORITY,WI_RESOLUTION</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEMS</property>
+            <property name="parameterFields">PROJECT_AREA_NAME,WI_PRIORITY,WI_RESOLUTION</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.advancedDataSet" name="Work Items" id="487">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">STATE_GROUP_NAME</property>
+                    <expression name="expression">stateGroups[row["STATE_GROUP"]]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                    <text-property name="displayName">WI_ID</text-property>
+                    <text-property name="heading">WI_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATE_NAME</property>
+                    <text-property name="displayName">STATE_NAME</text-property>
+                    <text-property name="heading">STATE_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATE_GROUP</property>
+                    <text-property name="displayName">STATE_GROUP</text-property>
+                    <text-property name="heading">STATE_GROUP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                    <text-property name="displayName">SUMMARY</text-property>
+                    <text-property name="heading">SUMMARY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DURATION</property>
+                    <text-property name="displayName">DURATION</text-property>
+                    <text-property name="heading">DURATION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TIME_SPENT</property>
+                    <text-property name="displayName">TIME_SPENT</text-property>
+                    <text-property name="heading">TIME_SPENT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ProjectAreaName</property>
+                    <property name="paramName">ProjectAreaName</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TeamAreaName</property>
+                    <property name="paramName">TeamAreaName</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Category</property>
+                    <property name="paramName">Category</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Timeline</property>
+                    <property name="paramName">Timeline</property>
+                    <property name="dataType">string</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Interval</property>
+                    <property name="paramName">Interval</property>
+                    <property name="dataType">string</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Type</property>
+                    <property name="paramName">Type</property>
+                    <property name="dataType">string</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Severity</property>
+                    <property name="paramName">Severity</property>
+                    <property name="dataType">string</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Priority</property>
+                    <property name="paramName">Priority</property>
+                    <property name="dataType">string</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Resolution</property>
+                    <property name="paramName">Resolution</property>
+                    <property name="dataType">string</property>
+                    <property name="position">9</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">StateGroup</property>
+                    <property name="paramName">StateGroup</property>
+                    <property name="dataType">string</property>
+                    <property name="position">10</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">State</property>
+                    <property name="paramName">State</property>
+                    <property name="dataType">string</property>
+                    <property name="position">11</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Tags</property>
+                    <property name="paramName">Tags</property>
+                    <property name="dataType">string</property>
+                    <property name="position">12</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">From</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">13</property>
+                    <expression name="defaultValue" type="javascript">fromTime;</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">To</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">14</property>
+                    <expression name="defaultValue" type="javascript">toTime;</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">15</property>
+                    <expression name="defaultValue" type="javascript">50</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_POSITION</property>
+                    <property name="paramName">Position</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">16</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">STATE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">STATE_GROUP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">DURATION</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">TIME_SPENT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">STATE_GROUP_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[stateGroups = {};
+stateGroups['IN_PROGRESS_STATES'] = reportContext.getMessage('IN_PROGRESS', reportContext.getLocale());
+stateGroups['OPEN_STATES'] = reportContext.getMessage('OPEN', reportContext.getLocale());
+stateGroups['CLOSED_STATES'] = reportContext.getMessage('CLOSED', reportContext.getLocale());]]></method>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">WI_ID</property>
+                    <property name="nativeName">WI_ID</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">STATE_NAME</property>
+                    <property name="nativeName">STATE_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">STATE_GROUP</property>
+                    <property name="nativeName">STATE_GROUP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="nativeName">SUMMARY</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">DURATION</property>
+                    <property name="nativeName">DURATION</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">TIME_SPENT</property>
+                    <property name="nativeName">TIME_SPENT</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[PROJECT_AREA_NAME IN ProjectAreaName AND
+TEAM_AREA_NAME IN TeamAreaName AND
+CATEGORY_NAME IN Category AND
+DEV_LINE_NAME IN Timeline AND
+ITERATION_NAME IN Interval AND
+WI_TYPE IN Type AND
+WI_SEVERITY IN Severity AND
+WI_PRIORITY IN Priority AND
+WI_RESOLUTION IN Resolution AND
+STATE_GROUP IN StateGroup AND
+STATE_NAME IN State AND
+TAGS IN Tags AND
+TIMESTAMP >= From AND
+TIMESTAMP <= To]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>5</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SUMMARY</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SUMMARY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SUMMARY</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEM_STATES</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>DURATION,STATE_GROUP,STATE_NAME,SUMMARY,TIME_SPENT,WI_ID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEM_STATES</property>
+            <property name="selectedFields">DURATION,STATE_GROUP,STATE_NAME,SUMMARY,TIME_SPENT,WI_ID</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.advancedDataSet" name="Count" id="568">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">WI_COUNT</property>
+                    <text-property name="displayName">WI_COUNT</text-property>
+                    <text-property name="heading">WI_COUNT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ProjectAreaName</property>
+                    <property name="paramName">ProjectAreaName</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TeamAreaName</property>
+                    <property name="paramName">TeamAreaName</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Category</property>
+                    <property name="paramName">Category</property>
+                    <property name="dataType">string</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Timeline</property>
+                    <property name="paramName">Timeline</property>
+                    <property name="dataType">string</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Interval</property>
+                    <property name="paramName">Interval</property>
+                    <property name="dataType">string</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Type</property>
+                    <property name="paramName">Type</property>
+                    <property name="dataType">string</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Severity</property>
+                    <property name="paramName">Severity</property>
+                    <property name="dataType">string</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Priority</property>
+                    <property name="paramName">Priority</property>
+                    <property name="dataType">string</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Resolution</property>
+                    <property name="paramName">Resolution</property>
+                    <property name="dataType">string</property>
+                    <property name="position">9</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">StateGroup</property>
+                    <property name="paramName">StateGroup</property>
+                    <property name="dataType">string</property>
+                    <property name="position">10</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">State</property>
+                    <property name="paramName">State</property>
+                    <property name="dataType">string</property>
+                    <property name="position">11</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Tags</property>
+                    <property name="paramName">Tags</property>
+                    <property name="dataType">string</property>
+                    <property name="position">12</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">From</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">13</property>
+                    <expression name="defaultValue" type="javascript">fromTime;</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">To</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">14</property>
+                    <expression name="defaultValue" type="javascript">toTime;</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">WI_COUNT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[count = 0;]]></method>
+            <method name="onFetch"><![CDATA[count++;]]></method>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">WI_COUNT</property>
+                    <property name="nativeName">WI_COUNT</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[PROJECT_AREA_NAME IN ProjectAreaName AND
+TEAM_AREA_NAME IN TeamAreaName AND
+CATEGORY_NAME IN Category AND
+DEV_LINE_NAME IN Timeline AND
+ITERATION_NAME IN Interval AND
+WI_TYPE IN Type AND
+WI_SEVERITY IN Severity AND
+WI_PRIORITY IN Priority AND
+WI_RESOLUTION IN Resolution AND
+STATE_GROUP IN StateGroup AND
+STATE_NAME IN State AND
+TAGS IN Tags AND
+TIMESTAMP >= From AND
+TIMESTAMP <= To]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>5</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SUMMARY</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SUMMARY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SUMMARY</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEM_STATES</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>WI_COUNT</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEM_STATES</property>
+            <property name="selectedFields">WI_COUNT</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Parameters 5" id="430">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">STATE_GROUP_NAME</property>
+                    <expression name="expression">stateGroups[row["STATE_GROUP"]]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                    <text-property name="heading">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATE_NAME</property>
+                    <text-property name="displayName">STATE_NAME</text-property>
+                    <text-property name="heading">STATE_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATE_GROUP</property>
+                    <text-property name="displayName">STATE_GROUP</text-property>
+                    <text-property name="heading">STATE_GROUP</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">STATE_NAME</property>
+                    <property name="nativeName">STATE_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">STATE_GROUP</property>
+                    <property name="nativeName">STATE_GROUP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">STATE_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">STATE_GROUP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">STATE_GROUP_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[stateGroups = {};
+stateGroups['IN_PROGRESS_STATES'] = reportContext.getMessage('IN_PROGRESS', reportContext.getLocale());
+stateGroups['OPEN_STATES'] = reportContext.getMessage('OPEN', reportContext.getLocale());
+stateGroups['CLOSED_STATES'] = reportContext.getMessage('CLOSED', reportContext.getLocale());]]></method>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">STATE_NAME</property>
+                    <property name="nativeName">STATE_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">STATE_GROUP</property>
+                    <property name="nativeName">STATE_GROUP</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>STATE_NAME</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>STATE_GROUP</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>FROM_TIME</design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TO_TIME</design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_TYPE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_TYPE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CATEGORY_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CATEGORY_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PROJECT_AREA</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ITERATION_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ITERATION_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CONTRIBUTOR_USERID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CONTRIBUTOR_USERID</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATE_GROUP</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATE_GROUP</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>WORKITEMS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>PROJECT_AREA_NAME,STATE_GROUP,STATE_NAME</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">WORKITEMS</property>
+            <property name="parameterFields">PROJECT_AREA_NAME,STATE_GROUP,STATE_NAME</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="birt-chart" id="98">
+            <property name="fontFamily">sans-serif</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="birt-body" id="68">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="birt-heading-title" id="69">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="color">#333333</property>
+        </style>
+        <style name="watchfor-title" id="245">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="watchfor-body" id="246">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#666666</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text-data id="569">
+            <property name="style">birt-body</property>
+            <property name="marginTop">50pt</property>
+            <property name="textAlign">left</property>
+            <property name="dataSet">Count</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">WI_COUNT</property>
+                    <text-property name="displayName">WI_COUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["WI_COUNT"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <expression name="valueExpr">var columns = params["Columns"].value;&#13;
+if (!columns || columns == "" || columns == "''") {&#13;
+	params["Columns"].value = "'ID','SUMMARY','STATE','COMPLETED_WORK','PLANNED_WORK'";&#13;
+}&#13;
+var count = row["WI_COUNT"];&#13;
+var position = params["Position"].value;&#13;
+showData = position &lt; count;&#13;
+showMore = position + 50 &lt; count;&#13;
+if (showData) {&#13;
+	"";&#13;
+} else {&#13;
+	reportContext.getMessage("NO_HISTORY", reportContext.getLocale())&#13;
+}</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <table id="435">
+            <property name="style">birt-body</property>
+            <property name="marginTop">0px</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Work Items</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">!showData;</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">WI_ID</property>
+                    <text-property name="displayName">WI_ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["WI_ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">SUMMARY</property>
+                    <text-property name="displayName">SUMMARY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SUMMARY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATE_GROUP</property>
+                    <text-property name="displayName">STATE_GROUP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATE_GROUP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DURATION</property>
+                    <text-property name="displayName">DURATION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DURATION"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">TIME_SPENT</property>
+                    <text-property name="displayName">TIME_SPENT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TIME_SPENT"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">STATE_GROUP_NAME</property>
+                    <text-property name="displayName">STATE_GROUP_NAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATE_GROUP_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATE_NAME</property>
+                    <text-property name="displayName">STATE_NAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATE_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="537">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">params["Columns"].value.indexOf("ID") == -1</expression>
+                    </structure>
+                </list-property>
+                <property name="width">0.75in</property>
+            </column>
+            <column id="538">
+                <property name="repeat">1</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">params["Columns"].value.indexOf("SUMMARY") == -1</expression>
+                    </structure>
+                </list-property>
+                <property name="width">2.6041666666666665in</property>
+            </column>
+            <column id="554">
+                <property name="repeat">1</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">params["Columns"].value.indexOf("STATE") == -1</expression>
+                    </structure>
+                </list-property>
+                <property name="width">0.8958333333333334in</property>
+            </column>
+            <column id="557">
+                <property name="repeat">1</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">params["Columns"].value.indexOf("PLANNED_WORK") == -1</expression>
+                    </structure>
+                </list-property>
+                <property name="width">0.8333333333333334in</property>
+            </column>
+            <column id="560">
+                <property name="repeat">1</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">params["Columns"].value.indexOf("COMPLETED_WORK") == -1</expression>
+                    </structure>
+                </list-property>
+                <property name="width">0.8854166666666666in</property>
+            </column>
+            <header>
+                <row id="436">
+                    <cell id="441">
+                        <label id="442">
+                            <property name="backgroundColor">#F3F3F3</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingTop">5pt</property>
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="ID">ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="443">
+                        <label id="444">
+                            <property name="backgroundColor">#F3F3F3</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingTop">5pt</property>
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="SUMMARY">Summary</text-property>
+                        </label>
+                    </cell>
+                    <cell id="552">
+                        <label id="561">
+                            <property name="backgroundColor">#F3F3F3</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingTop">5pt</property>
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text" key="STATE">State</text-property>
+                        </label>
+                    </cell>
+                    <cell id="555">
+                        <label id="562">
+                            <property name="backgroundColor">#F3F3F3</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingTop">5pt</property>
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text" key="PLANNED_WORK_HOURS">Planned Work</text-property>
+                        </label>
+                    </cell>
+                    <cell id="558">
+                        <label id="563">
+                            <property name="backgroundColor">#F3F3F3</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="paddingTop">5pt</property>
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">right</property>
+                            <text-property name="text" key="COMPLETED_WORK_HOURS">Completed Work</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="461">
+                    <property name="borderBottomColor">#F3F3F3</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <cell id="466">
+                        <data id="551">
+                            <property name="resultSetColumn">WI_ID</property>
+                            <list-property name="action">
+                                <structure>
+                                    <property name="linkType">hyperlink</property>
+                                    <expression name="uri" type="javascript">var serverURL = reportContext.getAppContext().get("SERVER_URL");&#13;
+if (serverURL == null) serverURL = "";&#13;
+serverURL + "#action=com.ibm.team.workitem.viewWorkItem&amp;id="+row["WI_ID"]</expression>
+                                    <property name="targetWindow">_self</property>
+                                </structure>
+                            </list-property>
+                        </data>
+                    </cell>
+                    <cell id="468">
+                        <data id="469">
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="resultSetColumn">SUMMARY</property>
+                        </data>
+                    </cell>
+                    <cell id="553">
+                        <text-data id="564">
+                            <expression name="valueExpr">var group = row["STATE_GROUP_NAME"];&#13;
+if (group) {&#13;
+	 group + " - " + row["STATE_NAME"];&#13;
+} else {&#13;
+	row["STATE_NAME"];&#13;
+}</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="556">
+                        <text-data id="565">
+                            <property name="textAlign">right</property>
+                            <expression name="valueExpr">BirtMath.round(row["DURATION"]/(60*60), 1)</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="559">
+                        <text-data id="566">
+                            <property name="textAlign">right</property>
+                            <expression name="valueExpr">BirtMath.round(row["TIME_SPENT"]/(60*60), 1)</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+        <text-data id="505">
+            <property name="style">birt-body</property>
+            <property name="fontSize">12px</property>
+            <property name="color">gray</property>
+            <property name="marginTop">40pt</property>
+            <property name="textAlign">left</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">!showMore;</expression>
+                </structure>
+            </list-property>
+            <expression name="valueExpr">var serverURL = reportContext.getAppContext().get("SERVER_URL");&#13;
+if (serverURL == null) {&#13;
+	serverURL = "";&#13;
+}&#13;
+&#13;
+result = serverURL + "#action=com.ibm.team.reports.viewReport&amp;reportUUID=workitems.WorkItemHistoryDetails";&#13;
+&#13;
+var projectArea = params["ProjectAreaName"].value;&#13;
+if ((projectArea) &amp;&amp; (projectArea.length > 0) &amp;&amp; (projectArea != "''")) {&#13;
+	result += "&amp;parameterName=ProjectAreaName&amp;parameterValue="+java.net.URLEncoder.encode(projectArea, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var teamArea = params["TeamAreaName"].value;&#13;
+if ((teamArea) &amp;&amp; (teamArea.length > 0) &amp;&amp; (teamArea != "''")) {&#13;
+	result += "&amp;parameterName=TeamAreaName&amp;parameterValue="+java.net.URLEncoder.encode(teamArea, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var category = params["Category"].value;&#13;
+if ((category) &amp;&amp; (category.length > 0) &amp;&amp; (category != "''")) {&#13;
+	result += "&amp;parameterName=Category&amp;parameterValue="+java.net.URLEncoder.encode(category, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var timeline = params["Timeline"].value;&#13;
+if ((timeline) &amp;&amp; (timeline.length > 0) &amp;&amp; (timeline != "''")) {&#13;
+	result += "&amp;parameterName=Timeline&amp;parameterValue="+java.net.URLEncoder.encode(timeline, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var interval = params["Interval"].value;&#13;
+if ((interval) &amp;&amp; (interval.length > 0) &amp;&amp; (interval != "''")) {&#13;
+	result += "&amp;parameterName=Interval&amp;parameterValue="+java.net.URLEncoder.encode(interval, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var type = params["Type"].value;&#13;
+if ((type) &amp;&amp; (type.length > 0) &amp;&amp; (type != "''")) {&#13;
+	result += "&amp;parameterName=Type&amp;parameterValue="+java.net.URLEncoder.encode(type, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var severity = params["Severity"].value;&#13;
+if ((severity) &amp;&amp; (severity.length > 0) &amp;&amp; (severity != "''")) {&#13;
+	result += "&amp;parameterName=Severity&amp;parameterValue="+java.net.URLEncoder.encode(severity, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var priority = params["Priority"].value;&#13;
+if ((priority) &amp;&amp; (priority.length > 0) &amp;&amp; (priority != "''")) {&#13;
+	result += "&amp;parameterName=Priority&amp;parameterValue="+java.net.URLEncoder.encode(priority, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var resolution = params["Resolution"].value;&#13;
+if ((resolution) &amp;&amp; (resolution.length > 0) &amp;&amp; (resolution != "''")) {&#13;
+	result += "&amp;parameterName=Resolution&amp;parameterValue="+java.net.URLEncoder.encode(resolution, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var stateGroup = params["StateGroup"].value;&#13;
+if ((stateGroup) &amp;&amp; (stateGroup.length > 0) &amp;&amp; (stateGroup != "''")) {&#13;
+	result += "&amp;parameterName=StateGroup&amp;parameterValue="+java.net.URLEncoder.encode(stateGroup, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var state = params["State"].value;&#13;
+if ((state) &amp;&amp; (state.length > 0) &amp;&amp; (state != "''")) {&#13;
+	result += "&amp;parameterName=State&amp;parameterValue="+java.net.URLEncoder.encode(state, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var tags = params["Tags"].value;&#13;
+if ((tags) &amp;&amp; (tags.length > 0) &amp;&amp; (tags != "''")) {&#13;
+	result += "&amp;parameterName=Tags&amp;parameterValue="+java.net.URLEncoder.encode(tags, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var time = params["Time"].value;&#13;
+if (time) {&#13;
+	result += "&amp;parameterName=Time&amp;parameterValue="+java.net.URLEncoder.encode(dateTimeFormat.format(time), "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+var position = params["Position"].value;&#13;
+result += "&amp;parameterName=Position&amp;parameterValue="+(position+50);&#13;
+&#13;
+var columns = params["Columns"].value;&#13;
+if ((columns) &amp;&amp; (columns.length > 0) &amp;&amp; (columns != "''")) {&#13;
+	result += "&amp;parameterName=Columns&amp;parameterValue="+java.net.URLEncoder.encode(columns, "UTF-8").replace("+", "%20");&#13;
+}&#13;
+&#13;
+"&lt;a class=\"workItemsLink\" href=\"" + result + "\">" + reportContext.getMessage("MORE", reportContext.getLocale())  + "&lt;/a>";</expression>
+            <property name="contentType">html</property>
+        </text-data>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">twistie-closed-light.gif</property>
+            <property name="libReference">shared.twistie-closed-light.gif</property>
+        </structure>
+        <structure>
+            <property name="name">twistie-open-light.gif</property>
+            <property name="libReference">shared.twistie-open-light.gif</property>
+        </structure>
+    </list-property>
+</report>

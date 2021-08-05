@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="jazz-team-process" name="Team process and Jazz" alt-style="css/swt.properties" style="css/t-links.css" path="overview/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Team process and Jazz" url="http://org.eclipse.ui.intro/showPage?id=jazz_eclipse_way" id="jazz_team_process_link">
+				<text>Learn about Jazz support for customizing your own team process and using the Eclipse Way development process.</text>
+			</link>	
+		</group>
+	</extensionContent>
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css" id="jazz_eclipse_way" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			<group id="page-content">
+	            <group id="content-header" label="Overview" filteredFrom="swt"></group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+	        
+				<group style-id="brochure">
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>Team process and Jazz</text>
+						</group>
+						<text>A challenge for every development team is balancing the demand for reliable and repeatable processes with the competing demands for speed, responsiveness and flexibility throughout the software development life cycle.  A heavy process will slow development and limit creativity, while insufficient process controls result in reduced quality and lack of focus.</text>
+						<text>The Jazz approach encourages teams to define development processes that meet the needs of their businesses.  The ability to define and formalize your development process will help your team automate many of the bookkeeping tasks that are very easy to forget or to do incorrectly but which are necessary to make a team successful.  To help you get started defining your own development processes, a formalized (in progress) version of The Eclipse Way, a development process recognized for its effectiveness in managing the various tensions.  The Eclipse Way evolved during the last decade and is based on the experiences of the Eclipse team.  During this evolution, the Eclipse team has been able to continually improve the balance between process and agility.</text>
+						<text style-id="subheading">The Eclipse Way</text>
+						<text>The Eclipse Way is divided into three major development phases; Warm-up, The Milestones, and the End Game.  </text>
+						<text>The Warm-up:</text>
+						<text>The Warm-up phase is a free spirited phase where new ideas come forward, the prior cycle is reviewed, and a rough release plan is drafted.  This initial release plan provides a context for early discussion and review with key stakeholders.  And the expectation is that it will change significantly.</text>
+						<img src="images/warmup.gif" alt="This diagram illustrates the warm-up phase" />
+						<text>The Milestones:</text>
+						<text>As part of the initial release plan the stakeholders agree on a set of milestones.  The number of milestones may vary somewhat, but each is divided into phases: plan, develop, and stabilize.  Within these major phases, each role has specific duties and expectations. To be successful, a milestone must be robust.  Its contents should be runable, testable and demo-able.  This last aspect is important because it allows stakeholders to assess progress not in abstract line items, but in demonstrable user tasks.</text>
+						<text>Within the milestone, there are regular, usually automated, nightly builds, integration builds.  The intent is that each and every build works, runs, and can be used directly.  Component teams obtain the latest builds as they continue their own development.  This approach results in a shared commitment to quality.</text>
+						<text>Milestone and integration builds are shared with the community of stakeholders so that they can engage and evaluate progress.  Each milestone includes documentation which outlines the latest additions so that community members will have a clearer understanding of where you are in the development process.</text>
+						<text>Milestone success is measured not only by the completion of functional line items, but also based on build success, defect rates, and feedback from the community.</text>
+						<img src="images/milestone.gif" alt="This diagram illustrates the milestone phase" />
+						<text>The End Game:</text>
+						<text>During this phase, development efforts shift from developing robust milestones, to shipping GA level product.</text>
+						<text>Development team members resist the desire to add new function and instead focus solely on defects and clean-up.</text>
+						<text>As this phase progresses, approval for additional changes become more and more difficult to obtain.  Any changes in this late stage must be critical to the release.</text>
+						<text>Release engineering tightens its control on integration builds.</text>
+						<text>Adherence to this approach helps ensure a high quality delivery, with effective process controls.</text>
+						<img src="images/endgame.gif" alt="This diagram illustrates the end-game phase" />
+
+					</group>	
+				</group>
+			</group>
+		</group>
+	</page>
+
+</introContent>

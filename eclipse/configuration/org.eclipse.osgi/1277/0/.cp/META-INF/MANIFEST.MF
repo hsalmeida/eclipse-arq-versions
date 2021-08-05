@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %Plugin.provider
+Bundle-Localization: plugin
+Bundle-Name: %Plugin.name
+Bundle-SymbolicName: com.ibm.welcome.common.rational.doc;singleton:=tr
+ ue
+Require-Bundle: com.ibm.ccl.welcome.bits;bundle-version="[1.0.0,9.0.0)
+ "
+Bundle-Version: 7.6.0.v20170829_1451
+Bundle-ManifestVersion: 2
+

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2011. All Rights Reserved.
+   
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<templates>
+
+<!-- Empty: ProcessSpecification -->
+<template
+	context="com.ibm.team.process.EmptySpecificationContextType"
+	description="%ProcessSettings_9"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProcessSpecification"
+	name="process specification">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;process-specification xmlns="http://com.ibm.team.process"&gt;
+	&lt;project-configuration&gt;
+		&lt;permissions&gt;
+		&lt;/permissions&gt;
+		&lt;behavior&gt;
+		&lt;/behavior&gt;
+	&lt;/project-configuration&gt;
+	&lt;team-configuration&gt;
+		&lt;permissions&gt;
+		&lt;/permissions&gt;
+		&lt;behavior&gt;
+		&lt;/behavior&gt;
+	&lt;/team-configuration&gt;
+&lt;/process-specification&gt;
+</template>
+
+<!-- Empty: TeamCustomization -->
+<template
+	context="com.ibm.team.process.EmptyCustomizationContextType"
+	description="%ProcessSettings_11"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.TeamCustomization"
+	name="team customization">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;team-customization xmlns="http://com.ibm.team.process"&gt;
+	&lt;permissions&gt;
+	&lt;/permissions&gt;
+	&lt;behavior&gt;
+	&lt;/behavior&gt;
+&lt;/team-customization&gt;
+</template>
+
+<!-- ProcessSpecification: Role Definitions -->	
+<template
+	context="com.ibm.team.process.ProcessSpecificationContextType"
+	description="%ProcessSettings_13"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.RoleDefinitions"
+	name="role-definitions">&lt;role-definitions&gt;
+		&lt;role-definition role-id="${role_id}" cardinality="${many}" description="${description}"/&gt;${cursor}
+	&lt;/role-definitions&gt;</template>
+
+<!-- ProcessSpecification: ProjectConfiguration -->
+<template
+	context="com.ibm.team.process.ProcessSpecificationContextType"
+	description="%ProcessSettings_15"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProjectConfiguration"
+	name="project-configuration">&lt;project-configuration&gt;
+		&lt;permissions&gt;
+			&lt;role id="${role_id}"&gt;
+				&lt;project-operation id="com.ibm.team.process.server.saveProjectArea"&gt;
+					&lt;action id="any"&gt;
+					&lt;/action&gt;
+				&lt;/project-operation&gt;
+			&lt;/role&gt;
+		&lt;/permissions&gt;
+		&lt;behavior&gt;
+		&lt;/behavior&gt;
+	&lt;/project-configuration&gt;</template>
+
+<!-- ProcessSpecification: TeamConfiguration -->
+<template
+	context="com.ibm.team.process.ProcessSpecificationContextType"
+	description="%ProcessSettings_17"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.TeamConfiguration"
+	name="team-configuration">&lt;team-configuration&gt;
+		&lt;permissions&gt;
+			${cursor}
+		&lt;/permissions&gt;
+		&lt;behavior&gt;
+		&lt;/behavior&gt;
+	&lt;/team-configuration&gt;</template>
+
+<!-- ProjectConfiguration: Initialization -->
+<template
+	context="com.ibm.team.process.ProjectConfigurationContextType"
+	description="%ProcessSettings_19"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProjectInitialization"
+	name="initialization">&lt;initialization&gt;
+			&lt;server-initialization&gt;
+				&lt;followup-actions&gt;
+					${cursor}
+				&lt;/followup-actions&gt;
+			&lt;/server-initialization&gt;
+			&lt;client-initialization&gt;
+				&lt;followup-actions&gt;
+				&lt;/followup-actions&gt;
+			&lt;/client-initialization&gt;
+		&lt;/initialization&gt;</template>
+
+<!-- ProjectConfiguration: Permissions -->
+<template
+	context="com.ibm.team.process.ProjectConfigurationContextType"
+	description="%ProcessSettings_21"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProjectPermissions"
+	name="permission">&lt;permissions&gt;
+			&lt;role id="${role_id}"&gt;
+				&lt;project-operation id="${operation_id}"&gt;
+					&lt;action id="${action_id}"&gt;
+					&lt;/action&gt;
+				&lt;/project-operation&gt;
+			&lt;/role&gt;
+		&lt;/permissions&gt;</template>
+
+<!-- ProjectConfiguration: Behavior -->
+<template
+	context="com.ibm.team.process.ProjectConfigurationContextType"
+	description="%ProcessSettings_23"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProjectBehavior"
+	name="behavior">&lt;behavior&gt;
+			&lt;role id="${role_id}"&gt;
+				&lt;project-operation id="${operation_id}"&gt;
+					&lt;preconditions&gt;
+						${cursor}
+					&lt;/preconditions&gt;
+					&lt;followup-actions&gt;
+					&lt;/followup-actions&gt;
+				&lt;/project-operation&gt;
+			&lt;/role&gt;
+		&lt;/behavior&gt;</template>
+
+<!-- Initialization: Client Initialization -->	
+<template
+	context="com.ibm.team.process.ProcessInitializationContextType"
+	description="%ProcessSettings_25"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ClientProjectAreaInitialization"
+	name="clientInitialization">&lt;client-initialization&gt;
+				&lt;followup-actions&gt;
+					&lt;followup-action id="${action_id}"
+						name="${display_name}"
+						description="${description}"&gt;
+						${cursor}
+					&lt;/followup-action&gt;
+				&lt;/followup-actions&gt;
+			&lt;/client-initialization&gt;</template>
+
+<!-- Initialization: Server Initialization -->	
+<template
+	context="com.ibm.team.process.ProcessInitializationContextType"
+	description="%ProcessSettings_27"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ServerProjectAreaInitialization"
+	name="serverInitialization">&lt;server-initialization&gt;
+				&lt;followup-actions&gt;
+					&lt;followup-action id="${action_id}"
+						name="${display_name}"
+						description="${description}"&gt;
+						${cursor}
+					&lt;/followup-action&gt;
+				&lt;/followup-actions&gt;
+			&lt;/server-initialization&gt;</template>
+
+<!-- TeamCustomization: Role Definitions -->	
+<template
+	context="com.ibm.team.process.TeamCustomizationContextType"
+	description="%ProcessSettings_29"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.RoleDefinitions"
+	name="role-definitions">&lt;role-definitions&gt;
+		&lt;role-definition role-id="${role_id}" cardinality="${many}" description="${description}"/&gt;${cursor}
+	&lt;/role-definitions&gt;</template>
+	
+<!-- PermissionsRole: PermissionsOperation -->
+<template 
+	context="com.ibm.team.process.PermissionsRoleContextType" 
+	description="%ProcessSettings_31" 
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.OperationPermissions" 
+	name="operation">&lt;operation id="${operation_id}"&gt;
+					&lt;action id="${action_id}"&gt;${cursor}
+					&lt;/action&gt;
+				&lt;/operation&gt;</template>
+
+<!-- Behavior: BehaviorRole -->
+<template 
+	context="com.ibm.team.process.BehaviorContextType" 
+	description="%ProcessSettings_33" 
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.BehaviorRole" 
+	name="role">&lt;role id="${role_id}"&gt;
+				&lt;operation id="${operation_id}"&gt;
+					&lt;preconditions&gt;${cursor}
+					&lt;/preconditions&gt;
+					&lt;followup-actions&gt;
+					&lt;/followup-actions&gt;
+				&lt;/operation&gt;
+			&lt;/role&gt;</template>
+
+<!-- Behavior: ChangeEvent -->
+<template 
+	context="com.ibm.team.process.BehaviorContextType" 
+	description="%ProcessSettings_35" 
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ChangeEvent" 
+	name="change-event">&lt;change-event id="${event_id}"&gt;
+				&lt;followup-actions&gt;
+					&lt;followup-action id="${action_id}"
+						name="${display_name}"
+						description="${description}"&gt;
+					&lt;/followup-action&gt;
+				&lt;/followup-actions&gt;
+			&lt;/change-event&gt;</template>
+
+<!-- BehaviorRole: BehaviorOperation -->
+<template 
+	context="com.ibm.team.process.BehaviorRoleContextType" 
+	description="%ProcessSettings_37" 
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.OperationBehavior" 
+	name="operation">&lt;operation id="${operation_id}"&gt;
+					&lt;preconditions&gt;${cursor}
+					&lt;/preconditions&gt;
+					&lt;followup-actions&gt;
+					&lt;/followup-actions&gt;
+				&lt;/operation&gt;</template>
+
+<!-- BehaviorOperation: Preconditions -->
+<template
+	context="com.ibm.team.process.BehaviorOperationContextType"
+	description="%ProcessSettings_39"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.Preconditions"
+	name="preconditions">&lt;preconditions&gt;
+						&lt;precondition id="${precondition_id}"
+							name="${display_name}"
+							overrulable="${true}"
+							description="${description}"&gt;${cursor}
+						&lt;/precondition&gt;
+					&lt;/preconditions&gt;</template>
+
+<!-- Preconditions: Precondition -->
+<template
+	context="com.ibm.team.process.PreconditionsContextType"
+	description="%ProcessSettings_41"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.Precondition"
+	name="precondition">&lt;precondition id="${precondition_id}"
+							name="${display_name}"
+							overrulable="${true}"
+							description="${description}"&gt;${cursor}
+						&lt;/precondition&gt;</template>
+
+<!-- BehaviorOperation: FollowupActions -->
+<template
+	context="com.ibm.team.process.BehaviorOperationContextType"
+	description="%ProcessSettings_43"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.FollowupActions"
+	name="followup-actions">&lt;followup-actions&gt;
+						&lt;followup-action id="${action_id}"
+							name="${display_name}"
+							description="${description}"&gt;${cursor}
+						&lt;/followup-action&gt;
+					&lt;/followup-actions&gt;</template>
+
+<!--  FollowupActions: FollowupAction -->
+<template
+	context="com.ibm.team.process.FollowupActionsContextType"
+	description="%ProcessSettings_45"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.FollowupAction"
+	name="followup-action">&lt;followup-action id="${participant_id}"
+							name="${display_name}"
+							description="${description}"&gt;${cursor}
+						&lt;/followup-action&gt;</template>
+
+<!-- TeamConfiguration: TimeLine -->
+<template
+	context="com.ibm.team.process.TeamConfigurationContextType"
+	description="%ProcessSettings_47"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.DevelopmentLine"
+	name="timeline">&lt;timeline id="${line_id}"&gt;
+			&lt;permissions&gt;
+				${cursor}
+			&lt;/permissions&gt;
+			&lt;behavior&gt;
+			&lt;/behavior&gt;
+		&lt;/timeline&gt;</template>
+
+<!-- TeamConfiguration: Permissions -->
+<template
+	context="com.ibm.team.process.TeamConfigurationContextType"
+	description="%ProcessSettings_49"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.TeamConfigurationPermissions"
+	name="permissions">&lt;permissions&gt;
+			&lt;role id="${role_id}"&gt;
+				&lt;operation id="${operation_id}"&gt;
+					&lt;action id="${action_id}"&gt;
+						${cursor}
+					&lt;/action&gt;
+				&lt;/operation&gt;
+			&lt;/role&gt;
+		&lt;/permissions&gt;</template>
+
+<!-- Team Configuration: Behavior -->
+<template
+	context="com.ibm.team.process.TeamConfigurationContextType"
+	description="%ProcessSettings_1"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.TeamConfigurationBehavior"
+	name="behavior">&lt;behavior&gt;
+			&lt;role id="${role_id}"&gt;
+				&lt;operation id="${operation_id}"&gt;
+					&lt;preconditions&gt;
+						${cursor}
+					&lt;/preconditions&gt;
+					&lt;followup-actions&gt;
+					&lt;/followup-actions&gt;
+				&lt;/operation&gt;
+			&lt;/role&gt;
+		&lt;/behavior&gt;</template>
+
+<!-- Timeline: Iteration -->
+<template
+	context="com.ibm.team.process.DevelopmentLineContextType"
+	description="%ProcessSettings_2"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.LeafIteration"
+	name="iteration">&lt;iteration id="${iteration_id}"&gt;
+				&lt;permissions&gt;
+					${cursor}
+				&lt;/permissions&gt;
+				&lt;behavior&gt;
+				&lt;/behavior&gt;
+			&lt;/iteration&gt;</template>
+
+<!-- Iteration: Permissions -->
+<template
+	context="com.ibm.team.process.IterationContextType"
+	description="%ProcessSettings_3"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.IterationPermissions"
+	name="permissions">&lt;permissions&gt;
+					&lt;role id="${role_id}"&gt;
+						&lt;operation id="${operation_id}"&gt;
+							&lt;action id="${action_id}"&gt;
+								${cursor}
+							&lt;/action&gt;
+						&lt;/operation&gt;
+					&lt;/role&gt;
+				&lt;/permissions&gt;</template>
+
+<!-- Iteration: Behavior -->
+<template
+	context="com.ibm.team.process.IterationContextType"
+	description="%ProcessSettings_4"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.IterationBehavior"
+	name="behavior">&lt;behavior&gt;
+					&lt;role id="${role_id}"&gt;
+						&lt;operation id="${operation_id}"&gt;
+							&lt;preconditions&gt;
+								${cursor}
+							&lt;/preconditions&gt;
+							&lt;followup-actions&gt;
+							&lt;/followup-actions&gt;
+						&lt;/operation&gt;
+					&lt;/role&gt;
+				&lt;/behavior&gt;</template>
+
+<!-- Iteration: Iteration -->
+<template
+	context="com.ibm.team.process.IterationContextType"
+	description="%ProcessSettings_5"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.Iteration"
+	name="iteration">&lt;iteration id="${iteration_id}"&gt;
+					&lt;permissions&gt;
+						${cursor}
+					&lt;/permissions&gt;
+					&lt;behavior&gt;
+					&lt;/behavior&gt;
+				&lt;/iteration&gt;</template>
+
+<!-- Empty: ProcessState -->
+<template
+	context="com.ibm.team.process.EmptyStateContextType"
+	description="%ProcessSettings_6"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.ProcessState"
+	name="process-state">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;process-state xmlns="http://com.ibm.team.process"&gt;
+	&lt;timeline id="${line_id}"&gt;
+		&lt;iteration id="${iteration_id}"&gt;
+			&lt;iteration id="${iteration_id_2}"&gt;
+				&lt;iteration id="${iteration_id_3}"&gt;
+				&lt;/iteration&gt;
+			&lt;/iteration&gt;
+		&lt;/iteration&gt;
+	&lt;/timeline&gt;
+&lt;/process-state&gt;</template>
+	
+<!-- ProcessState: Timeline State -->
+<template
+	context="com.ibm.team.process.ProcessStateContextType"
+	description="%ProcessSettings_7"
+	id="com.ibm.team.process.internal.ide.ui.settings.templates.DevelopmentLineState"
+	name="timeline">&lt;timeline id="${line_id}"&gt;
+		&lt;iteration id="${iteration_id}"&gt;
+				&lt;iteration id="${iteration_id_2}"&gt;
+				&lt;iteration id="${iteration_id_3}"&gt;
+			&lt;/iteration&gt;
+			&lt;/iteration&gt;
+		&lt;/iteration&gt;
+	&lt;/timeline&gt;</template>
+											
+</templates>

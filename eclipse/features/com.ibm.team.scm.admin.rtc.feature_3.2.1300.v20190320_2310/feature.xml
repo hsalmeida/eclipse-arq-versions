@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2009, 2014. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.scm.admin.rtc.feature"
+      label="%featureName"
+      version="3.2.1300.v20190320_2310"
+      provider-name="%providerName"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.team.scm.admin.common"
+         download-size="0"
+         install-size="0"
+         version="3.2.600.v20190108_2122"
+         unpack="false"/>
+
+</feature>

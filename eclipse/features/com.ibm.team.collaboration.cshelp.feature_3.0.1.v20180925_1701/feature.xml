@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.team.collaboration.cshelp.feature"
+      label="%featureName"
+      version="3.0.1.v20180925_1701"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.team.collaboration.cshelp"
+         download-size="0"
+         install-size="0"
+         version="3.0.1.v20180925_1701"
+         unpack="false"/>
+
+   <data
+   		 id="uadelivery.properties"
+   		 download-size="0"
+   		 install-size="0"/>
+
+</feature>

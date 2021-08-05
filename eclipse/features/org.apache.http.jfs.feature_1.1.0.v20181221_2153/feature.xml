@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2009, 2016. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+     
+ -->
+<feature
+      id="org.apache.http.jfs.feature"
+      label="Apache HTTP Feature"
+      version="1.1.0.v20181221_2153">
+
+   <requires>
+      <import feature="org.apache.commons.io.feature"/>
+   </requires>
+
+   <plugin
+         id="org.apache.http"
+         download-size="0"
+         install-size="0"
+         version="4.4.1.v20181221_2153"/>
+
+   <plugin
+         id="org.apache.http.client"
+         download-size="0"
+         install-size="0"
+         version="4.5.0.v20181221_2153"/>
+
+   <plugin
+         id="org.apache.james.mime4j"
+         download-size="0"
+         install-size="0"
+         version="0.6.0.v20120423"/>
+
+</feature>

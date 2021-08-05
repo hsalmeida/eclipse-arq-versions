@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<brochure id="dWIntro" title="developerWorks" >
+	<page id="dw_page1" title="developerWorks" icon="images/topiclabel/wr_devworks16.gif"/>
+	<page id="dw_page2" title="developerWorks Rational zone" icon="images/topiclabel/wr_devworksRtl16.gif"/>
+	<page id="dw_page3" title="developerWorks community" icon="images/topiclabel/wr_devworksComm16.gif"/>
+	<page id="dw_page4" title="alphaWorks" icon="images/topiclabel/wr_alphaworks16.gif"/>
+	<page id="dw_page5" title="PartnerWorld" icon="images/topiclabel/wr_partnerwrld16.gif"/>
+</brochure>

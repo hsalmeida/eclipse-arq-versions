@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.ccl.feedreader.feature"
+      label="FeedReader Feature"
+      version="1.0.6.v20141107_1924"
+      provider-name="IBM">
+
+   <description url="">
+      %General
+   </description>
+
+   <copyright url="">
+      %Copyright
+   </copyright>
+
+   <license url="">
+      %License
+   </license>
+
+   <plugin
+         id="com.ibm.ccl.feedreader"
+         download-size="0"
+         install-size="0"
+         version="3.0.4.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.parser"
+         download-size="0"
+         install-size="0"
+         version="2.6.1.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.common"
+         download-size="0"
+         install-size="0"
+         version="3.9.4.v20141107_1924"
+         unpack="false"/>
+
+   <data
+         id="uadelivery.properties"
+         download-size="0"
+         install-size="0"/>
+
+</feature>

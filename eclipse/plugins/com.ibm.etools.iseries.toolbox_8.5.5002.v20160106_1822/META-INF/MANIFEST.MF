@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ClassPath: runtime/iseriescomm.jar,runtime/iseriestoolbox.jar,r
+ untime/iseriesut.jar,runtime/jt400.jar,runtime/util400.jar,runtime/ju
+ i400.jar,runtime/jt400mriall.jar
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: IBM
+Bundle-Localization: plugin
+Bundle-Name: %Plugin.Name
+Bundle-SymbolicName: com.ibm.etools.iseries.toolbox; singleton:=true
+Require-Bundle: org.eclipse.core.runtime
+Bundle-Activator: com.ibm.etools.iseries.toolbox.ToolboxPlugin
+Export-Package: .,com.ibm.as400.access,com.ibm.as400.access.list,com.i
+ bm.as400.data,com.ibm.as400.micro,com.ibm.as400.resource,com.ibm.as40
+ 0.security,com.ibm.as400.security.auth,com.ibm.as400.ui.framework,com
+ .ibm.as400.ui.framework.java,com.ibm.as400.ui.util,com.ibm.as400.util
+ ,com.ibm.as400.util.commtrace,com.ibm.as400.vaccess,com.ibm.etools.is
+ eries.comm,com.ibm.etools.iseries.comm.filters,com.ibm.etools.iseries
+ .comm.interfaces,com.ibm.etools.iseries.toolbox,com.ibm.etools.iserie
+ s.ui,com.ibm.etools.iseries.util,com.ibm.etools.iseries.util.evfparse
+ r,com.ibm.spinner,com.ibm.ui.framework,utilities
+Bundle-Version: 8.5.5002.v20160106_1822
+Bundle-ManifestVersion: 2
+
+

@@ -1,0 +1,224 @@
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2009, 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<!--
+
+This example demonstrates a very simple ant build that uses the jazz build toolkit 
+and jazz scm.
+
+-->
+
+<project name="sample" default="all">
+
+	<!-- We've made "bill" the user that runs JBE and runs the build. Typically, a "build" user is created in the 
+	     repository and used here. Ensure that the user has the build system or developer client access license. -->
+	<property name="userId" value="bill" />
+	<property name="password" value="bill" />
+	<property name="datadir" value="data" />
+	<property name="workingDir" value="${basedir}/.."/>
+	<property name="build.output" value="${workingDir}/bin" />
+	<property name="compileLog" value='"${workingDir}/compilelog.xml"'/>
+
+	<target name="all" depends="
+		fetchCodeAndBuild, 
+		invokeTests">
+	</target>
+
+	<target name="fetchCodeAndBuild">
+		<!-- Publish some links. -->
+		<startBuildActivity label="publishing links"
+		                    autoComplete="true"
+		                    buildResultUUID="${buildResultUUID}"
+		                    repositoryAddress="${repositoryAddress}"
+		                    userId="${userId}"
+		                    password="${password}" />
+		
+		<linkPublisher buildResultUUID="${buildResultUUID}"
+		               verbose="true"
+		               label="Jazz.net"
+		               url="http://jazz.net"
+		               repositoryAddress="${repositoryAddress}"
+		               userId="${userId}"
+		               password="${password}" />
+
+		<startBuildActivity label="compiling"
+		                    activityIdProperty="compileActivityId"
+		                    autoComplete="true"
+		                    buildResultUUID="${buildResultUUID}"
+		                    repositoryAddress="${repositoryAddress}"
+		                    userId="${userId}"
+		                    password="${password}" />
+
+		<property name="build.debuglevel" value="lines,vars,source"/>
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+		<mkdir dir="${build.output}"/>
+		<property name="classpath" value="${workingDir}/releng/compiler/junit.jar"/>
+
+		<javac destdir="${build.output}"
+		       failonerror="true"
+		       debug="on"
+		       target="1.5"
+			   source="1.5"
+		       classpath="${classpath}"
+		       debuglevel="2"
+		       includes="**/*.java, *.java"
+		       srcdir="${workingDir}">
+			<compilerarg line="-log ${compileLog}"/>
+		</javac>
+
+		<startBuildActivity label="publishing the compile results"
+                parentActivityId="${compileActivityId}"
+                autoComplete="true"
+                buildResultUUID="${buildResultUUID}"
+                repositoryAddress="${repositoryAddress}"
+                userId="${userId}"
+                password="${password}" />
+
+		<jdtCompileLogPublisher 
+				buildResultUUID="${buildResultUUID}"
+                repositoryAddress="${repositoryAddress}"
+                userId="${userId}"
+                password="${password}"
+                filePath="${workingDir}/compilelog.xml" />
+
+		<startBuildActivity label="publishing the compiled binaries"
+                 parentActivityId="${compileActivityId}"
+                 autoComplete="true"
+                 buildResultUUID="${buildResultUUID}"
+                 repositoryAddress="${repositoryAddress}"
+                 userId="${userId}"
+                 password="${password}" />
+
+		<jar jarfile="${workingDir}/junitexamples-${buildLabel}.jar">
+			<fileset dir="${build.output}">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+
+		<artifactFilePublisher buildResultUUID="${buildResultUUID}"
+               repositoryAddress="${repositoryAddress}"
+               userId="${userId}"
+               password="${password}"
+               verbose="true"
+               filePath="${workingDir}/junitexamples-${buildLabel}.jar"
+               label="JUnit Examples JAR" />
+	</target>
+
+	<target name="invokeTests">
+		<startBuildActivity label="testing"
+	        activityIdProperty="junitActivityId"
+	        autoComplete="true"
+	        buildResultUUID="${buildResultUUID}"
+	        repositoryAddress="${repositoryAddress}"
+	        userId="${userId}"
+	        password="${password}" />
+
+		<mkdir dir="${workingDir}/test.results"/>
+
+		<startBuildActivity label="running the tests"
+         	parentActivityId="${junitActivityId}"
+         	autoComplete="true"
+         	buildResultUUID="${buildResultUUID}"
+         	repositoryAddress="${repositoryAddress}"
+         	userId="${userId}"
+         	password="${password}" />
+
+		<!-- Just a little delay to make the nest activities look better in
+		     the build result editor -->
+		<sleep seconds="5"/>
+		<echo message="workingDir=${workingDir}" />
+		<junit showoutput="true" fork="false" failureproperty="testFailed">
+			<jvmarg value="${bootVMArgument}"/>
+			<jvmarg value="${outVMArgument}"/>
+			<formatter type="xml" />
+			<classpath>
+				<pathelement path="${build.output}" />
+				<pathelement path="${workingDir}/releng/compiler/junit.jar" />
+			</classpath>
+			<test name="com.ibm.team.junit.examples.AllTests"
+			      todir="${workingDir}/test.results"
+			      outfile="junit.samples.AllTests.results" />
+		</junit>
+
+		<startBuildActivity label="publishing the test results"
+             	parentActivityId="${junitActivityId}"
+             	autoComplete="true"
+             	buildResultUUID="${buildResultUUID}"
+             	repositoryAddress="${repositoryAddress}"
+             	userId="${userId}"
+             	password="${password}" />
+
+		<junitResultPublisher
+			buildResultUUID="${buildResultUUID}"
+		 	repositoryAddress="${repositoryAddress}"
+		 	userId="${userId}"
+		 	password="${password}"
+		 	filePath="${workingDir}/test.results/junit.samples.AllTests.results.xml"
+	 		verbose="true"
+	 		failOnError="false"	 	
+		/>
+	</target>
+
+	<taskdef name="artifactFilePublisher"
+	         classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher"
+	         classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="buildResultPublisher"
+	         classname="com.ibm.team.build.ant.task.BuildResultPublisherTask" />
+
+	<taskdef name="filePublisher"
+	         classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher"
+	         classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher"
+	         classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="junitResultPublisher"
+	        classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask"/>
+
+	<taskdef name="linkPublisher"
+	         classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher"
+	         classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="completeTeamBuild"
+	         classname="com.ibm.team.build.ant.task.CompleteBuildTask" />
+
+	<taskdef name="startTeamBuild"
+	         classname="com.ibm.team.build.ant.task.StartBuildTask" />
+
+	<taskdef name="getNextTeamBuildRequest"
+	         classname="com.ibm.team.build.ant.task.GetNextBuildRequestTask" />
+
+	<taskdef name="requestTeamBuild"
+	         classname="com.ibm.team.build.ant.task.RequestBuildTask" />
+
+	<taskdef name="teamAccept"
+	         classname="com.ibm.team.build.ant.task.TeamAcceptTask">
+	</taskdef>
+
+	<taskdef name="teamFetch"
+	         classname="com.ibm.team.build.ant.task.TeamFetchTask">
+	</taskdef>
+
+	<taskdef name="workItemPublisher"
+	         classname="com.ibm.team.build.ant.task.WorkItemPublisherTask">
+	</taskdef>
+
+	<taskdef name="startBuildActivity"
+	         classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity"
+	         classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+</project>

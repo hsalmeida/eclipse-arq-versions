@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2009, 2014. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.workitem.rcp.rtc.feature"
+      label="%featureName"
+      version="3.1.2000.v20190321_0118"
+      provider-name="%providerName"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.team.collaboration.process.rcp.ui"
+         download-size="0"
+         install-size="0"
+         version="3.1.700.v20190202_0205"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.collaboration.workitem.rcp.ui"
+         download-size="0"
+         install-size="0"
+         version="3.1.900.v20190202_0205"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.workitem.rcp.core"
+         download-size="0"
+         install-size="0"
+         version="3.1.1700.v20190202_0205"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.team.workitem.rcp.ui"
+         download-size="0"
+         install-size="0"
+         version="3.1.2000.v20190202_0205"
+         unpack="false"/>
+
+</feature>

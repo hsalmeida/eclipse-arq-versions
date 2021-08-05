@@ -1,0 +1,510 @@
+body { 
+	margin: 0em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: .8em;
+	background-color: #FFF;
+	background-position: top left;*/
+	}
+
+div.page {
+	/*background-color: #efefef;*/
+	}
+	
+div#container {
+	width: 100%;
+	padding: 0px;
+	/*border: 1px dashed #4C7BC2;
+	background-color: #E0E085;*/
+	}
+	
+span.h1 {
+	font-size: 1.8em;
+	}
+
+pre {
+	padding: 5px;
+	width: 100%;
+	background-color: #ddd;
+	font-family: courier;
+	font-size: .7em;
+	overflow: scroll;
+	}
+	
+div#left-side {
+	width: 47%;
+	float: left;
+	padding: 10px 0px 10px 20px;
+	text-align:center;
+	/*border: 1px dashed #0000ff;
+	background-color: #D6A55C;*/
+}
+
+div#right-side {
+	width: 47%;
+	float: right;
+	padding: 10px 20px 10px 0px;
+	text-align:right;
+	/*border: 1px dashed #ff0000;
+	background-color: #83CF72;*/
+	}
+	
+
+div.section-box-hidden {
+	display: none;
+	position: fixed;
+	top: -10;
+	left: -10;
+	}
+	
+div.section-box-hidden div#section-box-expand-link {
+	display: none;
+	}
+
+div#right-side div.section-box {
+	margin: 0px 0px 15px 0px;
+	} 
+
+div#left-side div.section-box {
+	margin: 0px 0px 15px 0px;
+	} 
+
+div.section-box {
+	display: block;
+	padding: 5px 10px 0px 5px;
+	border: 0px solid #dedede;
+	background-color: #fff;
+	background-image: url(../images/grey_callout.gif);
+	background-position: top right;
+	background-repeat: repeat-y;
+	position: relative;
+	text-align: left;
+	}
+
+div.section-box-content, div.section-box-content-expanded {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	border: 0px solid #ccc;
+	height: auto;
+	overflow: hidden;
+	}
+
+div.section-box-content * div#top-right		{ display: none; }
+div.section-box-content * div#bottom-left 	{ display: none; }
+div.section-box-content * div#bottom-right 	{ display: none; }
+	
+div.active-quadrant {
+	border: 0px solid #C00;
+}
+div.hidden-quadrant {
+	display: none;
+}
+
+
+div.section-box-content #page-content a p {
+	border: 0px solid #00f;
+	}
+
+div.section-box-content #page-content p .page-description {
+	position: relative;
+	left: 0px;
+	top: 5px;
+	margin: 0;
+	font-size: .9em;
+	}
+	
+span.subheading {
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+
+div#group_1 span.text {
+	color: #CC3333;
+	font-weight: bold;
+}
+
+div.more-link {
+	display: block;
+	border: 0px dashed #E00;
+	padding: 2px 12px 2px 2px;
+	margin: 0;
+	text-align: right;
+	position: relative;
+	top: -1px;
+	z-index: 100;
+	}
+
+div.more-link a {
+	font-weight: normal;
+	/*padding-left: 20px;
+	background-image: url(../images/tb_16_go_forward_n.gif);
+	background-repeat: no-repeat;
+	background-position: top left;*/
+	color: #00517d;
+	color: #00507C;
+	}
+
+div.more-link a:hover {
+	text-decoration: underline;
+}	
+
+/* For the main section titles in each box */
+div.section-box-content div#page-content div#content-header,
+div.section-box-content-expanded div#page-content div#content-header {
+	padding: 0;
+	margin: 0;
+	margin-left: 10px;
+	border: 0px solid #00f;
+	}
+
+div.section-box-content div#page-content div#content-header H4 .div-label,
+div.section-box-content-expanded div#page-content div#content-header H4 .div-label {
+	line-height: 1.2em;
+	font-size: 1.5em;
+	border: 0px solid #0f0;
+	margin: 0;
+	padding: 0;
+	}
+
+div.section-box-content #page-content #content-header h4,
+div.section-box-content-expanded #page-content #content-header h4 {
+	margin-left: 0px;
+	border: 0px solid #f00;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	}
+
+/* 
+For handling the different sizes for Web resources styles when they are on the
+new root page.
+*/
+div.section-box-content * .webresources-category {
+	font-size: 1em;
+}
+
+.rss-feed-link a {
+	font-size: .8em;
+}
+
+
+/* Page content quadrants. Page content is placed in four quadrants.
+ * Upper pair is separated from the bottom pair with a divider
+ * to ensure bottom pair is aligned even with the uneven content
+ * in the upper pair.
+ */
+
+#page-content {
+	border: 0px dashed #0f0;
+	}
+	
+#page-content #top-left {
+  border: none; float: none; margin: 0px; padding: 0px; width: 100%;
+  clear: both;
+}
+#page-content #top-right {
+  border: none; float: none; margin: 0px; padding: 0px; width: 100%;
+  clear: both;
+}
+
+/* top-bottom divider - runs the entire width to ensure
+ * bottom boxes start at the same y
+ */
+#page-content #content-divider {
+  border: none; float: none; margin: 0; padding: 0px; width: 100%;
+  clear: both;
+}
+
+#page-content #bottom-left {
+  border: none; float: none; margin: 0px; padding: 0px; width: 100%;
+  clear: both;
+}
+#page-content #bottom-right {
+  border: none; float: none; margin: 0px; padding: 0px; width: 100%;
+  clear: both;
+}
+
+/* END QUADRANTS */
+
+div#top-left div.content-group,
+div#top-right div.content-group,
+div#bottom-left div.content-group,
+div#bottom-right div.content-group {
+	border: 0px solid #bbb;
+	margin: 0em;
+	text-align: left;
+	padding: 0px;
+	}
+	
+div.section-box-content #page-content, div.section-box-content-expanded #page-content {
+	float : none;
+	clear : both;
+	text-align : center;
+	position : relative;
+	top : 0px;
+	margin-bottom: 0px;
+	z-index : 10;
+}
+
+	
+div#expand-link-div {
+	position: absolute;
+	left: 5px;
+	bottom: -50px;
+	}
+
+	
+div#content-header {
+	}
+
+/* For the main page content's title */
+#content-header H4 .div-label {
+	}
+
+#content-header h4 {
+	}
+
+.content-link .link-label {
+	}
+
+
+
+
+/* OVERRIDING THE MAIN NAVIGATION */
+
+#navigation-links {
+	background-image: url(../graphics/contentpage/mi_banner.jpg);
+}
+
+#navigation-links #page-links a#overview img { 
+	background-image : url(../graphics/icons/ctool/ov_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#firststeps img { 
+	background-image : url(../graphics/icons/ctool/fs_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#tutorials img { 
+	background-image : url(../graphics/icons/ctool/tu_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#samples img { 
+	background-image : url(../graphics/icons/ctool/sa_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#whatsnew img { 
+	background-image : url(../graphics/icons/ctool/wn_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#migrate img { 
+	background-image : url(../graphics/icons/ctool/mi_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#webresources img { 
+	background-image : url(../graphics/icons/ctool/wr_nav_32.gif); 
+	top : 10px;
+	left : 9px;
+}
+
+#navigation-links #page-links a#overview:hover img,
+#navigation-links #page-links a#overview:focus img,
+#navigation-links #page-links a#overview:active img { 
+	background-image : url(../graphics/icons/ctool/ov_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#firststeps:hover img,
+#navigation-links #page-links a#firststeps:focus img,
+#navigation-links #page-links a#firststeps:active img { 
+	background-image : url(../graphics/icons/ctool/fs_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#tutorials:hover img,
+#navigation-links #page-links a#tutorials:focus img,
+#navigation-links #page-links a#tutorials:active img { 
+	background-image : url(../graphics/icons/ctool/tu_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#samples:hover img,
+#navigation-links #page-links a#samples:focus img,
+#navigation-links #page-links a#samples:active img { 
+	background-image : url(../graphics/icons/ctool/sa_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#whatsnew:hover img,
+#navigation-links #page-links a#whatsnew:focus img,
+#navigation-links #page-links a#whatsnew:active img { 
+	background-image : url(../graphics/icons/ctool/wn_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#migrate:hover img,
+#navigation-links #page-links a#migrate:focus img,
+#navigation-links #page-links a#migrate:active img { 
+	background-image : url(../graphics/icons/ctool/mi_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a#webresources:hover img,
+#navigation-links #page-links a#webresources:focus img,
+#navigation-links #page-links a#webresources:active img { 
+	background-image : url(../graphics/icons/ctool/wr_nav_hover.gif); 
+	top : 2px; 
+	left : 0px;
+}
+
+#navigation-links #page-links a:hover#overview .link-label,
+#navigation-links #page-links a:focus#overview .link-label,
+#navigation-links #page-links a:active#overview .link-label, 
+#navigation-links #page-links a:hover#firststeps .link-label,
+#navigation-links #page-links a:focus#firststeps .link-label,
+#navigation-links #page-links a:active#firststeps .link-label, 
+#navigation-links #page-links a:hover#tutorials .link-label,
+#navigation-links #page-links a:focus#tutorials .link-label,
+#navigation-links #page-links a:active#tutorials .link-label,
+#navigation-links #page-links a:hover#samples .link-label,
+#navigation-links #page-links a:focus#samples .link-label,
+#navigation-links #page-links a:active#samples .link-label,
+#navigation-links #page-links a:hover#whatsnew .link-label,
+#navigation-links #page-links a:focus#whatsnew .link-label,
+#navigation-links #page-links a:active#whatsnew .link-label,
+#navigation-links #page-links a:hover#migrate .link-label,
+#navigation-links #page-links a:focus#migrate .link-label,
+#navigation-links #page-links a:active#migrate .link-label, 
+#navigation-links #page-links a:hover#webresources .link-label,
+#navigation-links #page-links a:focus#webresources .link-label,
+#navigation-links #page-links a:active#webresources .link-label {
+	display: inline;
+}
+
+#navigation-links #page-links a:hover#overview,
+#navigation-links #page-links a:focus#overview,
+#navigation-links #page-links a:active#overview,
+#navigation-links #page-links a:hover#firststeps,
+#navigation-links #page-links a:focus#firststeps,
+#navigation-links #page-links a:active#firststeps, 
+#navigation-links #page-links a:hover#tutorials,
+#navigation-links #page-links a:focus#tutorials,
+#navigation-links #page-links a:active#tutorials,
+#navigation-links #page-links a:hover#samples,
+#navigation-links #page-links a:focus#samples,
+#navigation-links #page-links a:active#samples,
+#navigation-links #page-links a:hover#whatsnew,
+#navigation-links #page-links a:focus#whatsnew,
+#navigation-links #page-links a:active#whatsnew,
+#navigation-links #page-links a:hover#migrate,
+#navigation-links #page-links a:focus#migrate,
+#navigation-links #page-links a:active#migrate,
+#navigation-links #page-links a:hover#webresources,
+#navigation-links #page-links a:focus#webresources,
+#navigation-links #page-links a:active#webresources {
+	background-image: url(../graphics/icons/ctool/nav_midhov.gif);
+}
+
+#navigation-links #page-links a:hover#overview .link-extra-div,
+#navigation-links #page-links a:focus#overview .link-extra-div,
+#navigation-links #page-links a:active#overview .link-extra-div, 
+#navigation-links #page-links a:hover#firststeps .link-extra-div,
+#navigation-links #page-links a:focus#firststeps .link-extra-div,
+#navigation-links #page-links a:active#firststeps .link-extra-div, 
+#navigation-links #page-links a:hover#tutorials .link-extra-div,
+#navigation-links #page-links a:focus#tutorials .link-extra-div,
+#navigation-links #page-links a:active#tutorials .link-extra-div,
+#navigation-links #page-links a:hover#samples .link-extra-div,
+#navigation-links #page-links a:focus#samples .link-extra-div,
+#navigation-links #page-links a:active#samples .link-extra-div,
+#navigation-links #page-links a:hover#whatsnew .link-extra-div,
+#navigation-links #page-links a:focus#whatsnew .link-extra-div,
+#navigation-links #page-links a:active#whatsnew .link-extra-div,
+#navigation-links #page-links a:hover#migrate .link-extra-div,
+#navigation-links #page-links a:focus#migrate .link-extra-div,
+#navigation-links #page-links a:active#migrate .link-extra-div, 
+#navigation-links #page-links a:hover#webresources .link-extra-div,
+#navigation-links #page-links a:focus#webresources .link-extra-div,
+#navigation-links #page-links a:active#webresources .link-extra-div {
+	display: inline;
+}
+
+#navigation-links #page-links a#overview:hover .link-extra-div,
+#navigation-links #page-links a#overview:focus .link-extra-div,
+#navigation-links #page-links a#overview:active .link-extra-div,
+#navigation-links #page-links a#whatsnew:hover .link-extra-div,
+#navigation-links #page-links a#whatsnew:focus .link-extra-div,
+#navigation-links #page-links a#whatsnew:active .link-extra-div,
+#navigation-links #page-links a#tutorials:hover .link-extra-div,
+#navigation-links #page-links a#tutorials:focus .link-extra-div,
+#navigation-links #page-links a#tutorials:active .link-extra-div,
+#navigation-links #page-links a#samples:hover .link-extra-div,
+#navigation-links #page-links a#samples:focus .link-extra-div,
+#navigation-links #page-links a#samples:active .link-extra-div,
+#navigation-links #page-links a#migrate:hover .link-extra-div,
+#navigation-links #page-links a#migrate:focus .link-extra-div,
+#navigation-links #page-links a#migrate:active .link-extra-div,
+#navigation-links #page-links a#webresources:hover .link-extra-div,
+#navigation-links #page-links a#webresources:focus .link-extra-div,
+#navigation-links #page-links a#webresources:active .link-extra-div,
+#navigation-links #page-links a#firststeps:hover .link-extra-div,
+#navigation-links #page-links a#firststeps:focus .link-extra-div,
+#navigation-links #page-links a#firststeps:active .link-extra-div {
+	display: block;
+	position: absolute;
+	right : -2px;
+	top : 2px;
+	width : 2px;
+	height : 64px;
+	background-image: url(../graphics/icons/ctool/nav_rightedgehov.gif);
+	background-repeat: no-repeat;
+}
+
+
+/*
+ *
+ * OVERRIDE IMPORTANCE HIGHLIGHTS
+ *
+ */
+body .importance-low,
+body .importance-new,
+body #overview .importance-high,
+body #overview .importance-medium,
+body #tutorials .importance-high,
+body #samples .importance-high,
+body #tutorials .importance-medium,
+body #samples .importance-medium,
+body #whatsnew .importance-high,
+body #firststeps .importance-high,
+body #whatsnew .importance-medium,
+body #firststeps .importance-medium,
+body #webresources .importance-high,
+body #migrate .importance-high,
+body #webresources .importance-medium,
+body #migrate .importance-medium,
+.importance-callout {
+	background-color: transparent;
+	background-image: none;
+}
+
+/* Hide additional page-links content shown on root-like pages */ 
+ body #navigation-links #page-links a img.content-img, #navigation-links #page-links a p {
+      display:none;
+   }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	
+	<extensionContent id="my_home_page" name="Rational home page" path="overview/@">
+		<group></group>	
+	</extensionContent>
+	<!-- 
+	
+     	 This page is designed to act like a Home page for your Welcome.
+	
+	     1. It requires features available in 3.4. 
+	     
+	     2. The page uses the WelcomeData.xml to display the Top-Left quadrant
+	     content in the section box.
+
+	     3. To use it as your home page, set the following variables in your product plug-in's
+	     plugin_customization.ini:
+	     
+	        # Default Welcome start page, other than root
+	        org.eclipse.ui.intro/INTRO_START_PAGE = my_home_page
+	     
+	        # Default Welcome start page, other than root
+	        org.eclipse.ui.intro/INTRO_HOME_PAGE = my_home_page
+	     
+	     -->
+	
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css,css/my_home.css" id="my_home_page" style-id="page">
+		<head src="my_home_head.html" />
+		<title style-id="intro-header">Welcome</title> 
+		<group id="extra-group1" filteredFrom="swt"/>
+		<!--<include path="overview/navigation-links"/>-->
+		<!-- navigation -->
+        <group id="navigation-links" filteredFrom="swt">
+            <group id="page-links" computed="true">
+            </group>
+            <group id="action-links">
+                <link url="http://org.eclipse.ui.intro/switchToLaunchBar" label="Workbench" id="workbench" style-id="$high-contrast$">
+                    <text>Go to the workbench</text>
+                </link>
+            </group>
+        </group>
+		<group id="page-content">
+			<group id="content-header" label="Welcome" filteredFrom="swt"></group>
+		    <text style-id="page-title" id="page-title" filteredFrom="html">Welcome</text>
+            <group id="container">			
+				<group id="left-side" style-id="left-side">	        
+					<group style-id="section-box" id="section-overview">
+						<group style-id="section-box-content">
+							<include path="overview/page-content" merge-style="true" />							
+						</group>
+						<group style-id="more-link">
+							<html src="my_home_more-link-overview.html" type="inline"></html>
+						</group>
+					</group>
+					<group style-id="section-box" id="section-whatsnew">
+						<group style-id="section-box-content">
+							<include path="whatsnew/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+							<html src="my_home_more-link-whatsnew.html" type="inline"></html>
+						</group>
+					</group>
+					<group style-id="section-box" id="section-migrate">
+						<group style-id="section-box-content">
+							<include path="migrate/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+								<html src="my_home_more-link-migrate.html" type="inline"></html>
+						</group>
+					</group>
+					<group style-id="section-box" id="section-webresources">
+						<group style-id="section-box-content">
+							<include path="webresources/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+								<html src="my_home_more-link-webresources.html" type="inline"></html>
+						</group>
+					</group>
+				</group>
+				<group id="right-side" style-id="right-side">	        
+					<group style-id="section-box" id="section-firststeps">
+						<group style-id="section-box-content">
+							<include path="firststeps/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+							<html src="my_home_more-link-firststeps.html" type="inline"></html>
+						</group>
+					</group>
+					<group style-id="section-box" id="section-tutorials">
+						<group style-id="section-box-content">
+							<include path="tutorials/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+							<html src="my_home_more-link-tutorials.html" type="inline"></html>
+						</group>
+					</group>
+					<group style-id="section-box" id="section-samples">
+						<group style-id="section-box-content">
+							<include path="samples/page-content" merge-style="true" />
+						</group>
+						<group style-id="more-link">
+							<html src="my_home_more-link-samples.html" type="inline"></html>
+						</group>
+					</group>
+				</group>
+			</group>
+		</group>
+	</page>
+	
+	<page id="my_page_1">
+		<group id="group_1">
+			<text>Some text being pulled in from another page, using "include"</text>
+		</group>
+	</page>
+	
+</introContent>

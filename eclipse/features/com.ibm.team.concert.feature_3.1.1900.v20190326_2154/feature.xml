@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2010, 2014. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.concert.feature"
+      label="%featureName"
+      version="3.1.1900.v20190326_2154"
+      provider-name="%providerName"
+      plugin="com.ibm.team.concert"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.team.concert"
+         download-size="0"
+         install-size="0"
+         version="3.1.1900.v20190326_2154"
+         unpack="false"/>
+
+   <data
+         id="uadelivery.properties"
+         download-size="0"
+         install-size="0"/>
+
+</feature>

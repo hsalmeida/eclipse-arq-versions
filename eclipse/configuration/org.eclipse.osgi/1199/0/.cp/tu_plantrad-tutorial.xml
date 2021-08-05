@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2011. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="plantrad_tutorial" name="Plan a traditional project tutorial" alt-style="css/swt.properties" style="css/t-links.css" path="tutorials/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Plan a traditional project" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.concert.tutorial.doc/topics/tut_traditional_plan_abstract.html" id="plantrad_tutorial_link">
+				<text>This tutorial introduces the concepts and tasks that support traditional, or formal, project planning.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

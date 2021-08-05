@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.ibm.team.filesystem.setup.junit;singleton:=tr
+ ue
+Export-Package: com.ibm.team.filesystem.setup.junit.constants,com.ibm.
+ team.filesystem.setup.junit.internal
+Bundle-Name: %bundleName
+Bundle-Version: 3.0.200.v20190110_0136
+Bundle-ClassPath: com_ibm_team_filesystem_setup_junit.jar
+Bundle-Localization: plugin
+Require-Bundle: com.ibm.team.foundation.setup.client,com.ibm.team.repo
+ sitory.client,com.ibm.team.repository.common,com.ibm.team.process.cli
+ ent,com.ibm.team.process.common,com.ibm.team.workitem.client,com.ibm.
+ team.workitem.common,com.ibm.team.scm.client,com.ibm.team.scm.common,
+ com.ibm.team.workitem.setup.client,com.ibm.team.workitem.setup.junit,
+ org.eclipse.core.resources,org.eclipse.core.runtime,com.ibm.team.file
+ system.client,com.ibm.team.filesystem.common,com.ibm.team.filesystem.
+ rcp.core,com.ibm.team.filesystem.common.workitems,com.ibm.team.filesy
+ stem.client.workitems,org.eclipse.core.filebuffers,org.eclipse.jface.
+ text
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %bundleVendor
+
+

@@ -1,0 +1,70 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.jivesoftware.smack
+Export-Package: com.jcraft.jzlib;x-internal:=true,org.jivesoftware.sma
+ ck; uses:="javax.net.ssl,  org.jivesoftware.smack.packet,  javax.net,
+   org.jivesoftware.smack.filter,  new org.jivesoftware.smack",org.jiv
+ esoftware.smack.debugger; uses:="org.jivesoftware.smack.packet,  org.
+ jivesoftware.smack.util,  org.jivesoftware.smack,  javax.swing",org.j
+ ivesoftware.smack.filter;uses:="org.jivesoftware.smack.packet",org.ji
+ vesoftware.smack.packet;uses:="new org.jivesoftware.smack.packet",org
+ .jivesoftware.smack.provider;uses:="org.xmlpull.v1,org.jivesoftware.s
+ mack.packet",org.jivesoftware.smack.sasl;uses:="org.jivesoftware.smac
+ k",org.jivesoftware.smack.util; uses:="new org.jivesoftware.smack.uti
+ l,  org.xmlpull.v1,  org.jivesoftware.smack.packet,  org.jivesoftware
+ .smack.util.collections,  new new org.jivesoftware.smack.util",org.ji
+ vesoftware.smack.util.collections,org.jivesoftware.smackx; uses:="org
+ .jivesoftware.smack.provider,  new org.jivesoftware.smackx,  org.xmlp
+ ull.v1,  org.jivesoftware.smack.packet,  org.jivesoftware.smackx.pack
+ et,  org.jivesoftware.smack,  org.jivesoftware.smackx.provider,  org.
+ jivesoftware.smack.filter",org.jivesoftware.smackx.bookmark; uses:="o
+ rg.xmlpull.v1,  org.jivesoftware.smackx.packet,  org.jivesoftware.sma
+ ck,  org.jivesoftware.smackx.provider",org.jivesoftware.smackx.filetr
+ ansfer; uses:="org.jivesoftware.smack.packet,  org.jivesoftware.smack
+ x.packet,  org.jivesoftware.smack,  org.jivesoftware.smack.filter",or
+ g.jivesoftware.smackx.muc; uses:="org.jivesoftware.smackx,  new org.j
+ ivesoftware.smackx.muc,  org.jivesoftware.smack.packet,  org.jivesoft
+ ware.smack,  org.jivesoftware.smackx.packet,  org.jivesoftware.smack.
+ filter",org.jivesoftware.smackx.packet; uses:="org.jivesoftware.smack
+ x,  org.jivesoftware.smack.provider,  org.xmlpull.v1,  org.jivesoftwa
+ re.smack.packet,  org.jivesoftware.smack,  new org.jivesoftware.smack
+ x.packet",org.jivesoftware.smackx.provider; uses:="org.jivesoftware.s
+ mack.provider,  org.xmlpull.v1,  org.jivesoftware.smack.packet,  org.
+ jivesoftware.smackx.packet",org.jivesoftware.smackx.search; uses:="or
+ g.jivesoftware.smackx,  org.jivesoftware.smack.provider,  org.xmlpull
+ .v1,  org.jivesoftware.smack.packet,  org.jivesoftware.smack",org.jiv
+ esoftware.smackx.workgroup;uses:="org.jivesoftware.smack.packet",org.
+ jivesoftware.smackx.workgroup.agent; uses:="org.jivesoftware.smackx, 
+  org.jivesoftware.smack.provider,  org.jivesoftware.smack,  org.jives
+ oftware.smackx.workgroup.ext.notes,  org.jivesoftware.smackx.workgrou
+ p.ext.macros,  org.xmlpull.v1,  org.jivesoftware.smack.packet,  org.j
+ ivesoftware.smackx.workgroup.ext.history,  org.jivesoftware.smackx.wo
+ rkgroup,  org.jivesoftware.smackx.workgroup.packet,  org.jivesoftware
+ .smackx.workgroup.settings",org.jivesoftware.smackx.workgroup.ext.for
+ ms;uses:="org.jivesoftware.smack.provider,org.xmlpull.v1,org.jivesoft
+ ware.smack.packet",org.jivesoftware.smackx.workgroup.ext.history;uses
+ :="org.jivesoftware.smack.provider,org.xmlpull.v1,org.jivesoftware.sm
+ ack.packet",org.jivesoftware.smackx.workgroup.ext.macros;uses:="org.j
+ ivesoftware.smack.provider,org.xmlpull.v1,org.jivesoftware.smack.pack
+ et",org.jivesoftware.smackx.workgroup.ext.notes;uses:="org.jivesoftwa
+ re.smack.provider,org.xmlpull.v1,org.jivesoftware.smack.packet",org.j
+ ivesoftware.smackx.workgroup.packet; uses:="org.jivesoftware.smack.pr
+ ovider,  org.xmlpull.v1,  org.jivesoftware.smackx.workgroup.agent,  o
+ rg.jivesoftware.smack.packet,  new org.jivesoftware.smackx.workgroup.
+ packet,  org.jivesoftware.smackx.workgroup",org.jivesoftware.smackx.w
+ orkgroup.settings;uses:="org.jivesoftware.smack.provider,org.xmlpull.
+ v1,org.jivesoftware.smack.packet",org.jivesoftware.smackx.workgroup.u
+ ser; uses:="org.jivesoftware.smackx,  org.jivesoftware.smack.packet, 
+  org.jivesoftware.smack,  org.jivesoftware.smackx.muc,  org.jivesoftw
+ are.smackx.workgroup,  org.jivesoftware.smackx.workgroup.settings",or
+ g.jivesoftware.smackx.workgroup.util;uses:="org.xmlpull.v1",org.xmlpu
+ ll.mxp1;x-internal:=true;uses:="org.xmlpull.v1",org.xmlpull.v1;x-inte
+ rnal:=true
+Bundle-Name: %Bundle-Name.0
+Bundle-Version: 3.0.600.v20190202_0205
+Bundle-ClassPath: smackx.jar,smack.jar
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %Bundle-Vendor.0
+
+

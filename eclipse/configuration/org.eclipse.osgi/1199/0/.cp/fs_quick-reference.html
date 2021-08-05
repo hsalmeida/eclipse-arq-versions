@@ -1,0 +1,162 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><!--<h1>Jazz Platform quick reference</h1>-->
+
+<p>If you want to dive right in and start exploring, this quick reference covers the key
+concepts, terms, and visual elements that you'll come across.</p>
+
+<h3>Jazz Platform terminology and concepts</h3>
+
+<p>Jazz artifacts are stored in a <b>Repository</b>, which can
+be accessed only by authorized <b>Users</b>.</p>
+
+<p>The Repository contains <b>Project Areas</b> which contains 
+the artifacts for a project. Each project area has an associated <b>Process</b>,
+which governs how the project is run and customizes the way Jazz behaves. The
+process is defined by a process <b>specification</b> and a process <b>description</b>. The process specification defines the
+project's <b>Iterations</b> and how it behaves during these iterations. The process description
+corresponds to a web site explaining the process.</p>
+
+<div align="center"><img src="$plugin:com.ibm.team.welcome$/images/jazz-dev.gif" /></div>
+
+<p>There are two predefined processes to choose from: Eclipse Way and OpenUP 
+(work in progress). But you can also define your own processes
+or modify an existing one. </p>
+
+<p>Once you are <b>Connected</b> to a project area, you
+have access to the project's artifacts.</p>
+
+<p>Project Areas are decomposed into a set of <b>Team Areas</b>,
+which describe the teams that work on the project. Each team area has a list of
+team members and the <b>Process Role</b> they play within the team. A user can
+be a member of more than one team. Each team area can define <b>Process
+Customizations</b> of the process to tailor Jazz for the team and its subteams.</p>
+
+<p>For simple projects, all activity is on a single, main <b>Development
+Line</b> with a single stream. Additional development lines can be created for
+things like maintenance activities. Each development line has its own team
+areas and process customizations.</p>
+
+<p>The planned work is described by <b>Work Items</b>. The
+types of work items used in a project area are defined by the process. For
+example, the Eclipse Way process defines work item types for <b>Defects</b>, <b>Tasks</b>,
+and <b>Enhancements</b>. Each work item type can have its own state transitions
+and custom fields. Work items are filed against <b>Categories</b>, which allow
+you to organize work items by functional areas. Each project area defines the
+list of available categories. Each team area is <b>Associated</b> with the
+category for the functional area for which the team is responsible.</p>
+
+<p>You can find work items by executing <b>Queries</b>. Queries
+can be private for you or shared with the team.</p>
+
+<p>The work in a project area is done in a sequence of <b>Iterations
+</b>whose start and end dates are defined in the process' state. One of the
+iterations is defined as the <b>Current</b> one by the process. When planning
+the work, you <b>Target</b> a work item for a particular iteration. You can
+plan all the work that should go into an iteration by creating an <b>Iteration
+Plan.</b></p>
+
+<p>You use a personal <b>Repository Workspace</b> to work on
+project files under <b>Source Control</b>. You <b>Load</b> the repository
+workspace to copy the files and folders into your Eclipse workspace on your
+computer. Jazz tracks all changes made to source-controlled files with <b>Change-Sets</b>.
+Each change-set itemizes the changes to one or more individual files or
+folders, carries a comment, and references the relevant work item motivating
+the changes. You <b>Check-in</b> your change-sets to upload copies of the
+modified files from your Eclipse workspace to the repository workspace.</p>
+
+<p>Teams use a <b>Stream</b> to store the master copy of
+project files; each repository workspace holds a copy. A repository workspace
+and the team's stream are connected by a <b>Flow</b>. You <b>Deliver</b>
+change-sets from your repository workspace to the stream to incorporate
+your changes into the master copy; these are <b>Outgoing</b> change-sets. <b>Incoming</b>
+change-sets are ones that have been delivered to the stream by other team
+members. You <b>Accept</b> incoming change-sets to incorporate their changes
+into your repository workspace and your Eclipse workspace.</p>
+
+<p>The source-controlled file base is built up from nothing but
+the steady accretion of change-sets, each one building on everything that has
+come before it. The <b>Change History</b> is the sequence of change-sets for a
+repository workspace or stream.</p>
+
+<p>The source-controlled file base can be partitioned into one
+or more separate <b>Components</b>, each with their own tree of folders and
+files, and their own change history. Simple repository workspaces and streams
+consist of a single component. Multiple components are useful for teams building
+layered software in which the pieces evolve semi-independently and are deployed
+separately.</p>
+
+<p>You create a <b>Baseline</b> of an individual component in a
+repository workspace to capture an interesting point in time, or create a <b>Snapshot</b>
+to capture simultaneous baselines across all components.</p>
+
+<p>Each team can have its own <b>Build</b>, described in a <b>Build
+Definition</b> associated with the team area. The build definition specifies
+the build interval, which build script to use, and which repository workspace
+to be used for fetching files. A build can be run on different <b>Build Engines</b>.</p>
+
+<p>You can use <b>Feeds</b> to be aware of what your colleagues
+are working on, or what's happening on other teams. As artifacts in the
+repository are modified, event notices are automatically sent out to the feeds.</p>
+
+<h3>Eclipse user interface elements</h3>
+
+<h5>Views (view title in bold)</h5>
+
+<p><b>Team Artifacts</b> view manages your connections to a
+repository and a project area. Once you are connected to a project area you can
+access its artifacts. The artifacts are grouped into different nodes.</p>
+
+<p><b>Team Central</b> view gives you a quick overview of information
+that is relevant for your work, including builds, work item activity, or change-set
+deliveries. The view has a user-configurable set of sections. There's generally
+a specialized view or editor associated with each section that provides more
+details.</p>
+
+<p><b>Pending Changes</b> view shows your incoming and outgoing
+change-sets grouped by component. You typically deliver and accept changes from
+this view.</p>
+
+<p><b>My Work</b> view shows the work that is currently
+assigned to you. You typically start to work on a work item from this view.</p>
+
+<p><b>Work Items</b> view shows you the work items returned
+from a work item query. </p>
+
+<p><b>Build</b> view shows you the summaries of build results.
+You can open a build result editor to inspect the build results in detail.</p>
+
+<p><b>Team Advisor</b> view pops-up when you execute an
+operation that violates a process specification. This view tells you what went
+wrong and often provides a quick fix for the problem.</p>
+
+<h5>Editors</h5>
+
+<p><b>Project Area</b> editor gives you access to the
+project area's process specification, development lines, and categories.</p>
+
+<p><b>Team Area</b> editor gives you access to a team's members
+and their roles. This is also where a team customizes its process.</p>
+
+<p><b>Work Item</b> editor lets you create or modify a work
+item, change its state, to add comments, attachments, and links to other
+artifacts. When you save the editor, the updated work item will be transmitted
+to the repository.</p>
+
+<p><b>Planning</b> editor lets you to create or modify an
+iteration plan. An iteration plan is defined for a particular iteration target.</p>
+
+<p><b>Build Result</b> editor shows you a summary of a build,
+and has tabs that show the details output gathered for the different steps of
+the build.</p>
+
+<h5>Status Line Trims</h5>
+
+<p><b>Current Work</b> shows you the current work item in the
+status line on the bottom right of the Eclipse workbench window. The changes
+you make will be collected into a change-set associated with this work item.</p>
+
+<p><b>Work Item</b> entry field allows you to quickly navigate
+to a work item by entering either a work item number or a word from the
+description or summary. It appears in the status line on the bottom left of the
+Eclipse workbench window.</p>

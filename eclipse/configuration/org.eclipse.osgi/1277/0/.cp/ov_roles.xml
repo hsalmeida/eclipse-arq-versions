@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="common_ov_roles" name="Roles" alt-style="css/swt.properties" style="css/t-links.css" path="overview/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Displaying only the tools you need" url="http://org.eclipse.ui.intro/showPage?id=common_roles_page"
+			 id="common_ov_roles" alt="">
+				<text>With capabilities, you see only the tools that fit your current role. You can hide tools that you don't use, 
+				and the workbench will bring them back when you need them or ask for them.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css,../com.ibm.welcome.common.rational.doc/css/common.css" id="common_roles_page" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="Overview" filteredFrom="swt">
+            		<text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+            	</group>
+        
+				<group id="brochure" style-id="brochure">
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>Roles and capabilities</text>
+						</group>	
+						<img style-id="right" src="images/capabilities-preferences.gif" alt="Setting the preferences for Capabilities" />
+						<text id="paragraph1">
+							The product user interface is composed of menus, toolbars, perspectives, views of information within the perspectives, 
+							wizards, and contextual help. To reduce workspace clutter, a limited set of these tools is enabled by default
+							when you start the product. To support this streamlining, all the product features are grouped into logical sets called
+							roles and capabilities. 
+						</text>
+						<text id="paragraph2"><![CDATA[As you work, you can add more tools by activating additional roles, which enable additional product capabilities. 
+							To find a list of capability options, click <b>Window</b> > <b>Preferences</b>,
+							and then click <b>General</b> > <b>Capabilities</b>.]]></text>
+						<text id="paragraph3"> 
+							To enable tools by using the predefined roles, select the check boxes for the 
+							capabilities you want. In many cases, there are dependencies between capabilities, so enabling or disabling a 
+							capability automatically enables or disables other capabilities. </text>
+						<group id="clear"><text></text></group>
+						<img style-id="right" src="images/roles-welcome.gif" alt="Setting roles in the Welcome" />
+
+<!-- plh 30mar09 - Roles are not available from the new root page -->
+<!-- 
+						<text id="paragraph4"><![CDATA[You can also enable roles from the welcome home page. To get to this page, click <b>Help</b> > <b>Welcome</b>). 
+						To display the menu of available capabilites, click the <b>Enable Roles</b> icon in
+						the lower-right corner of the welcome home page.]]></text>
+-->
+											
+<!--						<anchor id="misc-roles-in-help"/>  Use this to insert a roles link at the top -->
+<!--						<anchor id="rsa-roles-in-help"/>  Anchor for Rational Software Architect roles -->
+<!--						<anchor id="rsd-roles-in-help"/> Anchor for Rational Systems Developer roles -->
+<!--						<anchor id="rsm-roles-in-help"/>  Anchor for Rational Software Modeler roles -->
+<!--						<anchor id="rad-roles-in-help"/>  Anchor for Rational Application Developer roles -->
+<!--						<anchor id="misc2-roles-in-help"/>  Use this to insert a roles link at the bottom -->
+
+					</group>
+				</group>
+			</group>
+	</group>
+	</page>
+
+</introContent>

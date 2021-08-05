@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.ibm.team.filesystem.ide.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="com.ibm.team.filesystem.ide.ui" id="sandboxEditorInputSource" name="Editor Input Source"/>
+      </appInfo>
+      <documentation>
+         Specifies how to open an Eclipse editor on a file from a sandbox.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="editorInputSource"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="editorInputSource">
+      <annotation>
+         <documentation>
+            The class capable of creating and returning the Eclipse editor input.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="storageId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the storage type. See the extension point named &apos;com.ibm.team.filesystem.client.storageManager&apos;.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="factory" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A class capable of opening the editor on shareables stored in the given sandbox type.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.ibm.team.filesystem.ui.editor.ISandboxEditorInputSource"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

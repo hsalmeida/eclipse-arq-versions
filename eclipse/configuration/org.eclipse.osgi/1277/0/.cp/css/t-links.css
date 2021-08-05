@@ -1,0 +1,35 @@
+/***** SHARED CSS *******/
+/* This CSS is for the topic list on section pages */
+.content-group .select-topic{
+	position: relative;
+	top: -30px;
+	left: 60px;
+}
+
+.select-topic li {
+	list-style-type: none;
+}
+/***** END SHARED ******/
+
+a#common_ov_accessibility img { background-image : url(../images/topiclabel/ov_accessibility48.gif); }
+
+a#common_ov_helponhelp img { background-image : url(../images/topiclabel/ov_uahelponhelp48.gif); }
+
+a#common_ov_roles img { background-image : url(../images/topiclabel/ov_roles48.gif); }
+
+a#gallery_tutorials_link img { background-image : url(../images/topiclabel/tu_gallery48.gif); }
+
+a#gallery_samples_link img { background-image : url(../images/topiclabel/sa_gallery48.gif); }
+
+a#common-wn-ua-icon img { background-image : url(../images/topiclabel/xx_uafeatures48.gif); }
+
+a#common-wn-relnotes-icon img { background-image : url(../images/topiclabel/wn_relnotes48.gif); }
+
+a#ua_brochure_link img { background-image : url(../images/topiclabel/xx_uafeatures48.gif); }
+
+a#mcif_link img { background-image : url(../images/topiclabel/mcif_48.gif); }
+
+a#developerWorks img { background-image : url(../images/topiclabel/wr_devworks48.gif); }
+
+a#rational_software_support img { background-image : url(../images/topiclabel/wr_support48.gif); }
+

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.rational.clearquest.cqjni.external
+Export-Package: com.rational.clearquest.cqjni
+Bundle-Name: ClearQuest JNI External Plug-In
+Bundle-Version: 3.0.800.v20190202_0205
+Bundle-ClassPath: external:$cq.home$/cqjni.jar
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: IBM
+
+

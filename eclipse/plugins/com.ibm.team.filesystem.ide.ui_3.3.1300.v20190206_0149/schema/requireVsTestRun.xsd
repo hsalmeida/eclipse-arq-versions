@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://com.ibm.team.process/requireVsTestRun"
+	targetNamespace="http://com.ibm.team.process/requireVsTestRun"
+	xmlns:process="http://com.ibm.team.process"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	
+	<xsd:import namespace="http://com.ibm.team.process" schemaLocation="platform:/plugin/com.ibm.team.process.common/schema/ProcessSettings.xsd"/>
+	
+	<xsd:complexType name="requireVsTestRunType">
+		<xsd:complexContent>
+			<xsd:restriction base="process:preconditionType">
+				<xsd:sequence>
+					<xsd:element name="toolinfo" maxOccurs="1" minOccurs="0">
+						<xsd:attribute name="id" type="xsd:string" use="required"/>
+						<xsd:attribute name="home" type="xsd:string" use="required"/>
+						<xsd:attribute name="testfile" type="xsd:string" use="required"/>
+						<xsd:attribute name="arguments" type="xsd:string" use="required"/>
+						<xsd:attribute name="components" type="xsd:string" use="required"/>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="id" type="xsd:string" use="required" fixed="com.ibm.team.process.vsclient.deliver.requireVsTestRun"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="precondition" substitutionGroup="process:precondition" type="requireVsTestRunType"/>
+</xsd:schema>

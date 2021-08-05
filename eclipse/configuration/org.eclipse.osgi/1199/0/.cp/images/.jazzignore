@@ -1,0 +1,14 @@
+# Local ignore file: .jazzignore (/com.ibm.team.welcome/images/.jazzignore)
+# The property core.ignore specifies a list of file patterns that will be
+# ignored in this directory. 
+#
+# The value of core.global.ignore will be ignored.
+#
+# Ignore properties should contain a space separated list of filename patterns.
+# Each pattern is case sensitive. Patterns use "*" to match zero or more 
+# characters, and "?" to match individual characters. 
+#
+#   e.g: *.sh \.*    ignores shell scripts and hidden files
+#Thu Nov 01 11:59:13 EDT 2007
+core.global.ignore=
+core.ignore=topiclabel.zip

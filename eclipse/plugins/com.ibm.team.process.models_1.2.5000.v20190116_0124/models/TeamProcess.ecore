@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TeamProcess"
+    nsURI="http:///TeamProcess.ecore" nsPrefix="TeamProcess">
+  <eAnnotations source="teamModel">
+    <details key="clientProject" value="com.ibm.team.process.common"/>
+    <details key="clientSrcFolder" value="src"/>
+  </eAnnotations>
+  <eSubpackages name="process" nsURI="com.ibm.team.process" nsPrefix="process">
+    <eAnnotations source="teamPackage">
+      <details key="clientBasePackage" value="com.ibm.team"/>
+      <details key="clientPackageSuffix" value="internal.common"/>
+      <details key="dbMapQueryablePropertiesOnly" value="false"/>
+      <details key="readAccessPolicy" value="PROTECTED"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDataEntry" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProjectArea" instanceClassName="com.ibm.team.process.common.IProjectArea"
+        eSuperTypes="#//process/ProcessArea">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="true"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="true"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="teamAreaHierarchyRecords"
+          ordered="false" upperBound="-1" eType="#//process/TeamAreaHierarchyRecord"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="teamAreaHierarchyTags"
+          ordered="false" upperBound="-1" eType="#//process/TeamAreaHierarchyTag"
+          containment="true">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processDefinition" ordered="false"
+          eType="#//process/ProcessDefinition">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitialized" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalDevelopmentLines"
+          ordered="false" upperBound="-1" eType="#//process/DevelopmentLine">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIterationTypes"
+          ordered="false" upperBound="-1" eType="#//process/IterationType">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalPublic" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="readAccessList" ordered="false"
+          lowerBound="1" eType="#//process/ReadAccessList">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalVisibleToMembers"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalVisibleToAccessList"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProjectDevelopmentLine"
+          ordered="false" eType="#//process/DevelopmentLine">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProjectLinks"
+          ordered="false" upperBound="-1" eType="#//process/ProjectLink">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="owningApplicationKey"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="dummy">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="MEDIUM"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessProvider"
+          ordered="false" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalIsProcessProvider"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalRemoteProcessConsumers"
+          ordered="false" upperBound="-1" eType="#//process/RemoteProcessConsumerEntry"
+          containment="true">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalRemoteProcessProviderUrl"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalRemoteProcessProvider"
+          ordered="false" eType="#//process/ProcessProviderCacheItem"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TeamArea" instanceClassName="com.ibm.team.process.common.ITeamArea"
+        eSuperTypes="#//process/ProcessArea">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="true"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TeamAreaHierarchyRecord">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
+          lowerBound="1" eType="#//process/TeamArea"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" ordered="false"
+          upperBound="-1" eType="#//process/TeamArea"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TeamAreaHierarchyTag">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roots" ordered="false"
+          upperBound="-1" eType="#//process/TeamArea"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="developmentLine" ordered="false"
+          lowerBound="1" eType="#//process/DevelopmentLine">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDefinition" instanceClassName="com.ibm.team.process.common.IProcessDefinition"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definitionData" ordered="false"
+          upperBound="-1" eType="#//process/DefinitionDataEntry" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processDomainDefinitions"
+          ordered="false" upperBound="-1" eType="#//process/ProcessDomainDefinition">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessAttachments"
+          ordered="false" upperBound="-1" eType="#//process/ProcessAttachment">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processContentPath" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="MEDIUM"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="owningApplicationKey"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="dummy">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="MEDIUM"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueProcessId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="dummy">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="true"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="MEDIUM"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DefinitionDataEntry" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDomainDefinition" instanceClassName="com.ibm.team.process.common.IProcessDomainDefinition"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processDomainId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="definitionData" ordered="false"
+          upperBound="-1" eType="#//process/DefinitionDataEntry2" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DefinitionDataEntry2" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ItemChangeReport" instanceClassName="com.ibm.team.process.common.IItemChangeReport">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalAddedItems" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item"
+          containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalDeletedItems"
+          ordered="false" upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item"
+          containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalUpdatedItems"
+          ordered="false" upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item"
+          containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TeamDataRecord">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contributor" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Contributor"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value2" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="_rk6pEDsJEeCFLaUgUDcHFA">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="LARGE"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessChangeEventCheck" eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/SimpleItem">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextCheckTime" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DevelopmentLine" instanceClassName="com.ibm.team.process.common.IDevelopmentLine"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIterations" upperBound="-1"
+          eType="#//process/Iteration">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProjectArea"
+          ordered="false" lowerBound="1" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalCurrentIteration"
+          ordered="false" eType="#//process/Iteration">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalStartDate" ordered="false"
+          eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalEndDate" ordered="false"
+          eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Iteration" instanceClassName="com.ibm.team.process.common.IIteration"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalParent" ordered="false"
+          eType="#//process/Iteration">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalChildren" ordered="false"
+          upperBound="-1" eType="#//process/Iteration">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalDevelopmentLine"
+          ordered="false" lowerBound="1" eType="#//process/DevelopmentLine">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalStartDate" ordered="false"
+          eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalEndDate" ordered="false"
+          eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalHasDeliverable"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="iterationType" ordered="false"
+          eType="#//process/IterationType">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IterationType" instanceClassName="com.ibm.team.process.common.IIterationType"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProjectArea"
+          ordered="false" lowerBound="1" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CurrentIterationInfo">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIterationType"
+          ordered="false" eType="#//process/IterationType" containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIteration" ordered="false"
+          lowerBound="1" eType="#//process/Iteration" containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessAttachment" instanceClassName="com.ibm.team.process.common.IProcessAttachment"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalOwningItem" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalOnProcessProvider"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDescription">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="LARGE"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="processContentPath" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDefinitionTranslation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processDefinition" ordered="false"
+          lowerBound="1" eType="#//process/ProcessDefinition" containment="true">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="true"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalTranslationEntries"
+          ordered="false" upperBound="-1" eType="#//process/TranslationEntry" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TranslationEntry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessArea" instanceClassName="com.ibm.team.process.common.IProcessArea"
+        abstract="true" eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processData" ordered="false"
+          upperBound="-1" eType="#//process/ProcessDataEntry" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="descSummary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="descDetails" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessAttachments"
+          ordered="false" upperBound="-1" eType="#//process/ProcessAttachment">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalAdmins" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Contributor">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contributors" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Contributor">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessDescription"
+          ordered="false" eType="#//process/ProcessDescription" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="teamDataRecords" ordered="false"
+          upperBound="-1" eType="#//process/TeamDataRecord" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueName" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="true"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectArea" ordered="false"
+          lowerBound="1" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReadAccessList" instanceClassName="com.ibm.team.process.common.IReadAccessList"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalContributors"
+          ordered="false" upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Contributor">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectArea" ordered="false"
+          lowerBound="1" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProjectLink" instanceClassName="com.ibm.team.process.common.IProjectLink"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="true"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetUrl" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconUrl" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkType" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectArea" ordered="false"
+          lowerBound="1" eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="LARGE"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessGenericItem" eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="true"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectarea" ordered="false"
+          eType="#//process/ProjectArea">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Content"
+          containment="true">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="genericItemType" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="genericItemId" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RemoteProcessConsumerEntry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cacheUrl" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessProviderCacheItem" instanceClassName="com.ibm.team.process.internal.common.IProcessProviderCacheItem"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="true"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="true"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalRemoteLastModified"
+          ordered="false" eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalLastUpdateAttempted"
+          ordered="false" eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalReferenceCount"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalProviderName"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalProviderUrl"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessAttachments"
+          ordered="false" upperBound="-1" eType="#//process/ProcessAttachmentCacheItem"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalTeamDataRecords"
+          ordered="false" upperBound="-1" eType="#//process/TeamDataRecord" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalProcessData"
+          ordered="false" upperBound="-1" eType="#//process/ProcessDataEntry" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalUpdateStatus"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalErrorMessage"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="LARGE"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalErrorCode" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIterationTypes"
+          ordered="false" upperBound="-1" eType="#//process/IterationTypeCacheItem"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessAttachmentCacheItem">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalRemoteLastModified"
+          ordered="false" lowerBound="1" eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalProcessAttachmentId"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processAttachment" ordered="false"
+          lowerBound="1" eType="#//process/ProcessAttachment"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AccessGroup" instanceClassName="com.ibm.team.process.common.IAccessGroup"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Auditable">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="true"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupContextId" ordered="false"
+          eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/UUID">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="owningApplicationKey"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="archived" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateGroup" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalItems" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute is deprecated and should not be used.  Use &quot;internalItems2&quot; instead."/>
+        </eAnnotations>
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="claimingItem" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalItems2" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute is deprecated and should not be used.  Use &quot;internalMembers&quot; instead."/>
+        </eAnnotations>
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalMembers" ordered="false"
+          upperBound="-1" eType="#//process/AccessGroupMember" containment="true">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalOwningItem" ordered="false"
+          eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AccessGroupMember" instanceClassName="com.ibm.team.process.common.IAccessGroupMember"
+        eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/Helper">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalContextType"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="item" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Item">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamReference">
+          <details key="belongsToHandle" value="false"/>
+          <details key="forceNonHandleType" value="false"/>
+          <details key="dbReuseMembers" value="false"/>
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IterationTypeCacheItem">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="USE_READ_ACCESS_POLICY_OF_PACKAGE"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalRemoteItemId"
+          ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalRemoteLastModified"
+          ordered="false" lowerBound="1" eType="ecore:EDataType ../../com.ibm.team.repository.common/models/repository.ecore#//repository/Timestamp">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalIterationType"
+          ordered="false" lowerBound="1" eType="#//process/IterationType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessDataProvider" eSuperTypes="../../com.ibm.team.repository.common/models/repository.ecore#//repository/SimpleItem">
+      <eAnnotations source="teamClass">
+        <details key="hasHandle" value="false"/>
+        <details key="dbPersistable" value="true"/>
+        <details key="allowsStateExtensions" value="false"/>
+        <details key="queryModelVisibility" value="DEFAULT"/>
+        <details key="readAccessPolicy" value="PUBLIC"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="providerId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="queryableProperty">
+          <details key="unique" value="false"/>
+          <details key="visibility" value="DEFAULT"/>
+        </eAnnotations>
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+          unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="">
+        <eAnnotations source="teamAttribute">
+          <details key="minRetrievalProfile" value="DEFAULT"/>
+          <details key="belongsToHandle" value="false"/>
+          <details key="dbStringSize" value="SMALL"/>
+          <details key="id" value="false"/>
+          <details key="URLString" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

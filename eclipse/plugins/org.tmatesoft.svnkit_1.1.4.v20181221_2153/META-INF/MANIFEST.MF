@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.tmatesoft.svnkit
+Export-Package: ch.ethz.ssh2,ch.ethz.ssh2.auth,ch.ethz.ssh2.channel,ch
+ .ethz.ssh2.crypto,ch.ethz.ssh2.crypto.cipher,ch.ethz.ssh2.crypto.dh,c
+ h.ethz.ssh2.crypto.digest,ch.ethz.ssh2.log,ch.ethz.ssh2.packets,ch.et
+ hz.ssh2.sftp,ch.ethz.ssh2.signature,ch.ethz.ssh2.transport,ch.ethz.ss
+ h2.util,de.regnis.q.sequence,de.regnis.q.sequence.core,de.regnis.q.se
+ quence.line,de.regnis.q.sequence.line.diff,de.regnis.q.sequence.line.
+ simplifier,de.regnis.q.sequence.media,org.tigris.subversion.javahl,or
+ g.tmatesoft.svn.core,org.tmatesoft.svn.core.auth,org.tmatesoft.svn.co
+ re.internal.delta,org.tmatesoft.svn.core.internal.io.dav,org.tmatesof
+ t.svn.core.internal.io.dav.handlers,org.tmatesoft.svn.core.internal.i
+ o.dav.http,org.tmatesoft.svn.core.internal.io.fs,org.tmatesoft.svn.co
+ re.internal.io.svn,org.tmatesoft.svn.core.internal.util,org.tmatesoft
+ .svn.core.internal.wc,org.tmatesoft.svn.core.internal.wc.admin,org.tm
+ atesoft.svn.core.io,org.tmatesoft.svn.core.io.diff,org.tmatesoft.svn.
+ core.javahl,org.tmatesoft.svn.core.replicator,org.tmatesoft.svn.core.
+ wc,org.tmatesoft.svn.core.wc.admin,org.tmatesoft.svn.core.wc.xml,org.
+ tmatesoft.svn.util
+Bundle-Name: SVNKit Library Plug-in
+Bundle-Version: 1.1.4.v20181221_2153
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.tmatesoft.svn.core.SVNKitPlugin
+Bundle-Vendor: TMate Software
+
+

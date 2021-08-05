@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    © Copyright IBM Corporation 2011, 2019. All Rights Reserved.
+   
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.dashboard.common.jfs.feature"
+      label="Dashboard Common JFS Feature"
+      version="6.0.4000.v20190116_0124"
+      provider-name="IBM">
+
+   <requires>
+      <import feature="com.ibm.team.process.common.jfs.feature"/>
+      <import feature="com.ibm.team.repository.common.jfs.feature"/>
+   </requires>
+
+   <plugin
+         id="com.ibm.team.dashboard.common"
+         download-size="0"
+         install-size="0"
+         version="6.0.4000.v20190116_0124"
+         unpack="false"/>
+
+</feature>

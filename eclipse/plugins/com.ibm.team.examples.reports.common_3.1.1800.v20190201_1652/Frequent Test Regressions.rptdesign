@@ -1,0 +1,1569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Licensed Materials - Property of IBM (c) Copyright IBM Corporation 2006, 2007. All Rights Reserved. Note to U.S. Government Users Restricted Rights:  Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <simple-property-list name="includeResource">
+        <value>shared/shared</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.java.util);
+
+hasData = false;
+maxFailures = 0;
+
+startDate = null;
+duration = "" + params["StartDate"].value;
+if (duration.indexOf("'") == 0) duration = duration.substring(1);
+if (duration.lastIndexOf("'") == duration.length - 1) duration = duration.substring(0, duration.length - 1);
+// Also strip off the first two characters of the value
+duration = duration.substring(2);
+var cal = Calendar.getInstance();
+cal.setTime(new Date());
+if (duration == "Last Month") {
+	cal.add(Calendar.MONTH, -1);
+	startDate = cal.getTime();
+	reportContext.setGlobalVariable("startDate", startDate);
+} else if (duration == "Last 3 Months") {
+	cal.add(Calendar.MONTH, -3);
+	startDate = cal.getTime();
+	reportContext.setGlobalVariable("startDate", startDate);
+} else if (duration == "Last 6 Months") {
+	cal.add(Calendar.MONTH, -6);
+	startDate = cal.getTime();
+	reportContext.setGlobalVariable("startDate", startDate);
+} else if (duration == "Last Year") {
+	cal.add(Calendar.YEAR, -1);
+	startDate = cal.getTime();
+	reportContext.setGlobalVariable("startDate", startDate);
+}]]></method>
+    <property name="theme">shared.defaultTheme</property>
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">shared/shared.rptlibrary</property>
+            <property name="namespace">shared</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <cascading-parameter-group name="BuildResultsParameters" id="108">
+            <text-property name="promptText">Build Results Parameter</text-property>
+            <property name="dataSet">Junit Results Parameter Data Set</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="ProjectAreaName" id="113">
+                    <property name="hidden">true</property>
+                    <text-property name="promptText" key="PARAM_PROJECT_AREA">Project Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["PROJECT_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["PROJECT_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">{Current Project Area}</value>
+                    </simple-property-list>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">false</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="TeamAreaName" id="114">
+                    <text-property name="promptText" key="PARAM_TEAM_AREA">Team Area</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["TEAM_AREA_NAME"]</expression>
+                    <expression name="labelExpr">row["TEAM_AREA_NAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["TEAM_AREA_NAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">{My Team Areas}</value>
+                    </simple-property-list>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="BuildTypeId" id="115">
+                    <text-property name="promptText" key="PARAM_BUILD_DEFINITION">Build Definition</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">true</property>
+                    <expression name="valueExpr">row["BUILDTYPE_ID"]</expression>
+                    <expression name="labelExpr">row["BUILDTYPE_ID"]</expression>
+                    <expression name="sortByColumn">dataSetRow["BUILDTYPE_ID"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">false</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="Component" id="116">
+                    <text-property name="promptText" key="PARAM_COMPONENT">Component</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <expression name="valueExpr">row["COMPONENT"]</expression>
+                    <expression name="labelExpr">row["COMPONENT"]</expression>
+                    <expression name="sortByColumn">dataSetRow["COMPONENT"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <scalar-parameter name="StartDate" id="290">
+            <text-property name="promptText" key="PARAM_DURATION">Duration</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="sortBy">value</property>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">false</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">3 Last 3 Months</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">2 Last Month</property>
+                    <property name="labelID">LAST_MONTH</property>
+                </structure>
+                <structure>
+                    <property name="value">3 Last 3 Months</property>
+                    <property name="labelID">LAST_3_MONTHS</property>
+                </structure>
+                <structure>
+                    <property name="value">4 Last 6 Months</property>
+                    <property name="labelID">LAST_6_MONTHS</property>
+                </structure>
+                <structure>
+                    <property name="value">5 Last Year</property>
+                    <property name="labelID">LAST_YEAR</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">false</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Build Results Data Source" id="103">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">BUILD_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="Regression Test Count Data Set" id="152">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">JUNIT_TEST</property>
+                    <text-property name="displayName">JUNIT_TEST</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">JUNIT_COUNT</property>
+                    <text-property name="displayName">JUNIT_COUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LAST_RUN</property>
+                    <text-property name="displayName">LAST_RUN</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="paramName">ProjectAreaName</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TEAM_AREA_NAME</property>
+                    <property name="paramName">TeamAreaName</property>
+                    <property name="nativeName">TEAM_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">BUILDTYPE_ID</property>
+                    <property name="paramName">BuildTypeId</property>
+                    <property name="nativeName">BUILDTYPE_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">COMPONENT</property>
+                    <property name="paramName">Component</property>
+                    <property name="nativeName">COMPONENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">JUNIT_EVENT</property>
+                    <property name="nativeName">JUNIT_EVENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">5</property>
+                    <expression name="defaultValue">'\'REGRESSION_ERROR\',\'REGRESSION_FAILURE\''</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">6</property>
+                    <expression name="defaultValue">10</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">7</property>
+                    <expression name="defaultValue">if (typeof(startDate) == "undefined") {
+	null;
+} else if (startDate == null) {
+	null;
+} else {
+	startDate;
+}</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">8</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">JUNIT_TEST</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">JUNIT_COUNT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">LAST_RUN</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="onFetch"><![CDATA[hasData = true;
+if (typeof(maxFailures) == "undefined") {
+	return;
+}
+if (row["JUNIT_COUNT"] > maxFailures) maxFailures = row["JUNIT_COUNT"];]]></method>
+            <property name="dataSource">Build Results Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">JUNIT_TEST</property>
+                    <property name="nativeName">JUNIT_TEST</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">JUNIT_COUNT</property>
+                    <property name="nativeName">JUNIT_COUNT</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">LAST_RUN</property>
+                    <property name="nativeName">LAST_RUN</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">6</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>PROJECT_AREA_NAME</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TEAM_AREA_NAME</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>BUILDTYPE_ID</design:name>
+        <design:position>3</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>COMPONENT</design:name>
+        <design:position>4</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>JUNIT_EVENT</design:name>
+        <design:position>5</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULT_SET_SIZE</design:name>
+        <design:position>6</design:position>
+        <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>FROM_TIME</design:name>
+        <design:position>7</design:position>
+        <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TO_TIME</design:name>
+        <design:position>8</design:position>
+        <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>JUNIT_TEST</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>JUNIT_TEST</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>JUNIT_COUNT</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>JUNIT_COUNT</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>LAST_RUN</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LAST_RUN</design:label>
+            <design:formattingHints>
+              <design:displaySize>8</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>JUNIT_CNT</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>JUNIT_TEST,JUNIT_COUNT,LAST_RUN</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>PROJECT_AREA_NAME,TEAM_AREA_NAME,BUILDTYPE_ID,COMPONENT,JUNIT_EVENT</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">JUNIT_CNT</property>
+            <property name="selectedFields">JUNIT_TEST,JUNIT_COUNT,LAST_RUN</property>
+            <property name="parameterFields">PROJECT_AREA_NAME,TEAM_AREA_NAME,BUILDTYPE_ID,COMPONENT,JUNIT_EVENT</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.parameterDataSet" name="Junit Results Parameter Data Set" id="251">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">PROJECT_AREA_NAME</property>
+                    <text-property name="displayName">PROJECT_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TEAM_AREA_NAME</property>
+                    <text-property name="displayName">TEAM_AREA_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BUILDTYPE_ID</property>
+                    <text-property name="displayName">BUILDTYPE_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COMPONENT</property>
+                    <text-property name="displayName">COMPONENT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'{Current Project Area}'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TEAM_AREA_NAME</property>
+                    <property name="nativeName">TEAM_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">BUILDTYPE_ID</property>
+                    <property name="nativeName">BUILDTYPE_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">COMPONENT</property>
+                    <property name="nativeName">COMPONENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FROM_TIME</property>
+                    <property name="nativeName">FROM_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TO_TIME</property>
+                    <property name="nativeName">TO_TIME</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="nativeDataType">6</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">PROJECT_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TEAM_AREA_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BUILDTYPE_ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">COMPONENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Build Results Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">PROJECT_AREA_NAME</property>
+                    <property name="nativeName">PROJECT_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TEAM_AREA_NAME</property>
+                    <property name="nativeName">TEAM_AREA_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BUILDTYPE_ID</property>
+                    <property name="nativeName">BUILDTYPE_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">COMPONENT</property>
+                    <property name="nativeName">COMPONENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>PROJECT_AREA_NAME</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TEAM_AREA_NAME</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>BUILDTYPE_ID</design:name>
+        <design:position>3</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>COMPONENT</design:name>
+        <design:position>4</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULT_SET_SIZE</design:name>
+        <design:position>5</design:position>
+        <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>FROM_TIME</design:name>
+        <design:position>6</design:position>
+        <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TO_TIME</design:name>
+        <design:position>7</design:position>
+        <design:nativeDataTypeCode>6</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>PROJECT_AREA_NAME</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PROJECT_AREA_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>17</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>TEAM_AREA_NAME</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TEAM_AREA_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BUILDTYPE_ID</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BUILDTYPE_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>BUILD_LABEL</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BUILD_LABEL</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ENGINE_ID</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ENGINE_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>COMPONENT</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COMPONENT</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>JUNT_RSULTS</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>PROJECT_AREA_NAME,TEAM_AREA_NAME,BUILDTYPE_ID,COMPONENT</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">JUNT_RSULTS</property>
+            <property name="parameterFields">PROJECT_AREA_NAME,TEAM_AREA_NAME,BUILDTYPE_ID,COMPONENT</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="birt-body" id="68">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="birt-heading-title" id="69">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="color">#333333</property>
+        </style>
+        <style name="birt-chart" id="70">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="watchfor-title" id="274">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="watchfor-body" id="275">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#666666</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text id="273">
+            <property name="style">birt-heading-title</property>
+            <property name="marginTop">0pt</property>
+            <property name="paddingTop">25px</property>
+            <property name="paddingLeft">2px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">1pt</property>
+            <property name="dataSet">Regression Test Count Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">JUNIT_TEST</property>
+                    <expression name="expression">dataSetRow["JUNIT_TEST"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">JUNIT_COUNT</property>
+                    <expression name="expression">dataSetRow["JUNIT_COUNT"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">LAST_RUN</property>
+                    <expression name="expression">dataSetRow["LAST_RUN"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="contentType">html</property>
+            <text-property name="content" key="FREQUENT_TEST_REGRESSIONS"><![CDATA[Frequent test regressions]]></text-property>
+        </text>
+        <table id="207">
+            <property name="style">birt-body</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginLeft">18px</property>
+            <property name="marginBottom">0pt</property>
+            <property name="width">5.979in</property>
+            <property name="dataSet">Regression Test Count Data Set</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">hasData == false;</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">JUNIT_TEST</property>
+                    <expression name="expression">dataSetRow["JUNIT_TEST"];</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">JUNIT_COUNT</property>
+                    <expression name="expression">dataSetRow["JUNIT_COUNT"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">LAST_RUN</property>
+                    <expression name="expression">dataSetRow["LAST_RUN"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="220">
+                <property name="fontSize">12px</property>
+                <property name="width">300px</property>
+            </column>
+            <column id="221">
+                <property name="width">70px</property>
+            </column>
+            <column id="222">
+                <property name="width">125px</property>
+            </column>
+            <header>
+                <row id="208">
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#666666</property>
+                    <cell id="209">
+                        <property name="paddingTop">0px</property>
+                        <property name="paddingLeft">0px</property>
+                        <property name="paddingBottom">0px</property>
+                        <property name="paddingRight">0px</property>
+                        <grid id="308">
+                            <property name="marginTop">0pt</property>
+                            <property name="width">100%</property>
+                            <column id="309"/>
+                            <row id="310">
+                                <cell id="311">
+                                    <property name="borderTopColor">#CDCDCD</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <property name="paddingTop">1px</property>
+                                    <property name="paddingLeft">0px</property>
+                                    <property name="paddingBottom">0px</property>
+                                    <property name="paddingRight">0px</property>
+                                    <label id="223">
+                                        <property name="style">birt-body</property>
+                                        <property name="backgroundColor">#F3F3F3</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0px</property>
+                                        <property name="marginLeft">0pt</property>
+                                        <property name="marginRight">0pt</property>
+                                        <property name="paddingTop">3pt</property>
+                                        <property name="paddingLeft">7pt</property>
+                                        <property name="paddingBottom">3pt</property>
+                                        <text-property name="text" key="TEST">Test</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="210">
+                        <property name="paddingTop">0px</property>
+                        <property name="paddingLeft">1px</property>
+                        <property name="paddingBottom">0px</property>
+                        <property name="paddingRight">1px</property>
+                        <grid id="312">
+                            <property name="width">100%</property>
+                            <column id="313"/>
+                            <row id="314">
+                                <cell id="315">
+                                    <property name="borderTopColor">#CDCDCD</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <property name="paddingTop">1px</property>
+                                    <property name="paddingLeft">0px</property>
+                                    <property name="paddingBottom">0px</property>
+                                    <property name="paddingRight">0px</property>
+                                    <label id="225">
+                                        <property name="style">birt-body</property>
+                                        <property name="backgroundColor">#F3F3F3</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0px</property>
+                                        <property name="paddingTop">3pt</property>
+                                        <property name="paddingLeft">3pt</property>
+                                        <property name="paddingBottom">3pt</property>
+                                        <property name="paddingRight">7pt</property>
+                                        <property name="textAlign">right</property>
+                                        <text-property name="text" key="REGRESSIONS">Regressions</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="211">
+                        <property name="paddingTop">0px</property>
+                        <property name="paddingLeft">0px</property>
+                        <property name="paddingBottom">0px</property>
+                        <property name="paddingRight">0px</property>
+                        <grid id="316">
+                            <property name="width">100%</property>
+                            <column id="317"/>
+                            <row id="318">
+                                <cell id="319">
+                                    <property name="borderTopColor">#CDCDCD</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <property name="paddingTop">1px</property>
+                                    <property name="paddingLeft">0px</property>
+                                    <property name="paddingBottom">0px</property>
+                                    <property name="paddingRight">0px</property>
+                                    <label id="227">
+                                        <property name="style">birt-body</property>
+                                        <property name="backgroundColor">#F3F3F3</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0px</property>
+                                        <property name="paddingTop">3pt</property>
+                                        <property name="paddingLeft">7pt</property>
+                                        <property name="paddingBottom">3pt</property>
+                                        <property name="paddingRight">7pt</property>
+                                        <text-property name="text" key="LAST">Last</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="212">
+                    <property name="borderBottomColor">#EBEBEB</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <cell id="213">
+                        <text-data id="298">
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">7pt</property>
+                            <expression name="valueExpr">importPackage(Packages.java.util);
+var value = row["JUNIT_TEST"];
+var tokenizer = new StringTokenizer(value);
+var first = tokenizer.nextToken();
+
+var lastDot = first.lastIndexOf(".");
+if (lastDot == -1) {
+	first;
+} else {
+	var testName = first.substring(lastDot + 1);
+	var fqn = first.substring(0, lastDot);
+	var secondLastDot = fqn.lastIndexOf(".");
+	if (secondLastDot == -1) {
+		first;
+	} else {
+		var className = fqn.substring(secondLastDot + 1);
+		var packageName = first.substring(0, secondLastDot);
+		"&lt;span style=\"color: #999999; font-size: 12px;\">" + className + ".&lt;wbr/>" + "&lt;/span>" + testName + "&lt;br/>" + 
+		"&lt;span style=\"color: #999999; font-size: 11px;\">" + packageName + "&lt;/span>";
+	}
+}</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="214">
+                        <data id="226">
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingRight">7pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">JUNIT_COUNT</property>
+                        </data>
+                        <text-data id="296">
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingRight">7pt</property>
+                            <property name="textAlign">right</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">ppt</property>
+                                    <expression name="valueExpr">true</expression>
+                                </structure>
+                                <structure>
+                                    <property name="format">doc</property>
+                                    <expression name="valueExpr">true</expression>
+                                </structure>
+                                <structure>
+                                    <property name="format">postscript</property>
+                                    <expression name="valueExpr">true</expression>
+                                </structure>
+                                <structure>
+                                    <property name="format">pdf</property>
+                                    <expression name="valueExpr">true</expression>
+                                </structure>
+                                <structure>
+                                    <property name="format">xls</property>
+                                    <expression name="valueExpr">true</expression>
+                                </structure>
+                            </list-property>
+                            <expression name="valueExpr">// Use 80 instead of 100 because of some overflow issues on IE
+var percent = (row["JUNIT_COUNT"] / maxFailures) * 80;
+"&lt;div align=\"right\" width=\"100%\">" +
+"&lt;table width=\"" + percent + "%\" style=\"border-style: solid; border-width: 6px 0px 0px 0px; border-color: #EFB3B2; padding: 0px; margin: 0px;\">" +
+	"&lt;tr style=\"padding: 0px; margin: 0px\">&lt;td>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>";</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="215">
+                        <data id="228">
+                            <property name="color">#666666</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">7pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Medium Date</property>
+                                <property name="pattern">Medium Date</property>
+                            </structure>
+                            <property name="resultSetColumn">LAST_RUN</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="216">
+                    <cell id="217"/>
+                    <cell id="218"/>
+                    <cell id="219"/>
+                </row>
+            </footer>
+        </table>
+        <label id="394">
+            <property name="style">watchfor-body</property>
+            <property name="color">#802023</property>
+            <property name="marginTop">3pt</property>
+            <property name="marginBottom">3pt</property>
+            <property name="paddingTop">1pt</property>
+            <property name="paddingLeft">27px</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">hasData == true;</expression>
+                </structure>
+            </list-property>
+            <text-property name="text" key="NO_TEST_REGRESSIONS_FOUND">No work items were found.</text-property>
+        </label>
+        <text id="390">
+            <property name="style">no-display</property>
+            <property name="marginTop">0pt</property>
+            <property name="paddingTop">1pt</property>
+            <expression name="bookmark">"WhyDidThisHappen"</expression>
+            <property name="contentType">auto</property>
+            <text-property name="content" key="WHY_DID_THIS_HAPPEN"><![CDATA[]]></text-property>
+        </text>
+        <text id="391">
+            <property name="style">watchfor-title</property>
+            <property name="fontWeight">normal</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginLeft">23px</property>
+            <property name="paddingTop">1pt</property>
+            <property name="paddingLeft">5px</property>
+            <property name="pageBreakAfter">avoid</property>
+            <property name="pageBreakBefore">avoid</property>
+            <property name="pageBreakInside">avoid</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">ppt</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">html</property>
+                    <expression name="valueExpr">hasData == true;</expression>
+                </structure>
+                <structure>
+                    <property name="format">doc</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">postscript</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">pdf</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<a style="color: rgb(102, 102, 102)" href="#" onmouseover="this.style.cursor='pointer'" onclick="
+        var imgSrc = document.getElementById('_rptOpenTwistyImg').src;
+        var alt = '^';
+        var displayMode = '';
+        if (this.wasClicked) {
+                imgSrc = document.getElementById('_rptClosedTwistyImg').src;
+                alt = '&amp;gt;';
+                displayMode = 'none';
+                this.wasClicked = false;
+        } else {
+                this.wasClicked = true;
+        }
+        var isIE = (navigator.userAgent != null &amp;&amp; navigator.userAgent.indexOf('MSIE') != -1);
+        if (isIE) { window.event.returnValue = 'false'; } else { event.preventDefault(); }
+        this.firstChild.src = imgSrc;
+        this.firstChild.alt = alt;
+        document.getElementById('empty').style.display = displayMode;
+        return false;
+        ">      
+        <img src="com.ibm.team.reports.jpg" alt="&amp;gt;" onerror="
+        		if (this.hasRun) { return; }
+        		this.hasRun = true;
+                this.src = document.getElementById('_rptClosedTwistyImg').src;
+                var tellMeText = document.getElementById('WhyDidThisHappen').innerHTML;
+                this.parentNode.appendChild(document.createTextNode(tellMeText));
+        "/>
+</a>
+]]></text-property>
+        </text>
+        <grid id="321">
+            <property name="style">no-display</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginLeft">10px</property>
+            <property name="width">100%</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">ppt</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">doc</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">postscript</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">pdf</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">html</property>
+                    <expression name="valueExpr">hasData == true;</expression>
+                </structure>
+            </list-property>
+            <expression name="bookmark">"empty"</expression>
+            <column id="322"/>
+            <row id="323">
+                <cell id="324">
+                    <label id="325">
+                        <property name="style">watchfor-body</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <text-property name="text" key="MISSING_DATA_1">This report presents historical data from the data warehouse. This data is collected by an automated snapshot task once a day around midnight. It is possible that this chart is empty because the task has not had a chance to run yet.</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="326">
+                <cell id="327">
+                    <label id="328">
+                        <property name="style">watchfor-body</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <text-property name="text" key="MISSING_DATA_2">To run the snapshot task manually, go to the web interface. Ensure your contributor has the "JazzDWAdmins" repository permission, and select the "Administer Data Warehouse" link in the left navigation panel. Select the "Update all snapshot data" button. After the task has completed, try viewing this report again.</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="329">
+                <cell id="330">
+                    <label id="331">
+                        <property name="style">watchfor-body</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <text-property name="text" key="MISSING_DATA_3">It is also possible that the selected parameters did not return any results from the data warehouse.</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <text id="291">
+            <property name="style">birt-heading-title</property>
+            <property name="paddingTop">29px</property>
+            <property name="paddingLeft">2px</property>
+            <property name="paddingBottom">4px</property>
+            <property name="paddingRight">1pt</property>
+            <property name="contentType">html</property>
+            <text-property name="content" key="ABOUT_THIS_REPORT"><![CDATA[About this report]]></text-property>
+        </text>
+        <text-data id="38">
+            <property name="style">watchfor-body</property>
+            <property name="marginTop">3pt</property>
+            <property name="marginLeft">0pt</property>
+            <property name="marginBottom">3pt</property>
+            <property name="paddingTop">1pt</property>
+            <property name="paddingLeft">27px</property>
+            <property name="paddingBottom">4px</property>
+            <expression name="valueExpr">importPackage(Packages.java.text);
+reportContext.getMessage("REPORT_GENERATED", reportContext.getLocale(), [DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG).format(new Date())]);</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <text id="392">
+            <property name="style">no-display</property>
+            <property name="marginTop">0pt</property>
+            <property name="paddingTop">1pt</property>
+            <expression name="bookmark">"WhatDoesThisReportTellMe"</expression>
+            <property name="contentType">auto</property>
+            <text-property name="content" key="WHAT_DOES_THIS_REPORT_TELL_ME"><![CDATA[]]></text-property>
+        </text>
+        <text id="393">
+            <property name="style">watchfor-title</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginLeft">17px</property>
+            <property name="paddingTop">1pt</property>
+            <property name="paddingLeft">5px</property>
+            <property name="pageBreakAfter">avoid</property>
+            <property name="pageBreakBefore">avoid</property>
+            <property name="pageBreakInside">avoid</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">ppt</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">doc</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">postscript</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">pdf</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<a style="color: rgb(102, 102, 102)" href="#" onmouseover="this.style.cursor='pointer'" onclick="
+        var imgSrc = document.getElementById('_rptOpenTwistyImg').src;
+        var alt = '^';
+        var displayMode = '';
+        if (this.wasClicked) {
+                imgSrc = document.getElementById('_rptClosedTwistyImg').src;
+                alt = '&amp;gt;';
+                displayMode = 'none';
+                this.wasClicked = false;
+        } else {
+                this.wasClicked = true;
+        }
+        var isIE = (navigator.userAgent != null &amp;&amp; navigator.userAgent.indexOf('MSIE') != -1);
+        if (isIE) { window.event.returnValue = 'false'; } else { event.preventDefault(); }
+        this.firstChild.src = imgSrc;
+        this.firstChild.alt = alt;
+        document.getElementById('tellMe').style.display = displayMode;
+        return false;
+        ">      
+        <img src="com.ibm.team.reports.jpg" alt="&amp;gt;" onerror="
+        		if (this.hasRun) { return; }
+        		this.hasRun = true;
+                this.src = document.getElementById('_rptClosedTwistyImg').src;
+                var tellMeText = document.getElementById('WhatDoesThisReportTellMe').innerHTML;
+                this.parentNode.appendChild(document.createTextNode(tellMeText));
+        "/>
+</a>
+]]></text-property>
+        </text>
+        <grid id="295">
+            <property name="style">no-display</property>
+            <property name="marginTop">0pt</property>
+            <property name="marginLeft">2px</property>
+            <property name="width">100%</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">ppt</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">doc</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">postscript</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">pdf</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <expression name="bookmark">"tellMe"</expression>
+            <column id="299"/>
+            <row id="297">
+                <cell id="300">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <label id="303">
+                        <property name="style">watchfor-body</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <text-property name="text" key="FrequentTestRegressions.About1">This report shows the unit tests which have regressed the largest number of times (that is, succeeded in one build but failed in a subsequent build). The top ten transgressors are shown. Also shown is the last time that the test regressed, which gives a sense of recent-ness to each.</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="304">
+                <cell id="305">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <label id="306">
+                        <property name="style">watchfor-title</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <property name="paddingBottom">0px</property>
+                        <text-property name="text" key="WATCH_FOR">Watch For:</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="301">
+                <cell id="302">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <label id="244">
+                        <property name="style">watchfor-body</property>
+                        <property name="paddingTop">10px</property>
+                        <property name="paddingLeft">27px</property>
+                        <text-property name="text" key="FrequentTestRegressions.About2">Tests with a high regression count. This may indicate that the code being tested is brittle or in flux, or that insufficient attention is being paid to testing prior to delivering code. It may also be that either the test, or the code being tested, is not well understood or documented.</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <image id="341">
+            <property name="style">no-display</property>
+            <expression name="bookmark">"_rptClosedTwistyImg"</expression>
+            <property name="source">embed</property>
+            <property name="imageName">twistie-closed-light.gif</property>
+        </image>
+        <image id="342">
+            <property name="style">no-display</property>
+            <expression name="bookmark">"_rptOpenTwistyImg"</expression>
+            <property name="source">embed</property>
+            <property name="imageName">twistie-open-light.gif</property>
+        </image>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">twistie-closed-light.gif</property>
+            <property name="libReference">shared.twistie-closed-light.gif</property>
+        </structure>
+        <structure>
+            <property name="name">twistie-open-light.gif</property>
+            <property name="libReference">shared.twistie-open-light.gif</property>
+        </structure>
+    </list-property>
+</report>

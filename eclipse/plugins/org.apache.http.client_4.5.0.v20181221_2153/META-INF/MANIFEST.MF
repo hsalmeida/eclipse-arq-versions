@@ -1,0 +1,104 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.apache.http.client
+Export-Package: com.sun.jna.platform.win32; uses:="com.sun.jna.platfor
+ m,  com.sun.jna.ptr,  com.sun.jna.win32,  com.sun.jna,  com.sun.jna.p
+ latform.win32.COM",org.apache.commons.codec.binary,org.apache.http.au
+ th;version="4.5"; uses:="org.apache.http.protocol,  org.apache.http.p
+ arams,  org.apache.http.config,  org.ietf.jgss,  org.apache.http",org
+ .apache.http.auth.params;version="4.5";uses:="org.apache.http.params"
+ ,org.apache.http.client;version="4.5"; uses:="org.apache.http.protoco
+ l,  org.apache.http.params,  org.apache.http.conn.routing,  org.apach
+ e.http.conn,  org.apache.http.cookie,  org.apache.http.client.methods
+ ,  org.apache.http,  org.apache.http.auth",org.apache.http.client.cac
+ he;version="4.5";uses:="org.apache.http.protocol,org.apache.http.clie
+ nt.protocol,org.apache.http",org.apache.http.client.config;version="4
+ .5";uses:="org.apache.http",org.apache.http.client.entity;version="4.
+ 5";uses:="org.apache.http.entity,org.apache.http",org.apache.http.cli
+ ent.fluent;version="4.5"; uses:="org.apache.http.message,  org.apache
+ .http.conn.scheme,  org.apache.http.protocol,  org.apache.http.entity
+ ,  org.apache.http.impl.conn,  org.apache.http.client,  org.apache.ht
+ tp.impl.client,  org.apache.http.client.config,  org.apache.http.clie
+ nt.methods,  org.apache.http.auth,  org.apache.http.concurrent,  org.
+ apache.http",org.apache.http.client.methods;version="4.5"; uses:="org
+ .apache.http.message,  org.apache.http.params,  new org.apache.http.c
+ lient.methods,  org.apache.http.conn,  org.apache.http.client.config,
+   org.apache.http,  org.apache.http.concurrent",org.apache.http.clien
+ t.params;version="4.5"; uses:="org.apache.http.auth.params,  org.apac
+ he.http.conn.params,  org.apache.http.params,  org.apache.http.cookie
+ .params,  org.apache.http.client.config,  org.apache.http",org.apache
+ .http.client.protocol;version="4.5"; uses:="org.apache.http.client.en
+ tity,  org.apache.commons.logging,  org.apache.http.cookie,  org.apac
+ he.http.protocol,  org.apache.http.config,  org.apache.http.client.co
+ nfig,  org.apache.http.client,  org.apache.http.conn.routing,  org.ap
+ ache.http.auth,  org.apache.http",org.apache.http.client.utils;versio
+ n="4.5"; uses:="org.apache.http.client,  org.apache.http.util,  org.a
+ pache.http.conn.routing,  org.apache.http.client.methods,  org.apache
+ .http",org.apache.http.conn;version="4.5"; uses:="org.apache.http.con
+ n.scheme,  org.apache.http.protocol,  org.apache.http.params,  org.ap
+ ache.http.entity,  org.apache.http.conn.routing,  org.apache.http.con
+ fig,  javax.net.ssl,  org.apache.http,  org.apache.http.concurrent",o
+ rg.apache.http.conn.params;version="4.5";uses:="org.apache.http.param
+ s,org.apache.http.conn.routing,org.apache.http",org.apache.http.conn.
+ routing;version="4.5";uses:="org.apache.http.protocol,org.apache.http
+ ",org.apache.http.conn.scheme;version="4.5";uses:="org.apache.http.pa
+ rams,org.apache.http",org.apache.http.conn.socket;version="4.5";uses:
+ ="org.apache.http.protocol,org.apache.http",org.apache.http.conn.ssl;
+ version="4.5"; uses:="org.apache.http.conn.socket,  org.apache.http.c
+ onn.scheme,  org.apache.http.protocol,  org.apache.http.params,  org.
+ apache.http.conn.util,  org.apache.http.ssl,  javax.net.ssl,  org.apa
+ che.http",org.apache.http.conn.util;version="4.5",org.apache.http.coo
+ kie;version="4.5"; uses:="org.apache.http.protocol,  org.apache.http.
+ params,  org.apache.http.config,  org.apache.http",org.apache.http.co
+ okie.params;version="4.5";uses:="org.apache.http.params",org.apache.h
+ ttp.entity.mime;version="4.5";uses:="org.apache.http.entity.mime.cont
+ ent,org.apache.http.entity,org.apache.http",org.apache.http.entity.mi
+ me.content;version="4.5";uses:="org.apache.http.entity",org.apache.ht
+ tp.impl.auth;version="4.5"; uses:="org.apache.commons.logging,  org.a
+ pache.http.protocol,  org.apache.http.params,  org.apache.http.client
+ ,  org.ietf.jgss,  org.apache.http.util,  org.apache.http.auth,  org.
+ apache.http",org.apache.http.impl.auth.win;version="4.5"; uses:="org.
+ apache.http.protocol,  com.sun.jna.platform.win32,  org.apache.http.i
+ mpl.auth,  org.apache.http.client,  org.apache.http.util,  org.apache
+ .http,  org.apache.http.auth",org.apache.http.impl.client;version="4.
+ 5",org.apache.http.impl.client.cache;version="4.5"; uses:="org.apache
+ .http.message,  org.apache.http.protocol,  org.apache.http.params,  o
+ rg.apache.http.entity,  org.apache.http.client,  org.apache.http.conn
+ .routing,  org.apache.http.client.protocol,  org.apache.http.client.c
+ ache,  org.apache.http.impl.client,  org.apache.http.conn,  org.apach
+ e.http.impl.execchain,  org.apache.http.client.methods,  org.apache.h
+ ttp",org.apache.http.impl.client.cache.ehcache;version="4.5";uses:="o
+ rg.apache.http.client.cache,net.sf.ehcache,org.apache.http.impl.clien
+ t.cache",org.apache.http.impl.client.cache.memcached;version="4.5";us
+ es:="org.apache.http.client.cache,net.spy.memcached,org.apache.http.i
+ mpl.client.cache",org.apache.http.impl.conn;version="4.5"; uses:="org
+ .apache.http.message,  org.apache.http.io,  org.apache.http.impl.io, 
+  org.apache.http.conn.scheme,  org.apache.http.protocol,  org.apache.
+ commons.logging,  org.apache.http.pool,  org.apache.http.params,  org
+ .apache.http.impl,  org.apache.http.entity,  org.apache.http.conn.rou
+ ting,  org.apache.http.conn,  org.apache.http.config,  javax.net.ssl,
+   org.apache.http.util,  org.apache.http",org.apache.http.impl.conn.t
+ sccm;version="4.5"; uses:="org.apache.http.conn.scheme,  org.apache.c
+ ommons.logging,  org.apache.http.conn.params,  org.apache.http.params
+ ,  org.apache.http.impl.conn,  org.apache.http.conn.routing,  org.apa
+ che.http.conn",org.apache.http.impl.cookie;version="4.5"; uses:="org.
+ apache.http.message,  org.apache.http.protocol,  org.apache.http.cook
+ ie,  org.apache.http.conn.util,  org.apache.http.params,  org.apache.
+ http.util,  org.apache.http",org.apache.http.impl.execchain;version="
+ 4.5"; uses:="org.apache.http.protocol,  org.apache.commons.logging,  
+ org.apache.http.params,  org.apache.http.entity,  org.apache.http.cli
+ ent,  org.apache.http.conn.routing,  org.apache.http.client.protocol,
+   org.apache.http.conn,  org.apache.http.client.methods,  org.apache.
+ http.concurrent,  org.apache.http,  org.apache.http.auth"
+Bundle-Name: Apache HttpComponents HttpClient
+Bundle-Version: 4.5.0.v20181221_2153
+Bundle-ClassPath: lib/commons-codec-1.9.jar,lib/fluent-hc-4.5.jar,lib/
+ httpclient-4.5.jar,lib/httpclient-cache-4.5.jar,lib/httpmime-4.5.jar,
+ lib/httpclient-win-4.5.jar,lib/jna-4.1.0.jar,lib/jna-platform-4.1.0.j
+ ar
+Require-Bundle: org.apache.http;bundle-version="4.4.1",org.apache.comm
+ ons.logging
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: The Apache Software Foundation
+
+

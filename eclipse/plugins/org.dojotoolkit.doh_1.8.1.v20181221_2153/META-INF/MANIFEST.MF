@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Description: From build 1.8.1-20121010-IBM
+Bundle-SymbolicName: org.dojotoolkit.doh;singleton:=true
+Bundle-Name: Doh Plug-in
+Bundle-Version: 1.8.1.v20181221_2153
+Bundle-ManifestVersion: 2
+
+

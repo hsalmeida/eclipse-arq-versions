@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+
+	<extensionContent id="cqsynch_tutorial" name="ClearQuest Synchronizer tutorial" alt-style="css/swt.properties" style="css/t-links.css" path="tutorials/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Get started with Rational ClearQuest Synchronizer" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.concert.tutorial.doc/topics/tut_cqconnector_abstract.html" id="cqsynch_tutorial_link">
+				<text>This tutorial walks you through the process of configuring the ClearQuest Synchronizer so that you can synchronize Rational ClearQuest  records with Rational Team Concert work items.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

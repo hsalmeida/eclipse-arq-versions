@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.ccl.ua.wizards.feature"
+      label="Wizards Feature"
+      version="1.2.2.v20141107_1924"
+      provider-name="IBM">
+
+   <description>
+      %General
+   </description>
+
+   <copyright>
+      %Copyright
+   </copyright>
+
+   <license>
+      %License
+   </license>
+
+   <plugin
+         id="com.ibm.ccl.ua.wizards"
+         download-size="0"
+         install-size="0"
+         version="1.1.4.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ccl.ua.help.gallery.menuactions"
+         download-size="0"
+         install-size="0"
+         version="7.5.1.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.common"
+         download-size="0"
+         install-size="0"
+         version="3.9.4.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.parser"
+         download-size="0"
+         install-size="0"
+         version="2.6.1.v20141107_1924"
+         unpack="false"/>
+
+</feature>

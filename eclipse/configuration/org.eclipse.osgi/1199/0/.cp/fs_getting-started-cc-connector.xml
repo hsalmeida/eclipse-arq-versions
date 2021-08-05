@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!-- Link to Content on First Steps Page -->
+	<extensionContent id="getting-started-cc-connector" name="Get started integrating Rational Team Concert and ClearCase" alt-style="css/swt.properties" style="css/t-links.css" path="firststeps/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Help: Get started integrating Rational Team Concert and ClearCase" url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.team.connector.scm.cc.doc/topics/c_intro.html" id="getting_started_cc_link">
+				<text>Rational Team Concert includes several tools to help you get integrated with Rational ClearCase: a ClearCase Synchronizer that supports flexible interoperation between Jazz source control and Rational ClearCase; a ClearCase
+				Bridge that supports associations between Jazz work items and UCM activities; and a tool for importing file and folder history from UCM streams and base ClearCase to Jazz™ source control.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+</introContent>

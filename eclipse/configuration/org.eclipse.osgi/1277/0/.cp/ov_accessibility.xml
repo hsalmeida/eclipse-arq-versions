@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	<!-- Link to Content on Overview Page -->
+	<extensionContent id="common_ov_accessibility" name="Accessibility" alt-style="css/swt.properties" style="PLUGINS_ROOT/com.ibm.welcome.common.rational.doc/css/common.css,css/t-links.css" path="overview/@">
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Accessibility" url="http://org.eclipse.ui.intro/showPage?id=common_accessibility_page"
+			 id="common_ov_accessibility" alt="">
+				<text>Learn about the accessibility features that are available for the IBM products and the user assistance.</text>
+			</link>
+		</group>
+	</extensionContent>
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/overview.css,../com.ibm.welcome.common.rational.doc/css/common.css" id="common_accessibility_page" style-id="page">
+		<head src="bits-content.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="overview/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="Overview" filteredFrom="swt">
+            </group>
+            <text style-id="page-title" id="page-title" filteredFrom="html">Overview</text>
+        
+				<group style-id="bits-content">
+					<group style-id="toolbar">
+						<group style-id="toolbar-gradient">
+							
+						</group>
+						<group style-id="toolbar-title">
+							
+						</group>
+						<group style-id="toolbar-background">
+							
+						</group>
+						<group style-id="images">
+							
+						</group>
+					</group>
+					<group style-id="content-area" id="content-area">
+					<group style-id="contentpgTitle" filteredFrom="swt">
+						<text>Accessibility</text>
+					</group>
+						
+					<text id="paragraph1">
+						IBM products provide accessibility features to help you navigate the user interface and operate
+						 the controls with a keyboard and screen-reader software.
+					</text>
+					<text id="paragraph2">
+						You can use keyboard shortcuts to navigate and perform tasks and use a screen reader, such as IBM Home Page Reader,
+						to hear what is displayed on the screen. The online help provides detailed information about the keyboard shortcuts 
+						that are available for each part of the product.
+					</text>
+					<text id="paragraph3">
+						You can navigate the different types of assistance by using the Tab and arrow keys, as well as 
+						shortcuts that are specific to the type of information that you are looking at. For example, when you are in the Samples 
+						or the Tutorials gallery, use the Tab or arrow keys to move through the items in the navigation 
+						pane, press Enter to open the item you want in the content pane, and press Ctrl+F6 to switch the focus to the content 
+						pane.	
+					</text>
+					<group style-id="content-group" id="content-group">
+						<link style-id="content-link" label="How to find information to assist you"
+						 url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.help.common.accessibility.doc/topics/r_help_shortct.html"
+						 id="common_ov_accessibility" alt="">
+							<text>Go to the help topics to read about the keyboard shortcuts that you can use to navigate through the product information.</text>
+						</link>
+					</group>
+					<group style-id="content-group" id="content-group">
+						<link style-id="content-link" label="Accessibility features for IBM products"
+						 url="http://org.eclipse.ui.intro/showHelpTopic?id=/com.ibm.help.common.accessibility.doc/topics/ceaccess.html"
+						 id="common_ov_accessibility" alt="">
+							<text>Go to the help topics to read about the accessibility features that are available for the products that you have installed.</text>
+						</link>
+					</group>
+					<group style-id="content-group" id="content-group">
+						<link style-id="content-link" label="Navigating the user interface for IBM products"
+						 url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.user/concepts/accessibility/navigation.htm"
+						 id="common_ov_accessibility" alt="">
+							<text>Go to the help topics to read about how to navigate the product user interface with just your keyboard.</text>
+						</link>
+					</group>
+				</group>
+				</group>
+			</group>
+	</group>
+	</page>
+
+</introContent>

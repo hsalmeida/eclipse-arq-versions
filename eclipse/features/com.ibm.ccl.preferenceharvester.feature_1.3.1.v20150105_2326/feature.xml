@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.ibm.ccl.preferenceharvester.feature"
+      label="Preference Harvester Feature"
+      version="1.3.1.v20150105_2326"
+      provider-name="IBM">
+
+   <description>
+      %General
+   </description>
+
+   <copyright>
+      %Copyright
+   </copyright>
+
+   <license url="">
+      %License
+   </license>
+
+   <plugin
+         id="com.ibm.ccl.help.preferenceharvester"
+         download-size="0"
+         install-size="0"
+         version="2.2.1.v20150105_2326"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.common"
+         download-size="0"
+         install-size="0"
+         version="3.9.4.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.parser"
+         download-size="0"
+         install-size="0"
+         version="2.6.1.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.state"
+         download-size="0"
+         install-size="0"
+         version="2.0.1.v20141107_1924"
+         unpack="false"/>
+
+   <plugin
+         id="com.ibm.ut.help.common.nl"
+         download-size="0"
+         install-size="0"
+         version="1.0.8.v20140917_1728"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

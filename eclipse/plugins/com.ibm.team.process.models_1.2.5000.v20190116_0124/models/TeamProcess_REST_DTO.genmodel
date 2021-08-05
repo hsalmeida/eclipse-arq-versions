@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.ibm.team.process.common/src"
+    modelPluginID="com.ibm.team.process.common" modelName="TeamProcess_REST_DTO" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>TeamProcess_REST_DTO.ecore</foreignModel>
+  <genPackages prefix="Rest" basePackage="com.ibm.team.process.internal.common" disposableProviderFactory="true"
+      ecorePackage="TeamProcess_REST_DTO.ecore#/">
+    <genClasses ecoreClass="TeamProcess_REST_DTO.ecore#//ProcessAreaDTO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TeamProcess_REST_DTO.ecore#//ProcessAreaDTO/itemId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TeamProcess_REST_DTO.ecore#//ProcessAreaDTO/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TeamProcess_REST_DTO.ecore#//ProcessAreaDTO/children"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

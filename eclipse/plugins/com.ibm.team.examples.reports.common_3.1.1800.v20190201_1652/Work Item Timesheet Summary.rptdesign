@@ -1,0 +1,2195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="author">IBM Software Group</property>
+    <property name="comments">Licensed Materials - Property of IBM (c) Copyright IBM Corporation 2013. All Rights Reserved. Note to U.S. Government Users Restricted Rights: Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <simple-property-list name="includeResource">
+        <value>shared/shared</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[hasData = false;
+workItemSummary = "" + params["WorkItemId"].value;
+workItems=[];
+workItemsChildren=[];
+newWorkItems=[];
+done=false;
+timesheetIds = [];
+workitems=[];
+timesheets = [];
+showInitialWI=false;
+adjustedStartDate = null;
+var s = params["From"].value;
+if ((s != null) &amp;&amp; (s.getTime() != 0)) {
+	var utc = s.getTime();
+	var offset = s.getTimezoneOffset()*60000;
+	var localTime = utc - offset;
+	adjustedStartDate = new Date(localTime);
+	reportContext.setGlobalVariable("adjustedStartDate", adjustedStartDate);
+}
+adjustedEndDate = null;
+var e = params["To"].value;
+if ((e != null) &amp;&amp; (e.getTime() != 0)) {
+	var utc = e.getTime();
+	var offset = e.getTimezoneOffset()*60000;
+	var localTime = utc - offset;
+	adjustedEndDate = new Date(localTime + 86400000); // add 24 hours to the end date 
+	reportContext.setGlobalVariable("adjustedEndDate", adjustedEndDate);
+}
+]]></method>
+    <property name="theme">shared.defaultTheme</property>
+    <text-property name="displayName">Team Timesheet</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">shared/shared.rptlibrary</property>
+            <property name="namespace">shared</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="WorkItemId" id="1577">
+            <text-property name="promptText" key="PARAM_WORK_ITEM_ID"></text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="From" id="916">
+            <text-property name="promptText" key="PARAM_FROM">From</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="To" id="917">
+            <text-property name="promptText" key="PARAM_TO">To</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Depth" id="1675">
+            <text-property name="promptText" key="PARAM_DEPTH"></text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">10</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Common" id="7">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">COMMON_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Work Items" id="9">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">WORKITEMS_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+        <script-data-source name="Script" id="1067"/>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.advancedDataSet" name="Time Sheets" id="1255">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">EFFORT</property>
+                    <expression name="expression">BirtMath.round(row["TIME_SPENT"]/3600000, 2)</expression>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TS_ITEMID</property>
+                    <text-property name="displayName">TS_ITEMID</text-property>
+                    <text-property name="heading">TS_ITEMID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TIME_SPENT</property>
+                    <text-property name="displayName">TIME_SPENT</text-property>
+                    <text-property name="heading">TIME_SPENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TS_TIME_CODE</property>
+                    <text-property name="displayName">TS_TIME_CODE</text-property>
+                    <text-property name="heading">TS_TIME_CODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CREATOR_NAME</property>
+                    <text-property name="displayName">CREATOR_NAME</text-property>
+                    <text-property name="heading">CREATOR_NAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">TsItemId</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">From</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">2</property>
+                    <expression name="defaultValue" type="javascript">reportContext.getGlobalVariable("adjustedStartDate");</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">To</property>
+                    <property name="dataType">dateTime</property>
+                    <property name="position">3</property>
+                    <expression name="defaultValue" type="javascript">reportContext.getGlobalVariable("adjustedEndDate");</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TS_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TIME_SPENT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TS_TIME_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CREATOR_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">EFFORT</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TS_ITEMID</property>
+                    <property name="nativeName">TS_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TIME_SPENT</property>
+                    <property name="nativeName">TIME_SPENT</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TS_TIME_CODE</property>
+                    <property name="nativeName">TS_TIME_CODE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CREATOR_NAME</property>
+                    <property name="nativeName">CREATOR_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[TS_START_DATE >= From AND TS_START_DATE <= To AND TS_ITEMID = TsItemId]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TS_TIME_CODE</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TS_TIME_CODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TS_TIME_CODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CREATOR_NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CREATOR_NAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CREATOR_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LIVE_TIMESHEET_ENTRIES</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>CREATOR_NAME,TIME_SPENT,TS_ITEMID,TS_TIME_CODE</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LIVE_TIMESHEET_ENTRIES</property>
+            <property name="selectedFields">CREATOR_NAME,TIME_SPENT,TS_ITEMID,TS_TIME_CODE</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="Links Work Items" id="1330">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">SOURCE_ITEMID</property>
+                    <text-property name="displayName">SOURCE_ITEMID</text-property>
+                    <text-property name="heading">SOURCE_ITEMID</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">LINK_TYPE</property>
+                    <property name="nativeName">LINK_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">'com.ibm.team.workitem.linktype.parentworkitem'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">TARGET_ITEMID</property>
+                    <property name="nativeName">TARGET_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">2</property>
+                    <expression name="defaultValue" type="javascript">"'"+workItemsChildren.join("','")+"'";</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SOURCE_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Common</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SOURCE_ITEMID</property>
+                    <property name="nativeName">SOURCE_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>LINK_TYPE</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>TARGET_ITEMID</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SOURCE_ITEMID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SOURCE_ITEMID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SOURCE_ITEMID</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LINKS</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>SOURCE_ITEMID</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>LINK_TYPE,TARGET_ITEMID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LINKS</property>
+            <property name="selectedFields">SOURCE_ITEMID</property>
+            <property name="parameterFields">LINK_TYPE,TARGET_ITEMID</property>
+        </oda-data-set>
+        <script-data-set name="Non Deleted Time Sheets" id="1334">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TS_TIME_CODE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CREATOR_NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">EFFORT</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CREATOR_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">WI_ID</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TS_TIME_CODE</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CREATOR_NAME</property>
+                </structure>
+                <structure>
+                    <property name="columnName">EFFORT</property>
+                </structure>
+                <structure>
+                    <property name="columnName">CREATOR_ITEMID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ITEMID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TS_TIME_CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CREATOR_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">EFFORT</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CREATOR_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">WI_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Script</property>
+            <method name="open"><![CDATA[index = 0;]]></method>
+            <method name="fetch"><![CDATA[if (index == timesheets.length) {
+	return false;
+} else {
+	var ts = timesheets[index];
+	row["TS_TIME_CODE"] = ts.tc;
+	row["CREATOR_NAME"] = ts.creator;
+	row["EFFORT"] = ts.effort;
+	row["WI_ITEMID"] = ts.wiItemId;
+	row["WI_ID"] = (ts.wiId).toString().replace(",", "").replace(".", "");
+	row["SUMMARY"] = ts.summary;
+	index++;
+	return true;
+}]]></method>
+        </script-data-set>
+        <script-data-set name="Time Sheet Ids" id="1379">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TS_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">WI_ID</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TS_ITEMID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ITEMID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TS_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Script</property>
+            <method name="open"><![CDATA[index = 0;]]></method>
+            <method name="fetch"><![CDATA[if (index == timesheetIds.length) {
+	return false;
+} else {
+	var ts = timesheetIds[index];
+	row["TS_ITEMID"] = ts.itemId;
+	row["WI_ITEMID"] = ts.wiItemId;
+	row["WI_ID"] = ts.wiId;
+	row["SUMMARY"] = ts.summary;
+	index++;
+	return true;
+}]]></method>
+        </script-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.advancedDataSet" name="Initial Work Item" id="1578">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">WI_ITEMID</property>
+                    <text-property name="displayName">WI_ITEMID</text-property>
+                    <text-property name="heading">WI_ITEMID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                    <text-property name="displayName">WI_ID</text-property>
+                    <text-property name="heading">WI_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                    <text-property name="displayName">SUMMARY</text-property>
+                    <text-property name="heading">SUMMARY</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">WorkItemId</property>
+                    <property name="paramName">WorkItemId</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">WI_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="nativeName">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_ID</property>
+                    <property name="nativeName">WI_ID</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="nativeName">SUMMARY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[WI_ID = WorkItemId]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ITEMID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ITEMID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ITEMID</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>5</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SUMMARY</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SUMMARY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SUMMARY</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LIVE_WORKITEM_CNT</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>SUMMARY,WI_ID,WI_ITEMID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LIVE_WORKITEM_CNT</property>
+            <property name="selectedFields">SUMMARY,WI_ID,WI_ITEMID</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="Links Timesheet Entries" id="1616">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TARGET_ITEMID</property>
+                    <text-property name="displayName">TARGET_ITEMID</text-property>
+                    <text-property name="heading">TARGET_ITEMID</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">LINK_TYPE</property>
+                    <property name="nativeName">LINK_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SOURCE_ITEMID</property>
+                    <property name="nativeName">SOURCE_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TARGET_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Common</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TARGET_ITEMID</property>
+                    <property name="nativeName">TARGET_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>LINK_TYPE</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>SOURCE_ITEMID</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SOURCE_ITEMID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SOURCE_ITEMID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SOURCE_ITEMID</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LINKS</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>TARGET_ITEMID</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>LINK_TYPE,SOURCE_ITEMID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LINKS</property>
+            <property name="selectedFields">TARGET_ITEMID</property>
+            <property name="parameterFields">LINK_TYPE,SOURCE_ITEMID</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="Work Items" id="1639">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">WI_ITEMID</property>
+                    <text-property name="displayName">WI_ITEMID</text-property>
+                    <text-property name="heading">WI_ITEMID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                    <text-property name="displayName">WI_ID</text-property>
+                    <text-property name="heading">WI_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                    <text-property name="displayName">SUMMARY</text-property>
+                    <text-property name="heading">SUMMARY</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="nativeName">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">"'"+workItems.join("','")+"'";</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">WI_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Work Items</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="nativeName">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_ID</property>
+                    <property name="nativeName">WI_ID</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="nativeName">SUMMARY</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>WI_ITEMID</design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name>RESULT_SET_SIZE</design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ITEMID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ITEMID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ITEMID</design:label>
+            <design:formattingHints>
+              <design:displaySize>9</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WI_ID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WI_ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WI_ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>5</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SUMMARY</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SUMMARY</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SUMMARY</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LIVE_WORKITEM_CNT</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>SUMMARY,WI_ID,WI_ITEMID</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>WI_ITEMID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LIVE_WORKITEM_CNT</property>
+            <property name="selectedFields">SUMMARY,WI_ID,WI_ITEMID</property>
+            <property name="parameterFields">WI_ITEMID</property>
+        </oda-data-set>
+        <script-data-set name="Iterate" id="1676">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">COUNT</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">COUNT</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">COUNT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Script</property>
+            <method name="open"><![CDATA[count = 0;]]></method>
+            <method name="fetch"><![CDATA[if (done) {
+	return false;
+} else {
+	count++;
+	var depth = params["Depth"].value;
+	if (depth < 0) {
+		depth = 0
+	} else if (depth > 100) {
+		depth = 100;
+	}
+	if (count > depth) {
+		return false;
+	}
+	row["COUNT"] = count;
+	return true;
+}]]></method>
+        </script-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="1256">
+            <property name="dimensions">
+                <tabular-dimension name="Time Code" id="1261">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="1262">
+                            <property name="levels">
+                                <tabular-level name="TS_TIME_CODE" id="1263">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">TS_TIME_CODE</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Work Item" id="1501">
+                    <property name="isTimeType">false</property>
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="1502">
+                            <property name="levels">
+                                <tabular-level name="WI_ID" id="1504">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">WI_ID</property>
+                                </tabular-level>
+                                <tabular-level name="SUMMARY" id="1505">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">SUMMARY</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="1264">
+                    <property name="measures">
+                        <tabular-measure name="EFFORT" id="1265">
+                            <expression name="measureExpression" type="javascript">dataSetRow["EFFORT"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Non Deleted Time Sheets</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="1572">
+            <column id="1573"/>
+            <row id="1574">
+                <cell id="1575">
+                    <table id="1665">
+                        <property name="dataSet">Initial Work Item</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="paramBindings">
+                            <structure>
+                                <property name="paramName">WorkItemId</property>
+                                <simple-property-list name="expression">
+                                    <value type="javascript">params["WorkItemId"].value</value>
+                                </simple-property-list>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">WI_ITEMID</property>
+                                <text-property name="displayName">WI_ITEMID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ITEMID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID</property>
+                                <text-property name="displayName">WI_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUMMARY</property>
+                                <text-property name="displayName">SUMMARY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="1674"/>
+                        <detail>
+                            <row id="1669">
+                                <cell id="1670">
+                                    <text-data id="1701">
+                                        <expression name="valueExpr">workItemSummary=row["WI_ID"]+" ("+row["SUMMARY"] +")";&#13;
+showInitialWI=true;&#13;
+'';</expression>
+                                        <property name="contentType">html</property>
+                                    </text-data>
+                                    <table id="1677">
+                                        <property name="dataSet">Iterate</property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">COUNT</property>
+                                                <text-property name="displayName">COUNT</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["COUNT"]</expression>
+                                                <property name="dataType">integer</property>
+                                            </structure>
+                                        </list-property>
+                                        <column id="1686"/>
+                                        <header>
+                                            <row id="1678">
+                                                <cell id="1679">
+                                                    <text-data id="1687">
+                                                        <expression name="valueExpr">workItems.push(row._outer["WI_ITEMID"]);&#13;
+workItemsChildren.push(row._outer["WI_ITEMID"]);&#13;
+'';</expression>
+                                                        <property name="contentType">html</property>
+                                                    </text-data>
+                                                </cell>
+                                            </row>
+                                        </header>
+                                        <detail>
+                                            <row id="1681">
+                                                <cell id="1682">
+                                                    <table id="1688">
+                                                        <property name="dataSet">Links Work Items</property>
+                                                        <list-property name="boundDataColumns">
+                                                            <structure>
+                                                                <property name="name">SOURCE_ITEMID</property>
+                                                                <text-property name="displayName">SOURCE_ITEMID</text-property>
+                                                                <expression name="expression" type="javascript">dataSetRow["SOURCE_ITEMID"]</expression>
+                                                                <property name="dataType">string</property>
+                                                            </structure>
+                                                        </list-property>
+                                                        <column id="1697"/>
+                                                        <header>
+                                                            <row id="1689">
+                                                                <cell id="1690">
+                                                                    <text-data id="1705">
+                                                                        <expression name="valueExpr">done=true;&#13;
+'';</expression>
+                                                                        <property name="contentType">html</property>
+                                                                    </text-data>
+                                                                </cell>
+                                                            </row>
+                                                        </header>
+                                                        <detail>
+                                                            <row id="1692">
+                                                                <cell id="1693">
+                                                                    <text-data id="1698">
+                                                                        <expression name="valueExpr">newWorkItems.push(row["SOURCE_ITEMID"]);&#13;
+done=false;&#13;
+workItems.push(row["SOURCE_ITEMID"]);&#13;
+'';</expression>
+                                                                        <property name="contentType">html</property>
+                                                                    </text-data>
+                                                                </cell>
+                                                            </row>
+                                                        </detail>
+                                                        <footer>
+                                                            <row id="1695">
+                                                                <cell id="1696">
+                                                                    <text-data id="1699">
+                                                                        <expression name="valueExpr">if (newWorkItems.length==0 || newWorkItems==[]){&#13;
+	done=true;&#13;
+}&#13;
+else{&#13;
+	workItemsChildren=newWorkItems;&#13;
+	newWorkItems=[];&#13;
+}&#13;
+done=true;&#13;
+'';</expression>
+                                                                        <property name="contentType">html</property>
+                                                                    </text-data>
+                                                                </cell>
+                                                            </row>
+                                                        </footer>
+                                                    </table>
+                                                </cell>
+                                            </row>
+                                        </detail>
+                                    </table>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                    <table id="1707">
+                        <property name="dataSet">Work Items</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="paramBindings">
+                            <structure>
+                                <property name="paramName">WI_ITEMID</property>
+                                <simple-property-list name="expression">
+                                    <value type="javascript">"'"+workItems.join("','")+"'";</value>
+                                </simple-property-list>
+                            </structure>
+                            <structure>
+                                <property name="paramName">RESULT_SET_SIZE</property>
+                                <simple-property-list name="expression">
+                                    <value type="javascript">if(workItems.length==0){&#13;
+	0;&#13;
+}&#13;
+else {&#13;
+	java.lang.Integer.MAX_VALUE;&#13;
+}</value>
+                                </simple-property-list>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">WI_ITEMID</property>
+                                <text-property name="displayName">WI_ITEMID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ITEMID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID</property>
+                                <text-property name="displayName">WI_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUMMARY</property>
+                                <text-property name="displayName">SUMMARY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="1726"/>
+                        <detail>
+                            <row id="1715">
+                                <cell id="1716">
+                                    <table id="1434">
+                                        <property name="dataSet">Links Timesheet Entries</property>
+                                        <list-property name="paramBindings">
+                                            <structure>
+                                                <property name="paramName">LINK_TYPE</property>
+                                                <simple-property-list name="expression">
+                                                    <value type="javascript">'com.ibm.team.workitem.linktype.timeSheetEntry'</value>
+                                                </simple-property-list>
+                                            </structure>
+                                            <structure>
+                                                <property name="paramName">SOURCE_ITEMID</property>
+                                                <simple-property-list name="expression">
+                                                    <value type="javascript">row["WI_ITEMID"]</value>
+                                                </simple-property-list>
+                                            </structure>
+                                        </list-property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">TARGET_ITEMID</property>
+                                                <text-property name="displayName">TARGET_ITEMID</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["TARGET_ITEMID"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                        </list-property>
+                                        <column id="1443"/>
+                                        <detail>
+                                            <row id="1438">
+                                                <cell id="1439">
+                                                    <text-data id="1378">
+                                                        <expression name="valueExpr">var ts = {};&#13;
+ts.itemId = row["TARGET_ITEMID"];&#13;
+ts.wiItemId = row._outer["WI_ITEMID"];&#13;
+ts.wiId = row._outer["WI_ID"];&#13;
+ts.summary = row._outer["SUMMARY"];&#13;
+timesheetIds.push(ts);&#13;
+'';</expression>
+                                                        <property name="contentType">html</property>
+                                                    </text-data>
+                                                </cell>
+                                            </row>
+                                        </detail>
+                                    </table>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                    <table id="1380">
+                        <property name="dataSet">Time Sheet Ids</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TS_ITEMID</property>
+                                <text-property name="displayName">TS_ITEMID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["TS_ITEMID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ITEMID</property>
+                                <text-property name="displayName">WI_ITEMID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ITEMID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID</property>
+                                <text-property name="displayName">WI_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUMMARY</property>
+                                <text-property name="displayName">SUMMARY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="1389"/>
+                        <detail>
+                            <row id="1384">
+                                <cell id="1385">
+                                    <text-data id="1391">
+                                        <property name="dataSet">Time Sheets</property>
+                                        <list-property name="paramBindings">
+                                            <structure>
+                                                <property name="paramName">TsItemId</property>
+                                                <simple-property-list name="expression">
+                                                    <value type="javascript">row["TS_ITEMID"]</value>
+                                                </simple-property-list>
+                                            </structure>
+                                        </list-property>
+                                        <list-property name="boundDataColumns">
+                                            <structure>
+                                                <property name="name">TS_ITEMID</property>
+                                                <text-property name="displayName">TS_ITEMID</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["TS_ITEMID"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">TIME_SPENT</property>
+                                                <text-property name="displayName">TIME_SPENT</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["TIME_SPENT"]</expression>
+                                                <property name="dataType">integer</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">TS_TIME_CODE</property>
+                                                <text-property name="displayName">TS_TIME_CODE</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["TS_TIME_CODE"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">CREATOR_NAME</property>
+                                                <text-property name="displayName">CREATOR_NAME</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["CREATOR_NAME"]</expression>
+                                                <property name="dataType">string</property>
+                                            </structure>
+                                            <structure>
+                                                <property name="name">EFFORT</property>
+                                                <text-property name="displayName">EFFORT</text-property>
+                                                <expression name="expression" type="javascript">dataSetRow["EFFORT"]</expression>
+                                                <property name="dataType">float</property>
+                                            </structure>
+                                        </list-property>
+                                        <expression name="valueExpr">var count = Total.count();&#13;
+if (count != 0) {&#13;
+	hasData = true;&#13;
+	var ts = {};&#13;
+	ts.tc = row["TS_TIME_CODE"];&#13;
+	ts.creator = row["CREATOR_NAME"];&#13;
+	ts.effort = row["EFFORT"];&#13;
+	ts.wiItemId = row._outer["WI_ITEMID"];&#13;
+	ts.wiId = row._outer["WI_ID"];&#13;
+	ts.summary = row._outer["SUMMARY"];&#13;
+	timesheets.push(ts);&#13;
+}</expression>
+                                        <property name="contentType">html</property>
+                                    </text-data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                    <text id="1576">
+                        <property name="style">birt-heading-title</property>
+                        <property name="paddingTop">25pt</property>
+                        <property name="paddingLeft">2pt</property>
+                        <property name="paddingBottom">4pt</property>
+                        <text-property name="content" key="WORK_ITEM_TIMESHEET_SUMMARY"><![CDATA[]]></text-property>
+                    </text>
+                    <label id="1571">
+                        <property name="marginTop">0pt</property>
+                        <property name="paddingTop">25pt</property>
+                        <property name="paddingLeft">2pt</property>
+                        <property name="paddingBottom">4pt</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">hasData == false</expression>
+                            </structure>
+                        </list-property>
+                        <text-property name="text" key="BY_WORK_ITEM_AND_TIME_CODE"></text-property>
+                    </label>
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1526">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="1541">
+                                <property name="measure">EFFORT</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="1542">
+                                        <property name="aggregationOnRow">Work Item/SUMMARY</property>
+                                        <property name="aggregationOnColumn">Time Code/TS_TIME_CODE</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                        <property name="width">255px</property>
+                                        <property name="content">
+                                            <data id="1543">
+                                                <property name="fontSize">9pt</property>
+                                                <property name="color">#808080</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">EFFORT_Work Item/SUMMARY_Time Code/TS_TIME_CODE</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="1557">
+                                        <property name="aggregationOnRow">Work Item/SUMMARY</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                        <property name="width">254px</property>
+                                        <property name="content">
+                                            <data id="1558">
+                                                <property name="backgroundColor">#F3F3F3</property>
+                                                <property name="fontSize">12px</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#666666</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">EFFORT_Work Item/SUMMARY</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="AggregationCell" id="1565">
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                        <property name="content">
+                                            <data id="1566">
+                                                <property name="backgroundColor">#F3F3F3</property>
+                                                <property name="fontSize">12px</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#666666</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">EFFORT</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="AggregationCell" id="1567">
+                                        <property name="aggregationOnColumn">Time Code/TS_TIME_CODE</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                        <property name="content">
+                                            <data id="1568">
+                                                <property name="backgroundColor">#F3F3F3</property>
+                                                <property name="fontSize">12px</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#666666</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Fixed</property>
+                                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                                </structure>
+                                                <property name="resultSetColumn">EFFORT_Time Code/TS_TIME_CODE</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="1544">
+                                        <property name="borderTopStyle">none</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                    </extended-item>
+                                    <extended-item extensionName="CrosstabCell" id="1561">
+                                        <property name="borderTopStyle">none</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="1533">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="1564">
+                                        <property name="content">
+                                            <label id="1569">
+                                                <property name="backgroundColor">#F3F3F3</property>
+                                                <property name="fontSize">12px</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#666666</property>
+                                                <text-property name="text" key="TOTAL"></text-property>
+                                            </label>
+                                        </property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="1534">
+                                        <property name="dimension">Work Item</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="1535">
+                                                <property name="level">Work Item/WI_ID</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1536">
+                                                        <property name="content">
+                                                            <data name="WI_ID1" id="1537">
+                                                                <property name="fontSize">9pt</property>
+                                                                <property name="color">#808080</property>
+                                                                <property name="resultSetColumn">WI_ID</property>
+                                                                <list-property name="action">
+                                                                    <structure>
+                                                                        <property name="linkType">hyperlink</property>
+                                                                        <expression name="uri" type="javascript">var serverURL = reportContext.getAppContext().get("SERVER_URL");&#13;
+if (serverURL == null) serverURL = "";&#13;
+url = serverURL + "#action=com.ibm.team.workitem.viewWorkItem&amp;id="+data["WI_ID"];&#13;
+url;</expression>
+                                                                        <property name="targetWindow">_self</property>
+                                                                    </structure>
+                                                                </list-property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderTopColor">#CDCDCD</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderBottomStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                        <property name="width">234px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="1538">
+                                                <property name="level">Work Item/SUMMARY</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1539">
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderTopColor">#CDCDCD</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderBottomStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                        <property name="canShrink">true</property>
+                                                        <property name="width">0pt</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">after</property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="1528">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="1554">
+                                        <property name="content">
+                                            <label id="1563">
+                                                <property name="backgroundColor">#F3F3F3</property>
+                                                <property name="fontSize">12px</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#666666</property>
+                                                <text-property name="text" key="TOTAL"></text-property>
+                                            </label>
+                                        </property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderTopColor">#CDCDCD</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="1529">
+                                        <property name="dimension">Time Code</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="1530">
+                                                <property name="level">Time Code/TS_TIME_CODE</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1531">
+                                                        <property name="content">
+                                                            <data name="TS_TIME_CODE1" id="1532">
+                                                                <property name="backgroundColor">#F3F3F3</property>
+                                                                <property name="fontSize">12px</property>
+                                                                <property name="fontWeight">bold</property>
+                                                                <property name="color">#666666</property>
+                                                                <property name="resultSetColumn">TS_TIME_CODE</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderTopColor">#CDCDCD</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderBottomStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">after</property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="1527">
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderTopColor">#CDCDCD</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                            </extended-item>
+                        </property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="marginTop">0pt</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">hasData == false</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">TS_TIME_CODE</property>
+                                <expression name="expression">dimension["Time Code"]["TS_TIME_CODE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID</property>
+                                <expression name="expression" type="javascript">dimension["Work Item"]["WI_ID"]+": "+dimension["Work Item"]["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUMMARY</property>
+                                <expression name="expression">dimension["Work Item"]["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT_Work Item/SUMMARY_Time Code/TS_TIME_CODE</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Work Item/SUMMARY</value>
+                                    <value>Time Code/TS_TIME_CODE</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT_Work Item/WI_ID_Time Code/TS_TIME_CODE</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Work Item/WI_ID</value>
+                                    <value>Time Code/TS_TIME_CODE</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID_TOTAL</property>
+                                <expression name="expression">dimension["Work Item"]["WI_ID"]+" TOTAL"</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT_Time Code/TS_TIME_CODE</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Time Code/TS_TIME_CODE</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT_Work Item/WI_ID</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Work Item/WI_ID</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT_Work Item/SUMMARY</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Work Item/SUMMARY</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EFFORT</property>
+                                <expression name="expression">measure["EFFORT"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                    <label id="1638">
+                        <property name="style">watchfor-body</property>
+                        <property name="color">#802023</property>
+                        <property name="marginTop">3pt</property>
+                        <property name="marginBottom">3pt</property>
+                        <property name="paddingLeft">27px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">hasData == true</expression>
+                            </structure>
+                        </list-property>
+                        <structure name="toc"/>
+                        <text-property name="text" key="NO_TIMESHEET_ENTRIES_FOUND"></text-property>
+                    </label>
+                    <text id="308">
+                        <property name="style">birt-heading-title</property>
+                        <property name="fontSize">16px</property>
+                        <property name="color">#333333</property>
+                        <property name="paddingTop">29px</property>
+                        <property name="paddingLeft">2px</property>
+                        <property name="paddingBottom">4px</property>
+                        <property name="paddingRight">1pt</property>
+                        <structure name="toc"/>
+                        <property name="contentType">html</property>
+                        <text-property name="content" key="ABOUT_THIS_REPORT"><![CDATA[About this report]]></text-property>
+                    </text>
+                    <table id="1727">
+                        <property name="dataSet">Initial Work Item</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">showInitialWI==false</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">WI_ITEMID</property>
+                                <text-property name="displayName">WI_IDSUMMARY</text-property>
+                                <expression name="expression" type="javascript">var string = '';&#13;
+workItemId = params["WorkItemId"].value;&#13;
+if ((workItemId != null) &amp;&amp; (workItemId != '')){&#13;
+	string = reportContext.getMessage("WORK_ITEM_COLON", reportContext.getLocale(), [workItemSummary]);&#13;
+}&#13;
+else&#13;
+	string = '';&#13;
+string;</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">WI_ID</property>
+                                <text-property name="displayName">WI_ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["WI_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SUMMARY</property>
+                                <text-property name="displayName">SUMMARY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SUMMARY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="1746"/>
+                        <detail>
+                            <row id="1735">
+                                <cell id="1736">
+                                    <data id="1737">
+                                        <property name="style">birt-body</property>
+                                        <property name="paddingLeft">27pt</property>
+                                        <property name="whiteSpace">nowrap</property>
+                                        <property name="resultSetColumn">WI_ITEMID</property>
+                                        <list-property name="action">
+                                            <structure>
+                                                <property name="linkType">hyperlink</property>
+                                                <expression name="uri" type="javascript">var serverURL = reportContext.getAppContext().get("SERVER_URL");&#13;
+if (serverURL == null) serverURL = "";&#13;
+url = serverURL + "#action=com.ibm.team.workitem.viewWorkItem&amp;id="+row["WI_ID"];&#13;
+url;</expression>
+                                                <property name="targetWindow">_self</property>
+                                            </structure>
+                                        </list-property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                    <text-data id="1752">
+                        <property name="style">watchfor-body</property>
+                        <property name="fontSize">12px</property>
+                        <property name="color">#666666</property>
+                        <property name="marginTop">3pt</property>
+                        <property name="marginBottom">3pt</property>
+                        <property name="paddingLeft">27pt</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">showInitialWI==true</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">var string = '';&#13;
+workItemId = params["WorkItemId"].value;&#13;
+if ((workItemId != null) &amp;&amp; (workItemId != '')){&#13;
+	string = reportContext.getMessage("WORK_ITEM_COLON", reportContext.getLocale(), [workItemSummary]);&#13;
+}&#13;
+else&#13;
+	string = '';&#13;
+string;</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <text-data id="1641">
+                        <property name="style">birt-body</property>
+                        <property name="fontSize">12px</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingLeft">27pt</property>
+                        <expression name="valueExpr">importPackage(Packages.java.lang);&#13;
+importPackage(Packages.java.text);&#13;
+var formatter = DateFormat.getDateInstance(DateFormat.MEDIUM);&#13;
+var string = null;&#13;
+from = params["From"].value;&#13;
+if (from != null){&#13;
+	string = reportContext.getMessage("FROM_COLON", reportContext.getLocale(), [formatter.format(from)]);&#13;
+}&#13;
+else&#13;
+	string = '';&#13;
+string;</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <text-data id="1642">
+                        <property name="style">birt-body</property>
+                        <property name="fontSize">12px</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingLeft">27pt</property>
+                        <expression name="valueExpr">importPackage(Packages.java.lang);&#13;
+importPackage(Packages.java.text);&#13;
+var formatter = DateFormat.getDateInstance(DateFormat.MEDIUM);&#13;
+var string = null;&#13;
+to = params["To"].value;&#13;
+if (to != null){&#13;
+	string = reportContext.getMessage("TO_COLON", reportContext.getLocale(), [formatter.format(to)]);&#13;
+}&#13;
+else&#13;
+	string = '';&#13;
+string;</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <text-data id="1753">
+                        <property name="style">birt-body</property>
+                        <property name="fontSize">12px</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingLeft">27pt</property>
+                        <expression name="valueExpr">var string = '';&#13;
+depth = params["Depth"].value;&#13;
+if ((depth != null) &amp;&amp; (depth != '')){&#13;
+	string = reportContext.getMessage("DEPTH_COLON", reportContext.getLocale(), [depth]);&#13;
+}&#13;
+else&#13;
+	string = '';&#13;
+string;</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                    <text-data id="1643">
+                        <property name="style">watchfor-body</property>
+                        <property name="fontSize">12px</property>
+                        <property name="color">#666666</property>
+                        <property name="marginTop">3pt</property>
+                        <property name="marginBottom">3pt</property>
+                        <property name="paddingLeft">27pt</property>
+                        <expression name="valueExpr">importPackage(Packages.java.text);&#13;
+reportContext.getMessage("REPORT_GENERATED", reportContext.getLocale(), [DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.LONG).format(new Date())]);</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

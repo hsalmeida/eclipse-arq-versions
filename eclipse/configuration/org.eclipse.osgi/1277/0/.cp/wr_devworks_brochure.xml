@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+	<!-- Link to Content on Web Resources Page -->
+	<extensionContent id="dw-intro" name="developerWorks" alt-style="css/swt.properties" style="PLUGINS_ROOT/com.ibm.welcome.common.rational.doc/css/common.css,css/t-links.css" path="webresources/@">
+		<!-- group label="Product 1, High Priority 1" style-id="content-group" id="content-group" expandable="true" -->
+		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="developerWorks" url="http://org.eclipse.ui.intro/showPage?id=dw_page1" id="developerWorks">
+				<text>developerWorks is the IBM technical resource for developers that provides a wide range of tools, code, and education for IBM software as well as for open-standards technology, such as Web services, wireless technology, Linux®, XML, Java™ technologies, and more.</text>
+			</link>
+			<group label="Select a topic" style-id="select-topic" id="dw-intro_select-a-topic" expandable="true">
+				<contentProvider id="dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BrochureTopicList" pluginId="com.ibm.ccl.welcome.bits" /> 
+			</group>
+		</group>
+	</extensionContent>
+
+		<!-- Actual Page -->
+	<page style="$theme$/html/webresources.css" id="dw_page1" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="webresources/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="Web Resources" filteredFrom="swt">
+            </group>
+            <text style-id="page-title" id="page-title" filteredFrom="html">Web Resources</text>
+        
+				<group style-id="brochure">
+					<contentProvider id="header-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" /> 
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>developerWorks</text>
+						</group>
+						
+						<img style-id="right" src="images/dW-screen.gif" alt="developerWorks" />
+						<text>
+							developerWorks is IBM's technical resource for developers, providing a wide range of tools, code, 
+							and education for Information Management, IBM Systems, Lotus®, Rational®, Tivoli®, and WebSphere® software as well as 
+							for open-standards technology, such as Web services, wireless technology, Linux®, XML, Java™ 
+							technologies, and more.
+						</text>
+						<group style-id="content-group" id="dw-content-group">
+							<group id="rss-feed" label="Latest developerWorks events and technical briefings">
+								<contentProvider id="url=http://www.ibm.com/developerworks/views/rss/customrssatom.jsp?zone_by=Web+services&amp;zone_by=Web+architecture&amp;type_by=Technical+briefings&amp;type_by=Events&amp;search_by=&amp;day=1&amp;month=01&amp;year=2004&amp;max_entries=10&amp;feed_by=rss&amp;isGUI=true&amp;Submit.x=52&amp;Submit.y=13##welcome_items=5##no_news_url=http://www.ibm.com/developerworks##no_news_text=developerWorks" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+							</group>
+						</group>
+						<text><![CDATA[
+							At developerWorks, you can find the following items:
+							<ul>
+							<li>Product trials and downloads</li>
+							<li>How-to articles from introductory to advanced levels</li>
+							<li>Tutorials ranging from basic concepts to advanced certification instruction</li>
+							<li>Technical forums and blogs</li>
+							<li>Industry news</li>
+							<li>Webcasts and podcasts</li>
+							<li>Developer events</li>
+							<li>Roadmaps and sample IT projects for your on-demand environment</li>
+							<li>Special programs to quickly inform you about open-standards technologies and IBM products</li>
+							</ul>
+						]]></text>
+						<text>
+							You can apply focused and relevant technical information from developerWorks to building and 
+							deploying applications across heterogeneous systems. Use developerWorks to take full advantage 
+							of open standards and the IBM Rational Software Delivery Platform in an on demand world. 
+						</text>
+						<group style-id="content-group" id="dw-content-group-2">
+							<group id="links" label="developerWorks links">
+								<text><![CDATA[
+								<ul class="linkList">
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2F%3Fca%3Ddsl-dwhpcasp" class="topicList">developerWorks home</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fdownloads%2F%3FS_TACT%3D105AGX15%26S_CMP%3DCASP%26ca%3Ddsl-trialscasp" class="topicList">Download trial versions of IBM software</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Foffers%2Ftechbriefings%2F%3Fca%3Ddsl-tbcasp" class="topicList">developerWorks Live! technical briefings</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Ftraining%2Ftraining.html%3Fca%3Ddsl-tutcasp" class="topicList">Tutorials and training</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcommunity%2F%3Fca%3Ddsl-commcasp" class="topicList">developerWorks community</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fnewsletter%2F%3Fca%3Ddsl-dwnlcasp" class="topicList">Free developerWorks newsletters</a></li>
+								</ul>
+								]]></text>						
+							</group>
+						</group>
+						<group id="clear"><text></text></group>
+					</group>
+				</group>
+			</group>
+		<contentProvider id="footer-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+	</group>
+	</page>
+	
+	<!-- Actual Page -->
+	<page style="$theme$/html/webresources.css" id="dw_page2" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="webresources/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="Web Resources" filteredFrom="swt">
+            </group>
+            <text style-id="page-title" id="page-title" filteredFrom="html">Web Resources</text>
+        
+				<group style-id="brochure">
+					<contentProvider id="header-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" /> 
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>developerWorks Rational zone</text>
+						</group>
+							
+						<img style-id="right" src="images/rational-screen.gif" alt="Rational" />
+						<text>
+							For information specific to Rational tools, visit the Rational home page on developerWorks. From 
+							there you can navigate directly to product-related areas, such as for IBM Rational 
+							Application Developer and IBM Rational Software Architect, as well as to other relevant technology 
+							areas, including Enterprise Generation Language and Pattern Solutions.
+						</text>
+						<group style-id="content-group" id="dw-content-group">
+							<group id="rss-feed" label="Latest developerWorks articles and tutorials for Rational">
+								<contentProvider id="url=http://www-128.ibm.com/developerworks/views/rss/customrssatom.jsp?zone_by=Rational&amp;type_by=Articles&amp;type_by=Tutorials&amp;search_by=&amp;day=1&amp;month=01&amp;year=2004&amp;max_entries=10&amp;feed_by=rss&amp;isGUI=true&amp;Submit.x=53&amp;Submit.y=13##welcome_items=5##no_news_url=http://www.ibm.com/developerworks/rational##no_news_text=IBM Rational" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+							</group>
+							<group id="links" label="developerWorks Rational links">
+							<text><![CDATA[ 
+								<ul class="linkList">
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Frational" class="topicList">developerWorks Rational zone home page</a></li>
+								</ul>
+							]]></text>
+							</group>						
+						</group>
+						<group id="clear"><text></text></group>	
+					</group>
+				</group>
+			</group>
+		<contentProvider id="footer-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+	</group>
+	</page>
+
+
+	<!-- Actual Page -->
+	<page style="$theme$/html/webresources.css" id="dw_page3" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="webresources/navigation-links"/>
+			<!-- content -->
+			<group id="page-content">
+				<group id="content-header" label="Web Resources" filteredFrom="swt">
+            </group>
+            <text style-id="page-title" id="page-title" filteredFrom="html">Web Resources</text>
+        
+				<group style-id="brochure">
+					<contentProvider id="header-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" /> 
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>developerWorks community</text>
+						</group>
+							
+						<img style-id="right" src="images/community-screen.gif" alt="developerWorks Community" />
+						<text>
+							developerWorks community provides opportunities for you to get involved with fellow developers on 
+							developerWorks discussion forums, blogs, and wikis, as well as subscribe to content through Web 
+							feeds, RSS, and podcasts. 
+						</text>
+						<group style-id="content-group" id="dw-content-group">
+							<group id="rss-feed" label="Most recently updated threads from the developerWorks Rational forums">
+								<contentProvider id="url=http://www-128.ibm.com/developerworks/forums/dw_forum_rss.jsp?forum=430&amp;full=true##welcome_items=5##no_news_url=http://www.ibm.com/developerworks/community/##no_news_text=developerWorks Community" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+							</group>
+						</group>
+						<text><![CDATA[
+							At developerWorks Community, you can find the following items:<br/>
+							<br/>
+							•	Forums: Join lively discussions that cover a wide range of topics across IBM Rational®, Information Management, IBM Systems, Lotus®, Tivoli®, WebSphere®, Web services, wireless technology, Linux®, XML, Java™ technologies, and more. Here you can pose questions, investigate ideas, and connect with peers on the issues that interest you. <br/>
+							•	Blogs: Get keen insight into the mindsets of experts and leaders involved in the ongoing development of technology and products from IBM and across open industry standards.<br/>
+							•	Wikis: Check out these working areas where project leaders and technology users can develop information about different subjects.<br/>
+							•	Podcasts: Listen weekly for audio overviews of new content and other cool features on developerWorks and for interviews with a broad range of technical experts, both inside and outside IBM, who offer insights and discuss technology innovations and evolution.<br/>
+							•	Subscriptions: Subscribe to content from across developerWorks through common syndication standards like RSS and Atom. Or customize a feed from our site to display on your own Web page.
+						]]></text>
+						<group style-id="content-group" id="dw-content-group-2">
+							<group id="links" label="developerWorks Community links">
+								<text><![CDATA[
+								<ul class="linkList">
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2FdeveloperWorks%2Fcommunity" class="topicList">developerWorks community</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2FdeveloperWorks%2Fblogs" class="topicList">developerWorks blogs</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2FdeveloperWorks%2Fforums" class="topicList">developerWorks forums</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2FdeveloperWorks%2Fwikis" class="topicList">developerWorks wikis</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2FdeveloperWorks%2Fpodcast" class="topicList">developerWorks podcasts</a></li>
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Frss%2F" class="topicList">developerWorks Web feeds</a></li></ul>
+								]]></text>
+							</group>
+						</group>
+						<group id="clear"><text></text></group>
+					</group>
+				</group>
+			</group>
+		<contentProvider id="footer-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+	</group>
+	</page>
+	
+	<!-- Actual Page -->
+	<page style="$theme$/html/webresources.css" id="dw_page4" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title> 
+		<group id="container">
+			<include path="webresources/navigation-links"/>
+			<!-- content -->
+	        <group id="page-content">
+	            <group id="content-header" label="Web Resources" filteredFrom="swt">
+	            </group>
+	            <text style-id="page-title" id="page-title" filteredFrom="html">Web Resources</text>
+	        
+				<group style-id="brochure">
+					<contentProvider id="header-dwIntro" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" /> 
+					<group style-id="brochure-content" id="brochure-content">
+						<group style-id="contentpgTitle" filteredFrom="swt">
+							<text>alphaWorks</text>
+						</group>
+							
+						<img style-id="right" src="images/aw-screen.gif" alt="alphaWorks" />
+						<text>
+							alphaWorks provides a unique opportunity for early-adopter developers around the world to 
+							experience the latest innovations from IBM. These emerging technologies are available for 
+							download at the earliest stages of research and development, enabling you to evaluate and 
+							influence IBM research and development.
+						</text>
+						<group style-id="content-group" id="dw-content-group">
+							<group id="rss-feed" label="Latest alphaWorks news">
+								<contentProvider id="url=http://www.alphaworks.ibm.com/news/rss/aw.rss##welcome_items=5##no_news_url=http://www.alphaworks.ibm.com##no_news_text=alphaWorks" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+							</group>
+						</group>					
+						<text>
+							At alphaWorks you can collaborate with both IBM and non-IBM developers on individual 
+							technologies and emerging technology topics impacting the IT world. alphaWorks has been 
+							successfully helping IBM connect with innovative developers to lead the advancement of 
+							promising new standards, products, and open source technology since 1996. 
+						</text>
+						<text>
+							To date, 40 percent of the technologies posted to the alphaWorks Web site have been 
+							incorporated into IBM products or licensed to third-party developers, and over 200 
+							technologies are now available for download. These technologies have garnered much 
+							industry attention and have won numerous awards, including the 2003 Jolt award from the 
+							Software Developers Journal for best developer Web site. The alphaWorks business model 
+							has been featured in The New York Times, The Wall Street Journal, and the Harvard Business 
+							Review. 
+						</text>
+						<group style-id="content-group" id="dw-content-group-2">
+							<group id="links" label="alphaWorks links">
+							<text><![CDATA[
+								<ul class="linkList">
+								<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.alphaworks.ibm.com" class="topicList">alphaWorks home</a></li>
+								</ul>
+							]]></text>
+							</group>
+						</group>
+						<group id="clear"><text></text></group>					
+					</group>
+				</group>
+			</group>
+			<contentProvider id="footer-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>
+	
+	<!-- Actual Page -->
+	<page style="$theme$/html/webresources.css" id="dw_page5" style-id="page">
+		<head src="brochure-head.html" />
+		<title style-id="intro-header">$introTitle$</title>
+		<group id="container">
+		<include path="webresources/navigation-links"/>
+				<!-- content -->
+        <group id="page-content">
+            <group id="content-header" label="Web Resources" filteredFrom="swt">
+            </group>
+            <text style-id="page-title" id="page-title" filteredFrom="html">Web Resources</text>
+        
+			<group style-id="brochure">
+				<contentProvider id="header-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.TopBrochureNav" pluginId="com.ibm.ccl.welcome.bits" /> 
+				<group style-id="brochure-content" id="brochure-content">
+					<group style-id="contentpgTitle" filteredFrom="swt">
+						<text>PartnerWorld</text>
+					</group>
+						
+					<img style-id="right" src="images/pW-screen.gif" alt="PartnerWorld" />
+					<text>
+						IBM PartnerWorld is a worldwide program for IBM Business Partners that offers sales and 
+						marketing tools, skill-building courses, and technical support to help you grow your 
+						business and drive increased profit.
+					</text>
+					<group style-id="content-group" id="dw-content-group">
+						<group id="rss-feed" label="Latest PartnerWorld news">
+							<contentProvider id="url=http://www-304.ibm.com/jct09002c/isv/news/pwisvrssfeed.xml##welcome_items=5##no_news_url=http://www-304.ibm.com/jct09002c/isv/index.html##no_news_text=PartnerWorld" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+						</group>
+					</group>
+					<text>
+						PartnerWorld puts a wealth of offerings at your fingertips to help you deliver solutions 
+						that address your customers' business needs. As your membership level increases, you become 
+						eligible to receive increasingly valuable benefits and support from IBM.
+					</text>
+					<text>
+						When you team with IBM as a commercial software developer whose business is developing and 
+						delivering solutions to the marketplace, you team with a company that appreciates the position 
+						of ISV Business Partners. PartnerWorld is focused on working with you to enable your 
+						applications and deliver solutions with the potential for unrivaled market opportunity.
+					</text>
+					<text>
+						Among the opportunities open to ISVs and all members of PartnerWorld is participation in the 
+						PartnerWorld Industry Networks, which provide access to a rich set of powerful marketing, 
+						sales, and technical benefits based on your commitment to go to market with IBM.
+					</text>
+					<group style-id="content-group" id="dw-content-group-2">
+						<group id="links" label="PartnerWorld links">
+							<text><![CDATA[
+							<ul class="linkList">
+							<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fpartnerworld" class="topicList">IBM PartnerWorld</a></li>
+							<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fpartnerworld%2Fisv" class="topicList">ISV Business Partners</a></li>
+							<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fpartnerworld%2Findustrynetworks" class="topicList">PartnerWorld Industry Networks</a></li>
+							</ul>							
+							]]></text>
+						</group>
+						<group id="benefits" label="PartnerWorld benefits">
+							<text><![CDATA[
+							<ul class="linkList">
+							<li><a href="http://org.eclipse.ui.intro/openBrowser?url=http%3A%2F%2Fwww.ibm.com%2Fpartnerworld%2Fwps%2Fservlet%2FContentHandler%2Fpw_com_prb_index" class="topicList">Program benefits -- Benefits to help you success</a></li>
+							</ul>
+							]]></text>
+						</group>
+					</group>					
+				</group>
+			</group>
+			</group>
+			<contentProvider id="footer-dWIntro" class="com.ibm.ccl.welcome.bits.contentproviders.BottomBrochureNav" pluginId="com.ibm.ccl.welcome.bits" />
+		</group>
+	</page>
+</introContent>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.apache.commons.io
+Export-Package: org.apache.commons.io;version=1.2,org.apache.commons.i
+ o.filefilter;version=1.2,org.apache.commons.io.input;version=1.2,org.
+ apache.commons.io.output;version=1.2
+Bundle-Name: Apache Commons IO
+Bundle-Version: 1.2.1100.v20181221_2153
+Bundle-ClassPath: lib/commons-io-1.2.jar
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: The Apache Software Foundation
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2014, 2015. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<feature
+      id="com.ibm.team.enterprise.build.buildmap.common.feature"
+      label="Buildmap Common"
+      version="1.0.800.v20190320_2310"
+      provider-name="IBM"
+      
+      >
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="com.ibm.team.enterprise.build.buildmap.common"
+         download-size="0"
+         install-size="0"
+         version="1.1.400.v20190201_1652"
+         unpack="false"/>
+
+</feature>

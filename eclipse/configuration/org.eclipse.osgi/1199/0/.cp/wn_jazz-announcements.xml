@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed Materials - Property of IBM
+    (c) Copyright IBM Corporation 2010. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+
+<introContent>
+	<!--  -->
+	<extensionContent id="jazz_announcements" name="Jazz announcements" alt-style="css/swt.properties" style="css/common.css,css/t-links.css" path="webresources/@">
+		<group style-id="content-group" id="content-group">
+			<group style-id="webresources-category" id="wn_jazz-announcements">
+				<group id="rss-feed" label="Jazz announcements">
+					<contentProvider id="url=https://jazz.net/community/announcements/feed.rss?externalize=true##welcome_items=6##no_news_url=https://jazz.net/community/community.jsp##no_news_text=Jazz.net Community" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+				</group>
+			</group>
+		</group>
+		<!-- Removing because it requires a second authentication -->
+		<!--<group style-id="content-group" id="content-group">
+			<group style-id="webresources-category" id="wn_jazz-alerts">
+				<group id="rss-feed" label="Jazz alerts">
+					<contentProvider id="url=https://jazz.net/community/alerts/feed.rss?externalize=true##welcome_items=6##no_news_url=https://jazz.net/community/community.jsp##no_news_text=Jazz.net Community" class="com.ibm.ccl.welcome.bits.rss.RSSViewer" pluginId="com.ibm.ccl.welcome.bits"/>
+				</group>
+			</group>
+		</group>-->
+	</extensionContent>
+	
+</introContent>

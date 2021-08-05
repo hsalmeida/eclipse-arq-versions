@@ -1,0 +1,10 @@
+# Debugging options for this plugin.
+
+# Print out tracing info to the console when a query is executed
+com.ibm.team.filesystem.ide.ui/trace.query.execute=false
+
+# Print trace information that tracks the lifecycle of WorkspaceContext (for detecting leaks)
+com.ibm.team.filesystem.ide.ui/trace.workspace.context=false
+
+# Record the intermediate steps when converting advisor text from AML to HTML
+com.ibm.team.filesystem.ide.ui/trace.process.markup=false

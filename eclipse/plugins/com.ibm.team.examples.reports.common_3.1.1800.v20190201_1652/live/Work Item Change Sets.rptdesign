@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <html-property name="description">Creates a blank report with no predefined content.</html-property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[itemId = '_0000000000000000000000';
+changeSets = '';]]></method>
+    <text-property name="displayName">Blank Report</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="Work Item" id="9">
+            <text-property name="promptText">Work Item</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Work Item Data Source" id="6">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">WORKITEMS_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Common Data Source" id="7">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">COMMON_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+        <oda-data-source extensionID="com.ibm.team.reports.generic.dataSource" name="Scm Data Source" id="8">
+            <property name="repository">https://localhost:9443/ccm/</property>
+            <property name="snapshot">SCM_SNAPSHOT</property>
+            <property name="projectArea">JKE Banking (Change Management)</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="Work Item Data Set" id="10">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">WI_ITEMID</property>
+                    <text-property name="displayName">WI_ITEMID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WI_ID</property>
+                    <text-property name="displayName">WI_ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SUMMARY</property>
+                    <text-property name="displayName">SUMMARY</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">WI_ID</property>
+                    <property name="paramName">Work Item</property>
+                    <property name="nativeName">WI_ID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">WI_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">WI_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">SUMMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[itemId = '_0000000000000000000000';]]></method>
+            <method name="onFetch"><![CDATA[itemId = row["WI_ITEMID"];]]></method>
+            <property name="dataSource">Work Item Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">WI_ITEMID</property>
+                    <property name="nativeName">WI_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">WI_ID</property>
+                    <property name="nativeName">WI_ID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">SUMMARY</property>
+                    <property name="nativeName">SUMMARY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>WI_ID</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULT_SET_SIZE</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LIVE_WORKITEM_CNT</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>WI_ITEMID,WI_ID,SUMMARY</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>WI_ID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LIVE_WORKITEM_CNT</property>
+            <property name="selectedFields">WI_ITEMID,WI_ID,SUMMARY</property>
+            <property name="parameterFields">WI_ID</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="ChangeSet Links Data Set" id="11">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">LINK_TYPE</property>
+                    <text-property name="displayName">LINK_TYPE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SOURCE_ITEMID</property>
+                    <text-property name="displayName">SOURCE_ITEMID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TARGET_ITEMID</property>
+                    <text-property name="displayName">TARGET_ITEMID</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">LINK_TYPE</property>
+                    <property name="nativeName">LINK_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">'com.ibm.team.filesystem.workitems.change_set'</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">SOURCE_ITEMID</property>
+                    <property name="nativeName">SOURCE_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TARGET_ITEMID</property>
+                    <property name="nativeName">TARGET_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">3</property>
+                    <expression name="defaultValue">itemId</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">LINK_TYPE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">SOURCE_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TARGET_ITEMID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[changeSets = '';]]></method>
+            <method name="onFetch"><![CDATA[if (changeSets.length == 0) {
+	changeSets += "'" + row["SOURCE_ITEMID"] + "'";
+} else {
+	changeSets += ",'" + row["SOURCE_ITEMID"] + "'";
+}]]></method>
+            <property name="dataSource">Common Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LINK_TYPE</property>
+                    <property name="nativeName">LINK_TYPE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">SOURCE_ITEMID</property>
+                    <property name="nativeName">SOURCE_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TARGET_ITEMID</property>
+                    <property name="nativeName">TARGET_ITEMID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>LINK_TYPE</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>SOURCE_ITEMID</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>TARGET_ITEMID</design:name>
+        <design:position>3</design:position>
+        <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULT_SET_SIZE</design:name>
+        <design:position>4</design:position>
+        <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>LINKS</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>LINK_TYPE,SOURCE_ITEMID,TARGET_ITEMID</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>LINK_TYPE,SOURCE_ITEMID,TARGET_ITEMID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">LINKS</property>
+            <property name="selectedFields">LINK_TYPE,SOURCE_ITEMID,TARGET_ITEMID</property>
+            <property name="parameterFields">LINK_TYPE,SOURCE_ITEMID,TARGET_ITEMID</property>
+        </oda-data-set>
+        <oda-data-set extensionID="com.ibm.team.reports.generic.dataSet" name="ChangeSet Data Set" id="35">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CS_COMMENT</property>
+                    <text-property name="displayName">CS_COMMENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CS_OWNER</property>
+                    <text-property name="displayName">CS_OWNER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CS_CHANGE_COUNT</property>
+                    <text-property name="displayName">CS_CHANGE_COUNT</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">CS_ITEM_ID</property>
+                    <property name="nativeName">CS_ITEM_ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue">changeSets</expression>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">RESULT_SET_SIZE</property>
+                    <property name="nativeName">RESULT_SET_SIZE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">3</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CS_COMMENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CS_OWNER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CS_CHANGE_COUNT</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Scm Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CS_COMMENT</property>
+                    <property name="nativeName">CS_COMMENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CS_OWNER</property>
+                    <property name="nativeName">CS_OWNER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CS_CHANGE_COUNT</property>
+                    <property name="nativeName">CS_CHANGE_COUNT</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:DataSetParameters>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>CS_ITEM_ID</design:name>
+        <design:position>1</design:position>
+        <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+    <design:parameterDefinitions>
+      <design:inOutMode>In</design:inOutMode>
+      <design:attributes>
+        <design:name>RESULT_SET_SIZE</design:name>
+        <design:position>2</design:position>
+        <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+        <design:precision>0</design:precision>
+        <design:scale>0</design:scale>
+        <design:nullability>Nullable</design:nullability>
+      </design:attributes>
+      <design:inputAttributes>
+        <design:elementAttributes>
+          <design:optional>true</design:optional>
+        </design:elementAttributes>
+      </design:inputAttributes>
+    </design:parameterDefinitions>
+  </design:DataSetParameters>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>fact</name>
+                    <value>CHANGE_SET</value>
+                </ex-property>
+                <ex-property>
+                    <name>selectedFields</name>
+                    <value>CS_COMMENT,CS_OWNER,CS_CHANGE_COUNT</value>
+                </ex-property>
+                <ex-property>
+                    <name>parameterFields</name>
+                    <value>CS_ITEM_ID</value>
+                </ex-property>
+            </list-property>
+            <property name="fact">CHANGE_SET</property>
+            <property name="selectedFields">CS_COMMENT,CS_OWNER,CS_CHANGE_COUNT</property>
+            <property name="parameterFields">CS_ITEM_ID</property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="birt-body" id="68">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="birt-chart" id="70">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+            <property name="color">#666666</property>
+        </style>
+        <style name="birt-heading-title" id="69">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">16px</property>
+            <property name="fontWeight">normal</property>
+            <property name="color">#333333</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">1.25in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">1.25in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text-data id="96">
+            <property name="style">birt-body</property>
+            <property name="dataSet">Work Item Data Set</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">WI_ITEMID</property>
+                    <expression name="expression">dataSetRow["WI_ITEMID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">WI_ID</property>
+                    <expression name="expression">dataSetRow["WI_ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">SUMMARY</property>
+                    <expression name="expression">dataSetRow["SUMMARY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <expression name="valueExpr">"Hidden label bound to work item data set " + Total.count();</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <text-data id="97">
+            <property name="style">birt-body</property>
+            <property name="dataSet">ChangeSet Links Data Set</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">LINK_TYPE</property>
+                    <expression name="expression">dataSetRow["LINK_TYPE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SOURCE_ITEMID</property>
+                    <expression name="expression">dataSetRow["SOURCE_ITEMID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TARGET_ITEMID</property>
+                    <expression name="expression">dataSetRow["TARGET_ITEMID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <expression name="valueExpr">"Hidden label bound to change set links data set " + Total.count();</expression>
+            <property name="contentType">html</property>
+        </text-data>
+        <table id="74">
+            <property name="marginTop">0pt</property>
+            <property name="width">100%</property>
+            <property name="dataSet">ChangeSet Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CS_COMMENT</property>
+                    <expression name="expression">var comment = dataSetRow["CS_COMMENT"];
+if ((comment == null) || (comment.length == 0)) {
+	comment = "Unnamed";
+}
+comment;</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CS_OWNER</property>
+                    <expression name="expression">dataSetRow["CS_OWNER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CS_CHANGE_COUNT</property>
+                    <expression name="expression">dataSetRow["CS_CHANGE_COUNT"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <property name="pageBreakInterval">50</property>
+            <column id="93">
+                <property name="width">4.4375in</property>
+            </column>
+            <column id="95"/>
+            <header>
+                <row id="75">
+                    <cell id="76">
+                        <grid id="307">
+                            <property name="marginTop">0pt</property>
+                            <property name="width">100%</property>
+                            <column id="308"/>
+                            <row id="309">
+                                <cell id="310">
+                                    <property name="borderTopColor">#CDCDCD</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <property name="paddingTop">1px</property>
+                                    <property name="paddingLeft">0px</property>
+                                    <property name="paddingBottom">0px</property>
+                                    <property name="paddingRight">0px</property>
+                                    <label id="223">
+                                        <property name="style">birt-body</property>
+                                        <property name="backgroundColor">#F3F3F3</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0px</property>
+                                        <property name="marginLeft">0pt</property>
+                                        <property name="marginRight">0pt</property>
+                                        <property name="paddingTop">3pt</property>
+                                        <property name="paddingLeft">7pt</property>
+                                        <property name="paddingBottom">3pt</property>
+                                        <text-property name="text">Change Set Comment</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                    <cell id="80">
+                        <grid id="315">
+                            <property name="marginTop">0pt</property>
+                            <property name="width">100%</property>
+                            <column id="316"/>
+                            <row id="317">
+                                <cell id="318">
+                                    <property name="borderTopColor">#CDCDCD</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <property name="paddingTop">1px</property>
+                                    <property name="paddingLeft">0px</property>
+                                    <property name="paddingBottom">0px</property>
+                                    <property name="paddingRight">0px</property>
+                                    <label id="319">
+                                        <property name="style">birt-body</property>
+                                        <property name="backgroundColor">#F3F3F3</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="marginTop">0px</property>
+                                        <property name="marginLeft">0pt</property>
+                                        <property name="marginRight">0pt</property>
+                                        <property name="paddingTop">3pt</property>
+                                        <property name="paddingLeft">7pt</property>
+                                        <property name="paddingBottom">3pt</property>
+                                        <text-property name="text">File/Folder Changes</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </grid>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="82">
+                    <cell id="83">
+                        <property name="borderBottomColor">#EBEBEB</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <data id="84">
+                            <property name="style">birt-body</property>
+                            <property name="paddingLeft">7pt</property>
+                            <property name="resultSetColumn">CS_COMMENT</property>
+                        </data>
+                    </cell>
+                    <cell id="87">
+                        <property name="borderBottomColor">#EBEBEB</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <data id="88">
+                            <property name="style">birt-body</property>
+                            <property name="paddingLeft">7pt</property>
+                            <property name="resultSetColumn">CS_CHANGE_COUNT</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="89">
+                    <cell id="90"/>
+                    <cell id="92"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

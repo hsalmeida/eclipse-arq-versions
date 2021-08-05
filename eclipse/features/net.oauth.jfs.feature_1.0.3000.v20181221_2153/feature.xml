@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.oauth.jfs.feature"
+      label="OAuth Library"
+      version="1.0.3000.v20181221_2153">
+
+   <requires>
+      <import feature="org.apache.http.jfs.feature"/>
+   </requires>
+
+   <plugin
+         id="net.oauth"
+         download-size="0"
+         install-size="0"
+         version="0.2.3000.v20181221_2153"
+         unpack="false"/>
+
+</feature>

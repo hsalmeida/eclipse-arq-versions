@@ -1,0 +1,50 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--<h2>Overview of the Jazz Platform architecture</h2>-->
+
+<p>The Jazz Platform is based on a client-server architecture. The Jazz server, normally running on a secured server-class machine, hosts a set of services and houses data in its repository. Remote clients communicate with the Jazz server over the network using HTTP. Remote clients come in many forms, with the quintessential one being an IDE with integrated Jazz Platform support, driven by a user engaged in collaborative software development. Other remote clients, such as Jazz-specific command line tools or Ant scripts, operate in headless mode. Others access the server directly using a Web browser, without needing to install Jazz-specific software on their machine.</p>
+
+<div align="center"><img src="$plugin:com.ibm.team.welcome$/images/jazz-arch.gif" alt="This diagram illustrates the Jazz Platform client-server architecture" /></div>
+
+<h3>Client-server</h3>
+
+<p>Jazz Platform has matched parts: the service and the client library. The  service is on the server-side. The service implementation is written in Java. The service is contacted through its service interface. The service interface is used as the Java service definition of a web service interface, which is used for synchronous, RPC-style communication from client to server.</p>
+
+<p>The corresponding client-side portion is a Java-based client library that exposes a client interface. The client library makes calls to the corresponding service interface, which are sent over the network to the corresponding service on the server for processing. The client library provides caching, event notification, and other features that make the API more convenient to use than the raw service interface.</p>
+
+<p>Java-based Jazz clients, such as the Eclipse IDE and Ant, use methods in the client interface. (Analogous client libraries could be written for use by non-Java-based clients.)</p>
+
+<p>Web browser clients are handled in an analogous fashion using a related service interface more suited for access from JavaScript (described in the later section on Web UIs).</p>
+
+<h3>Components</h3>
+
+<p>Jazz Platform has a modular and extensible architecture. A typical module, referred to as a Jazz component, provides a capability that helps with some facet of the software development lifecycle, such as defect tracking or automated builds. A typical component provides one or more services and corresponding client libraries, along with the domain-specific UI pieces built on these lower layers. Installing a component on a Jazz server makes the component's services generally available, while installing the component on a Jazz client affords a user access to the new service. A Jazz component can either stand by itself (relying only on essential, built-in functionality), or it can make use of functionality provided by other installed components.</p>
+
+<p>While the notion of component is convenient for explaining how the Jazz Platform is extended, Jazz does not offer a new general purpose component mechanism. Instead, the Jazz Platform leverages the Eclipse Platform's extensibility mechanisms on both the server and Java-based clients. (The reader unfamiliar with the Eclipse Platform notions of plug-ins and extension points should read the Platform Runtime and Plug-in Architecture section of the Eclipse Platform Technical Overview for the background.) Components are packaged as Eclipse's notion of plug-ins, and contribute extensions to other components using Eclipse's notion of extension points. A single component is composed of a set of plug-ins, some of which are installed on the server and some on the client.</p>
+
+<p>The prototypical Jazz component consists of five plug-ins:
+	<ul>
+		<li>Service plug-in</li>
+		<li>Client library plug-in</li>
+		<li>Common plug-in</li>
+		<li>Eclipse client UI plug-in</li>
+		<li>Web UI plug-in</li>
+	</ul>
+</p>
+
+<p>The service, common, and web UI plug-ins are installed on the server.</p>
+
+<p>The plug-ins use extension points to register with Jazz. The component's common plug-in, which is installed on both the client and the server, registers the component's service interface via an extension point. The service plug-in registers the corresponding service implementation via a server-side-only extension point. The client library plug-in registers the client interface via a client-side-only extension point. These contributions bear the id string of the component. The contributions are used to knit together the components at run time.</p>
+
+<p>The client-side plug-ins for the component's client UI and client library are installed into the Eclipse IDE. Client UI plug-ins contribute their views, editors, etc. via Eclipse Platform extension points; and client library plug-ins register their client interfaces via a Jazz-specific extension point.</p>
+
+<p>The client libraries are designed to work in clients, such as Ant, that do not have an OSGi runtime. Client libraries may only depend on the client libraries of other components, and not on their services or UIs.</p>
+
+<p>Components must declare any dependencies on other components. The dependency graph must not contain cycles. A component may also declare its own extension points, allowing it to be extended in turn by other components.</p>
+
+<h3>Server</h3>
+
+<p>The Jazz server is a Java-based web application that runs within any Java EE 1.4 compliant application server. The application servers that are currently supported are Apache Tomcat and IBM WebSphere Application Server. Apache Tomcat is an open source servlet container which can be installed on desktop class machines. IBM WebSphere Application Server is a commercially available product offering solutions at various scales. The semantics of services and server-side Jazz APIs are independent of the choice of application server, allowing additional application servers to be supported in future releases.</p>
+
+<p>For readers familiar with Eclipse, the Jazz web application is structured internally around an OSGi runtime. The Jazz web application handles the services of all Jazz components installed on the server. Installing a new component on a Jazz server involves making the component's server-side plug-ins (OSGi bundles) known to the primary web application's OSGi runtime. The bundle's manifest declares any dependencies on other installed components; the separate extension manifest contains any contributions to various extension points. The OSGi runtime processes bundle manifests on start up, ensuring that inter-component dependencies are satisfied for all installed components. The Jazz web application manages the extension registry that pulls together the contributions of all installed components, and routes each incoming request on a component's service interface to the corresponding service for processing.</p>
